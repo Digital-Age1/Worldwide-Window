@@ -1,6 +1,7 @@
 import { useState, FormEvent } from 'react';
 import Header from '@/components/feature/Header';
 import Footer from '@/components/feature/Footer';
+import content from '@/content';
 
 const FORM_URL = 'https://readdy.ai/api/form/d7j7s9udvpcv9r19p9qg';
 
@@ -17,6 +18,8 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>('idle');
+  const pageContent = content.pages.contact;
+  const contactInfo = content.global.contact;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -59,13 +62,13 @@ export default function ContactPage() {
             <div className="max-w-2xl">
               <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
                 <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
-                Free Quote — No Obligation
+                {pageContent.heroBadge || 'Free Quote — No Obligation'}
               </div>
               <h1 className="text-4xl lg:text-5xl xl:text-6xl font-extrabold text-white mb-4 leading-tight" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}>
-                Get Your Free Quote
+                {pageContent.heroTitle}
               </h1>
               <p className="text-white text-lg font-light leading-relaxed" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}>
-                Serving homeowners and businesses across Washington, Oregon &amp; Idaho.
+                {pageContent.heroSubtitle}
               </p>
             </div>
           </div>
@@ -78,31 +81,31 @@ export default function ContactPage() {
               {/* Contact Info */}
               <div className="lg:col-span-1 space-y-6">
                 <div>
-                  <h2 className="text-2xl font-extrabold text-slate-900 mb-2">Contact Us</h2>
+                  <h2 className="text-2xl font-extrabold text-slate-900 mb-2">{pageContent.pageTitle}</h2>
                   <p className="text-slate-500 text-sm leading-relaxed">
-                    Family-owned since 1983. We&apos;re here to help — call, email, or fill out the form and we&apos;ll get back to you fast.
+                    {pageContent.pageDescription}
                   </p>
                 </div>
 
                 <div className="space-y-4">
-                  <a href="tel:+18002231286" className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
+                  <a href={`tel:${contactInfo.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
                     <div className="w-12 h-12 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-xl flex-shrink-0 transition-colors">
                       <i className="ri-phone-fill text-blue-700 group-hover:text-white text-xl transition-colors"></i>
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call Us</p>
-                      <p className="text-slate-900 font-bold text-base">(800) 223-1286</p>
+                      <p className="text-slate-900 font-bold text-base">{contactInfo.phone}</p>
                       <p className="text-slate-400 text-xs">Mon–Sat: 7:00 AM – 6:00 PM</p>
                     </div>
                   </a>
 
-                  <a href="mailto:clean@worldwidewindow.net" className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
+                  <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
                     <div className="w-12 h-12 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-xl flex-shrink-0 transition-colors">
                       <i className="ri-mail-fill text-blue-700 group-hover:text-white text-xl transition-colors"></i>
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-0.5">Email Us</p>
-                      <p className="text-slate-900 font-bold text-sm">clean@worldwidewindow.net</p>
+                      <p className="text-slate-900 font-bold text-sm">{contactInfo.email}</p>
 
                     </div>
                   </a>
@@ -123,12 +126,7 @@ export default function ContactPage() {
                 <div className="bg-blue-700 rounded-2xl p-6 text-white">
                   <h3 className="font-extrabold text-lg mb-4">Why Choose Us?</h3>
                   <ul className="space-y-3">
-                    {[
-                      { icon: 'ri-home-heart-fill', text: 'Family-Owned Since 1983' },
-                      { icon: 'ri-shield-check-fill', text: '100% Satisfaction Guarantee' },
-                      { icon: 'ri-checkbox-circle-fill', text: 'Free, No-Obligation Quotes' },
-                      { icon: 'ri-map-2-line', text: 'Serving WA, OR &amp; ID' },
-                    ].map((item) => (
+                    {pageContent.trustBadgesList.map((item) => (
                       <li key={item.text} className="flex items-center gap-3">
                         <div className="w-7 h-7 flex items-center justify-center flex-shrink-0">
                           <i className={`${item.icon} text-blue-300 text-base`}></i>

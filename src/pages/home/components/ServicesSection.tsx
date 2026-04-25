@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const featuredService = {
+const fallbackFeaturedService = {
   id: 'residential',
   icon: 'ri-home-4-line',
   title: 'Residential Window Cleaning',
@@ -11,7 +12,7 @@ const featuredService = {
   alt: 'Professional residential home window cleaning service',
 };
 
-const residentialServices = [
+const fallbackResidentialServices = [
   {
     id: 'gutters',
     icon: 'ri-layout-top-line',
@@ -31,6 +32,11 @@ const residentialServices = [
     alt: 'Hard water stain removal treatment for residential windows',
   },
 ];
+
+const servicesContent = content.pages.home.servicesSection;
+const featuredService = servicesContent?.featured || fallbackFeaturedService;
+const residentialServices = servicesContent?.residentialServices || fallbackResidentialServices;
+const businessService = servicesContent?.businessService;
 
 export default function ServicesSection() {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -60,13 +66,13 @@ export default function ServicesSection() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-16" ref={titleRef}>
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
-            <i className="ri-service-line"></i> What We Do
+            <i className="ri-service-line"></i> {servicesContent?.badge || 'What We Do'}
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-            Residential &amp; Commercial Window Cleaning Across WA, OR &amp; ID
+            {servicesContent?.title || 'Residential & Commercial Window Cleaning Across WA, OR & ID'}
           </h2>
           <p className="text-slate-500 text-lg font-light leading-relaxed">
-            Delivering premuim results for homes of all sizes across the Pacific Northwest
+            {servicesContent?.subtitle || 'Delivering premuim results for homes of all sizes across the Pacific Northwest'}
           </p>
         </div>
 
@@ -82,7 +88,7 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-slate-900/30 lg:block hidden"></div>
               <div className="absolute top-4 left-4">
                 <span className="bg-blue-700 text-white text-xs font-black uppercase tracking-widest px-3 py-1.5 rounded-full">
-                  Our Core Specialty
+                  {featuredService.badge || 'Our Core Specialty'}
                 </span>
               </div>
             </div>
@@ -165,8 +171,8 @@ export default function ServicesSection() {
             <div className="lg:col-span-2 group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-slate-200 hover:shadow-lg transition-all duration-300 flex flex-col sm:flex-row cursor-pointer">
               <div className="relative sm:w-56 flex-shrink-0 h-44 sm:h-auto overflow-hidden">
                 <img
-                  src="https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20small%20business%20storefront%20clean%20gleaming%20clear%20glass%20exterior%20shop%20retail%20building%20clean%20attractive%20neighborhood%20street%20daylight&width=400&height=300&seq=svc-commercial-sm-002&orientation=landscape"
-                  alt="Commercial storefront window cleaning service"
+                  src={businessService?.img || "https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20small%20business%20storefront%20clean%20gleaming%20clear%20glass%20exterior%20shop%20retail%20building%20clean%20attractive%20neighborhood%20street%20daylight&width=400&height=300&seq=svc-commercial-sm-002&orientation=landscape"}
+                  alt={businessService?.alt || "Commercial storefront window cleaning service"}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
               </div>
@@ -175,13 +181,13 @@ export default function ServicesSection() {
                   <div className="w-8 h-8 flex items-center justify-center bg-slate-100 rounded-lg flex-shrink-0">
                     <i className="ri-store-2-line text-slate-600 text-base"></i>
                   </div>
-                  <h3 className="text-base font-bold text-slate-900">Commercial Window Cleaning</h3>
+                <h3 className="text-base font-bold text-slate-900">{businessService?.title || 'Commercial Window Cleaning'}</h3>
                 </div>
                 <p className="text-slate-500 text-sm leading-relaxed mb-3">
-                  Storefront and low-rise business window cleaning across WA, OR, and ID. Keep a clean, professional appearance that makes the right impression on customers.
+                  {businessService?.desc || 'Storefront and low-rise business window cleaning across WA, OR, and ID. Keep a clean, professional appearance that makes the right impression on customers.'}
                 </p>
                 <ul className="space-y-1 mb-4">
-                  {['Storefronts & retail shops', 'Low-rise office buildings', 'Recurring service plans'].map((b) => (
+                  {(businessService?.bullets || ['Storefronts & retail shops', 'Low-rise office buildings', 'Recurring service plans']).map((b) => (
                     <li key={b} className="flex items-center gap-2 text-slate-600 text-sm">
                       <i className="ri-check-line text-slate-400 text-sm flex-shrink-0"></i>
                       {b}

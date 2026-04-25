@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
+import content from '@/content';
 
-const beforeAfterPairs = [
+const fallbackBeforeAfterPairs = [
   {
     id: 1,
     label: 'Residential Home — Bellevue, WA',
@@ -23,6 +24,7 @@ const beforeAfterPairs = [
     type: 'Hard Water',
   },
 ];
+const beforeAfterPairs = content.sections.gallery.beforeAfterPairs || fallbackBeforeAfterPairs;
 
 export default function BeforeAfterGallery() {
   const [activeId, setActiveId] = useState(1);

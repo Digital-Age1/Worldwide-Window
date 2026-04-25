@@ -1,3 +1,6 @@
+import servicesContent from '@/content/services/services.json';
+import serviceAreasContent from '@/content/sections/service-areas.json';
+
 export interface CityEntry {
   name: string;
   slug: string;
@@ -22,7 +25,7 @@ export interface ServiceEntry {
   img: string;
 }
 
-export const STATES: StateEntry[] = [
+const FALLBACK_STATES: StateEntry[] = [
   {
     name: 'Washington',
     slug: 'washington',
@@ -96,7 +99,7 @@ export const STATES: StateEntry[] = [
   },
 ];
 
-export const SERVICES: ServiceEntry[] = [
+const FALLBACK_SERVICES: ServiceEntry[] = [
   {
     id: 'residential',
     slug: 'residential-window-cleaning',
@@ -142,6 +145,10 @@ export const SERVICES: ServiceEntry[] = [
     bullets: ['Full debris removal', 'Downspout flush & check', 'Gutter inspection included', 'Prevent water damage', 'Seasonal maintenance plans'],
   },
 ];
+
+export const STATES: StateEntry[] = (serviceAreasContent.routeStates as StateEntry[]) || FALLBACK_STATES;
+
+export const SERVICES: ServiceEntry[] = (servicesContent.services as ServiceEntry[]) || FALLBACK_SERVICES;
 
 export function getServiceBySlug(slug: string): ServiceEntry | undefined {
   return SERVICES.find((s) => s.slug === slug);

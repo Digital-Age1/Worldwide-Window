@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const blocks = [
+const fallbackBlocks = [
   {
     icon: 'ri-eye-line',
     q: 'What does professional residential window cleaning include?',
@@ -23,6 +24,7 @@ const blocks = [
     a: 'Residential window cleaning requires different techniques, tools, and care than commercial work. A residential specialist understands how to work around landscaping, pets, children\'s schedules, and interior furnishings — and brings the personal accountability that makes the difference. World Wide Window is primarily residential, which means homes are never an afterthought for our team.',
   },
 ];
+const blocks = content.pages.home.aiSearchBlocks || fallbackBlocks;
 
 export default function AISearchBlocks() {
   const ref = useRef<HTMLDivElement>(null);

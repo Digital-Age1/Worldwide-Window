@@ -1,7 +1,9 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const stats = [
+const aboutContent = content.pages.home.aboutPreview;
+const stats = aboutContent?.stats || [
   { value: '1983', label: 'Est. by Our Family' },
   { value: '3', label: 'States Served' },
   { value: '40+', label: 'Years Experience' },
@@ -35,7 +37,7 @@ export default function AboutSection() {
           <div className="relative" ref={leftRef}>
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
               <img
-                src="https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/38f4f87b39d6feafe2bc8f35e7981672.jpeg"
+                src={aboutContent?.image || "https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/38f4f87b39d6feafe2bc8f35e7981672.jpeg"}
                 alt="World Wide Window Co — Family-owned residential window cleaning since 1983"
                 className="w-full h-full object-cover object-top"
               />
@@ -61,10 +63,10 @@ export default function AboutSection() {
           {/* Content side */}
           <div ref={rightRef}>
             <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
-              <i className="ri-history-line"></i> Our Story
+              <i className="ri-history-line"></i> {aboutContent?.badge || 'Our Story'}
             </div>
             <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
-              Over 40 Years Serving Homeowners Across WA, OR &amp; ID
+              {aboutContent?.title || 'Over 40 Years Serving Homeowners Across WA, OR & ID'}
             </h2>
             <div className="space-y-4 text-slate-600 text-base lg:text-lg leading-relaxed mb-8">
               <p>

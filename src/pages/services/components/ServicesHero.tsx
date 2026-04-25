@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
 export default function ServicesHero() {
+  const pageContent = content.pages.services;
   return (
     <section className="relative w-full min-h-[72vh] flex items-center overflow-hidden pt-[108px]">
       <div className="absolute inset-0">
@@ -17,16 +19,16 @@ export default function ServicesHero() {
         <div className="max-w-3xl">
           <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
-            Residential &amp; Commercial Window Cleaning
+            {pageContent.heroBadge || 'Residential & Commercial Window Cleaning'}
           </div>
 
           <h1 className="font-extrabold leading-[1.05] mb-6">
-            <span className="block text-5xl lg:text-6xl xl:text-7xl text-white drop-shadow-2xl mb-1" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}>Professional Window</span>
-            <span className="block text-5xl lg:text-6xl xl:text-7xl text-blue-300 drop-shadow-2xl" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}>Cleaning Services</span>
+            <span className="block text-5xl lg:text-6xl xl:text-7xl text-white drop-shadow-2xl mb-1" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}>{pageContent.heroTitle1 || 'Professional Window'}</span>
+            <span className="block text-5xl lg:text-6xl xl:text-7xl text-blue-300 drop-shadow-2xl" style={{ textShadow: '0 2px 16px rgba(0,0,0,0.9)' }}>{pageContent.heroTitle2 || 'Cleaning Services'}</span>
           </h1>
 
           <p className="text-white text-xl font-light max-w-2xl mb-10 leading-relaxed" style={{ textShadow: '0 2px 12px rgba(0,0,0,0.9)' }}>
-            From single-family homes to storefronts and low-rise commercial buildings — we deliver spotless results backed by 40+ years of Pacific Northwest expertise.
+            {pageContent.heroSubtitle || pageContent.pageSubtitle}
           </p>
 
           <div className="flex flex-wrap gap-4 mb-12">

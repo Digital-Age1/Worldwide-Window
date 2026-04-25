@@ -43,7 +43,7 @@ const defaultPhotos = [
 
 const photos = (content.sections.gallery?.images || defaultPhotos).map((img, i) => ({
   ...img,
-  label: img.alt?.split(' — ')[1] || img.alt?.substring(0, 30) || '',
+  label: img.category || img.alt?.split(' — ')[1] || img.alt?.substring(0, 30) || '',
   span: i === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1',
 }));
 

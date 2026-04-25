@@ -159,6 +159,19 @@ collections:
               - { label: "State Name", name: "state", widget: "string" }
               - { label: "Description", name: "desc", widget: "text" }
               - { label: "Cities", name: "cities", widget: "list", field: { label: "City", name: "city", widget: "string" } }
+          - label: "Route States"
+            name: "routeStates"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Abbreviation", name: "abbr", widget: "string" }
+              - label: "Cities"
+                name: "cities"
+                widget: "list"
+                fields:
+                  - { label: "Name", name: "name", widget: "string" }
+                  - { label: "Slug", name: "slug", widget: "string" }
 
   # Process
   - name: "process"
@@ -191,6 +204,15 @@ collections:
               - { label: "Src", name: "src", widget: "string" }
               - { label: "Alt", name: "alt", widget: "string" }
               - { label: "Category", name: "category", widget: "string", required: false }
+          - label: "Before After Pairs"
+            name: "beforeAfterPairs"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "number" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Before Image", name: "before", widget: "string" }
+              - { label: "After Image", name: "after", widget: "string" }
+              - { label: "Type", name: "type", widget: "string" }
 
   # Services
   - name: "services"
@@ -257,6 +279,10 @@ collections:
         fields:
           - { label: "Page Title", name: "pageTitle", widget: "string", required: false }
           - { label: "Page Subtitle", name: "pageSubtitle", widget: "text", required: false }
+          - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+          - { label: "Hero Title Line 1", name: "heroTitle1", widget: "string", required: false }
+          - { label: "Hero Title Line 2", name: "heroTitle2", widget: "string", required: false }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
 
   # Contact Page
   - name: "contact-page"
@@ -267,6 +293,7 @@ collections:
         name: "contact-page"
         fields:
           - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+          - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
           - { label: "Page Title", name: "pageTitle", widget: "string", required: false }
           - { label: "Page Description", name: "pageDescription", widget: "text", required: false }

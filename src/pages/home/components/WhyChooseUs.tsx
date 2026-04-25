@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const reasons = [
+const fallbackReasons = [
   {
     number: '01',
     title: 'Spotless Results — Guaranteed Every Time',
@@ -40,6 +41,9 @@ const reasons = [
   },
 ];
 
+const whyContent = content.pages.home.whyChooseUs;
+const reasons = whyContent?.reasons || fallbackReasons;
+
 export default function WhyChooseUs() {
   const titleRef = useRef<HTMLDivElement>(null);
 
@@ -58,13 +62,13 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-20" ref={titleRef}>
           <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-5">
-            <i className="ri-shield-star-line"></i> Why Choose World Wide Window
+            <i className="ri-shield-star-line"></i> {whyContent?.badge || 'Why Choose World Wide Window'}
           </div>
           <h2 className="text-4xl lg:text-5xl font-extrabold text-slate-900 mb-4 leading-tight">
-            The Standard Pacific Northwest Homeowners Measure Against
+            {whyContent?.title || 'The Standard Pacific Northwest Homeowners Measure Against'}
           </h2>
           <p className="text-slate-500 text-lg font-light">
-            Over 40 years of residential window cleaning excellence across WA, OR &amp; ID. Here&apos;s what makes us different.
+            {whyContent?.subtitle || "Over 40 years of residential window cleaning excellence across WA, OR & ID. Here's what makes us different."}
           </p>
         </div>
 

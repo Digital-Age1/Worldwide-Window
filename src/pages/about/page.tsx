@@ -14,8 +14,10 @@ import AISearchBlocks from '../home/components/AISearchBlocks';
 import FAQ from '../home/components/FAQ';
 import Gallery from '../home/components/Gallery';
 import LeadForm from '../home/components/LeadForm';
+import content from '@/content';
 
 export default function AboutPage() {
+  const aboutContent = content.pages.about;
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -45,9 +47,9 @@ export default function AboutPage() {
           <div className="absolute inset-0 bg-slate-900/55 flex items-center justify-center">
             <div className="text-center text-white max-w-2xl px-6">
               <p className="text-2xl lg:text-3xl font-extrabold mb-3">
-                &ldquo;We treat every home like it&apos;s our own.&rdquo;
+                &ldquo;{aboutContent.quoteText}&rdquo;
               </p>
-              <p className="text-white/80 text-base font-light">— World Wide Window Co, est. 1983</p>
+              <p className="text-white/80 text-base font-light">— {aboutContent.quoteAuthor}</p>
             </div>
           </div>
         </section>
