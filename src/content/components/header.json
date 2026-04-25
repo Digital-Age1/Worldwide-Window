@@ -1,8 +1,21 @@
 {
   "topBarText": "Serving Washington, Oregon & Idaho — Family-Owned Since 1983",
   "navLinks": [
-    { "label": "Home", "href": "/" },
-    { "label": "About Us", "href": "/about" },
-    { "label": "Locations", "href": "/locations" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "label": "Locations",
+      "href": "/locations"
+    },
+    {
+      "label": "help",
+      "href": "/help"
+    }
   ]
 }
