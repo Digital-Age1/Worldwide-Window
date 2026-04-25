@@ -1,0 +1,227 @@
+import { useState, useRef, useEffect, FormEvent } from 'react';
+
+const FORM_URL = 'https://readdy.ai/api/form/d6sod3837h4e5cfhprvg';
+
+const services = [
+  'Residential Window Cleaning',
+  'Commercial Window Cleaning',
+  'High-Rise Window Cleaning',
+  'Gutter Cleaning',
+  'Hard Water Stain Removal',
+  'Other / Not Sure',
+];
+
+type Status = 'idle' | 'submitting' | 'success' | 'error';
+
+export default function LeadForm() {
+  const [status, setStatus] = useState<Status>('idle');
+  const ref = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    el.classList.add('reveal');
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { el.classList.add('visible'); obs.disconnect(); } },
+      { threshold: 0.1 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setStatus('submitting');
+    const form = e.currentTarget;
+    const data = new URLSearchParams();
+    new FormData(form).forEach((v, k) => data.append(k, v.toString()));
+    try {
+      const res = await fetch(FORM_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: data.toString(),
+      });
+      if (res.ok) {
+        setStatus('success');
+        form.reset();
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <section className="py-24 bg-white" id="quote">
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
+        <div className="grid lg:grid-cols-2 gap-0 rounded-3xl overflow-hidden border border-slate-100">
+          {/* Form side */}
+          <div className="bg-white p-10 lg:p-14" ref={ref}>
+            <div className="inline-flex items-center gap-2 bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-6">
+              <i className="ri-file-list-3-line"></i> Free Quote
+            </div>
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-slate-900 mb-2 leading-tight">
+              Get Your Free Quote
+            </h2>
+            <p className="text-slate-500 text-base mb-7 leading-relaxed">
+              Serving homeowners across Washington, Oregon &amp; Idaho.
+            </p>
+
+            {status === 'success' ? (
+              <div className="flex flex-col items-center justify-center py-16 text-center">
+                <div className="w-16 h-16 flex items-center justify-center bg-blue-100 rounded-full mb-5">
+                  <i className="ri-checkbox-circle-fill text-blue-600 text-3xl"></i>
+                </div>
+                <h3 className="text-2xl font-bold text-slate-900 mb-2">Quote Request Sent!</h3>
+                <p className="text-slate-500 text-base">
+                  We&apos;ll be in touch soon. For immediate assistance, call{' '}
+                  <a href="tel:+18002231286" className="text-blue-600 font-semibold">(800) 223-1286</a>.
+                </p>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} data-readdy-form className="space-y-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">First Name *</label>
+                    <input
+                      name="first_name"
+                      type="text"
+                      required
+                      placeholder="Jane"
+                      className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-sm font-semibold text-slate-700 mb-1.5">Last Name *</label>
+                    <input
+                      name="last_name"
+                      type="text"
+                      required
+                      placeholder="Smith"
+                      className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                    />
+                  </div>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Email Address *</label>
+                  <input
+                    name="email"
+                    type="email"
+                    required
+                    placeholder="jane@email.com"
+                    className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Phone Number *</label>
+                  <input
+                    name="phone"
+                    type="tel"
+                    required
+                    placeholder="(509) 555-0000"
+                    className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Service Address</label>
+                  <input
+                    name="address"
+                    type="text"
+                    placeholder="Your home address (city, state)"
+                    className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Service Needed *</label>
+                  <select
+                    name="service"
+                    required
+                    className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all bg-white cursor-pointer"
+                  >
+                    <option value="">Select a service...</option>
+                    {services.map((s) => <option key={s} value={s}>{s}</option>)}
+                  </select>
+                </div>
+
+                <div>
+                  <label className="block text-sm font-semibold text-slate-700 mb-1.5">Additional Notes</label>
+                  <textarea
+                    name="message"
+                    rows={3}
+                    maxLength={500}
+                    placeholder="Tell us about your home — number of windows, stories, special requirements..."
+                    className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                  />
+                </div>
+
+                {status === 'error' && (
+                  <p className="text-red-500 text-sm">Something went wrong. Please try again or call us directly.</p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === 'submitting'}
+                  className="w-full bg-blue-700 hover:bg-blue-800 disabled:bg-blue-400 text-white font-bold text-base py-4 rounded-xl transition-all duration-200 hover:scale-[1.02] flex items-center justify-center gap-2 cursor-pointer whitespace-nowrap"
+                >
+                  {status === 'submitting' ? (
+                    <><i className="ri-loader-4-line animate-spin"></i> Sending...</>
+                  ) : (
+                    <><i className="ri-send-plane-line"></i> Request My Free Quote</>
+                  )}
+                </button>
+                <p className="text-slate-400 text-xs text-center">No spam, ever.</p>
+              </form>
+            )}
+          </div>
+
+          {/* Trust / image side */}
+          <div className="relative hidden lg:flex flex-col justify-center bg-slate-900 p-14">
+            <img
+              src="https://readdy.ai/api/search-image?query=beautiful%20upscale%20residential%20home%20exterior%20crystal%20clear%20sparkling%20clean%20windows%20sunlight%20reflection%20immaculate%20two%20story%20house%20lush%20green%20garden%20Pacific%20Northwest%20warm%20afternoon%20light%20premium%20curb%20appeal&width=800&height=900&seq=leadform-side-resi-v2&orientation=portrait"
+              alt="Premium residential window cleaning results"
+              className="absolute inset-0 w-full h-full object-cover opacity-20"
+            />
+            <div className="relative z-10">
+              <div className="text-blue-400 font-black text-6xl leading-none mb-2">40+</div>
+              <p className="text-white text-xl font-bold mb-1">Years of Excellence</p>
+              <p className="text-slate-400 text-sm mb-10">Family-owned and trusted since 1983</p>
+
+              <div className="space-y-5">
+                {[
+                  { icon: 'ri-checkbox-circle-fill', text: 'Free, no-obligation quotes' },
+                  { icon: 'ri-shield-check-fill', text: '100% satisfaction guarantee' },
+                  { icon: 'ri-home-heart-fill', text: 'Family-owned since 1983' },
+                  { icon: 'ri-refresh-fill', text: 'Recurring plans with discounts' },
+                  { icon: 'ri-map-2-line', text: 'Serving WA, OR &amp; ID statewide' },
+                ].map((item) => (
+                  <div key={item.text} className="flex items-center gap-3">
+                    <div className="w-8 h-8 flex items-center justify-center flex-shrink-0">
+                      <i className={`${item.icon} text-blue-400 text-lg`}></i>
+                    </div>
+                    <span className="text-white/85 text-sm font-medium" dangerouslySetInnerHTML={{ __html: item.text }} />
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-10 pt-8 border-t border-white/10">
+                <p className="text-slate-400 text-sm mb-3">Prefer to call?</p>
+                <a
+                  href="tel:+18002231286"
+                  className="inline-flex items-center gap-2 text-white font-bold text-xl hover:text-blue-400 transition-colors cursor-pointer"
+                >
+                  <i className="ri-phone-fill text-blue-400"></i> (800) 223-1286
+                </a>
+                <p className="text-slate-500 text-xs mt-1">Mon–Sat: 7:00 AM – 6:00 PM · WA · OR · ID</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
