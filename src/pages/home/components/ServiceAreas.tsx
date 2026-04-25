@@ -128,7 +128,7 @@ export default function ServiceAreas() {
                   <i className="ri-phone-fill text-blue-700"></i> (800) 223-1286
                 </a>
                 <Link
-                  to="/service-areas"
+                  to="/locations"
                   className="inline-flex items-center gap-2 border border-white/20 hover:border-blue-400 text-white font-bold px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap text-sm"
                 >
                   <i className="ri-map-2-line"></i> View Full Coverage

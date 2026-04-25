@@ -50,6 +50,16 @@ const services = [
 
 export { services };
 
+const serviceRouteById: Record<string, string> = {
+  residential: '/services/residential-window-cleaning',
+  commercial: '/services/commercial-window-cleaning',
+  'high-rise': '/services/high-rise-window-cleaning',
+  'gutter-cleaning': '/services/gutter-cleaning',
+  'interior-exterior': '/services/residential-window-cleaning',
+  screens: '/services/residential-window-cleaning',
+  tracks: '/services/residential-window-cleaning',
+};
+
 export default function ServicesGrid() {
   return (
     <section id="services-grid" className="py-24 bg-slate-50">
@@ -70,7 +80,7 @@ export default function ServicesGrid() {
           {services.map((service) => (
             <Link
               key={service.id}
-              to={`/services/${service.id === 'interior-exterior' ? 'residential-window-cleaning' : service.id === 'screens' ? 'residential-window-cleaning' : service.id === 'tracks' ? 'residential-window-cleaning' : service.id}`}
+              to={serviceRouteById[service.id] || '/services'}
               className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer block"
             >
               <div className="relative h-48 overflow-hidden">

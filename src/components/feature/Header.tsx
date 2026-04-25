@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
 import content from '@/content';
 
-const TOP_NAV = content.global.site?.navLinks || [
+const TOP_NAV = content.components.header?.navLinks || [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Locations', href: '/locations' },

@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import content from '@/content';
 
 const fallbackBeforeAfterPairs = [
@@ -126,12 +127,12 @@ export default function BeforeAfterGallery() {
         {/* CTA */}
         <div className="mt-10 text-center">
           <p className="text-slate-500 text-sm mb-4">Want results like this for your home?</p>
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer whitespace-nowrap"
           >
             <i className="ri-calendar-check-line"></i> Book My Free Quote
-          </a>
+          </Link>
         </div>
       </div>
     </section>

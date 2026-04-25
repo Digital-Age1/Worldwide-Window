@@ -1,4 +1,4 @@
-import { useNavigate, type NavigateFunction } from "react-router-dom";
+import { useLocation, useNavigate, type NavigateFunction } from "react-router-dom";
 import { useRoutes } from "react-router-dom";
 import { useEffect } from "react";
 import routes from "./config";
@@ -18,9 +18,26 @@ export const navigatePromise = new Promise<NavigateFunction>((resolve) => {
 export function AppRoutes() {
   const element = useRoutes(routes);
   const navigate = useNavigate();
+  const location = useLocation();
+
   useEffect(() => {
     window.REACT_APP_NAVIGATE = navigate;
     navigateResolver(window.REACT_APP_NAVIGATE);
   });
+
+  useEffect(() => {
+    if (!location.hash) {
+      window.scrollTo({ top: 0, left: 0 });
+      return;
+    }
+
+    const id = decodeURIComponent(location.hash.slice(1));
+    [0, 100, 500, 1000].forEach((delay) => {
+      window.setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: "auto", block: "start" });
+      }, delay);
+    });
+  }, [location.pathname, location.hash]);
+
   return element;
 }

@@ -84,7 +84,7 @@ export default function ProcessTimeline() {
 
         <div className="text-center mt-16">
           <Link
-            to="/process"
+            to="/about#process"
             className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-bold text-sm mr-6 border-b-2 border-blue-200 hover:border-blue-500 pb-0.5 transition-all cursor-pointer"
           >
             Learn more about our process <i className="ri-arrow-right-line"></i>

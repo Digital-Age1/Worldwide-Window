@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const reasons = [
   {
@@ -119,12 +120,12 @@ export default function AboutWhyUs() {
           <p className="text-slate-500 text-lg font-light max-w-2xl mx-auto mb-6">
             We proudly serve homeowners and businesses in Spokane, Seattle, Portland, Boise, and hundreds of communities across Washington, Oregon, and Idaho. If you&apos;re in the Pacific Northwest, chances are we cover your area.
           </p>
-          <a
-            href="/locations"
+          <Link
+            to="/locations"
             className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-bold text-sm border-b-2 border-blue-200 hover:border-blue-500 pb-0.5 transition-all cursor-pointer"
           >
             View all service locations <i className="ri-arrow-right-line"></i>
-          </a>
+          </Link>
         </div>
       </section>
 

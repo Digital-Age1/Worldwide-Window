@@ -37,6 +37,15 @@ const servicesContent = content.pages.home.servicesSection;
 const featuredService = servicesContent?.featured || fallbackFeaturedService;
 const residentialServices = servicesContent?.residentialServices || fallbackResidentialServices;
 const businessService = servicesContent?.businessService;
+const serviceRouteById: Record<string, string> = {
+  residential: '/services/residential-window-cleaning',
+  gutters: '/services/gutter-cleaning',
+  'gutter-cleaning': '/services/gutter-cleaning',
+  commercial: '/services/commercial-window-cleaning',
+  hardwater: '/services',
+};
+
+const getServiceRoute = (id: string) => serviceRouteById[id] || '/services';
 
 export default function ServicesSection() {
   const titleRef = useRef<HTMLDivElement>(null);
@@ -107,7 +116,7 @@ export default function ServicesSection() {
                 ))}
               </ul>
               <Link
-                to={`/services#${featuredService.id}`}
+                to={getServiceRoute(featuredService.id)}
                 className="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-800 font-bold text-sm transition-colors group-hover:gap-2.5 cursor-pointer"
               >
                 Learn more <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
@@ -146,7 +155,7 @@ export default function ServicesSection() {
                   ))}
                 </ul>
                 <Link
-                  to={`/services#${service.id}`}
+                  to={getServiceRoute(service.id)}
                   className="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-800 font-semibold text-sm transition-colors group-hover:gap-2.5 cursor-pointer"
                 >
                   Learn more <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
@@ -195,7 +204,7 @@ export default function ServicesSection() {
                   ))}
                 </ul>
                 <Link
-                  to="/services#commercial"
+                  to="/services/commercial-window-cleaning"
                   className="inline-flex items-center gap-1.5 text-slate-600 hover:text-blue-700 font-semibold text-sm transition-colors cursor-pointer"
                 >
                   Learn more <i className="ri-arrow-right-line"></i>

@@ -2,10 +2,10 @@
   "ctaHeading": "Ready for crystal-clear windows at your home?",
   "ctaSubtext": "Serving Washington, Oregon & Idaho · 100% satisfaction guaranteed",
   "serviceLinks": [
-    { "label": "Residential Cleaning", "href": "/services#residential" },
-    { "label": "Gutter Cleaning", "href": "/services#gutters" },
-    { "label": "Hard Water Removal", "href": "/services#hardwater" },
-    { "label": "Commercial Cleaning", "href": "/services#commercial" }
+    { "label": "Residential Cleaning", "href": "/services/residential-window-cleaning" },
+    { "label": "Gutter Cleaning", "href": "/services/gutter-cleaning" },
+    { "label": "Hard Water Removal", "href": "/services" },
+    { "label": "Commercial Cleaning", "href": "/services/commercial-window-cleaning" }
   ],
   "locationLinks": [
     { "label": "Washington State", "href": "/locations" },

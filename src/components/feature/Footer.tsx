@@ -3,10 +3,10 @@ import content from '@/content';
 
 const footerLinks = {
   Services: content.components.footer?.serviceLinks || [
-    { label: 'Residential Cleaning', href: '/services#residential' },
-    { label: 'Gutter Cleaning', href: '/services#gutters' },
-    { label: 'Hard Water Removal', href: '/services#hardwater' },
-    { label: 'Commercial Cleaning', href: '/services#commercial' },
+    { label: 'Residential Cleaning', href: '/services/residential-window-cleaning' },
+    { label: 'Gutter Cleaning', href: '/services/gutter-cleaning' },
+    { label: 'Hard Water Removal', href: '/services' },
+    { label: 'Commercial Cleaning', href: '/services/commercial-window-cleaning' },
   ],
   Locations: content.components.footer?.locationLinks || [
     { label: 'Washington State', href: '/locations' },
