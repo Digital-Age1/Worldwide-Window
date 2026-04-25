@@ -1,8 +1,9 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
+import content from '@/content';
 
-const TOP_NAV = [
+const TOP_NAV = content.global.site?.navLinks || [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Locations', href: '/locations' },
@@ -55,11 +56,11 @@ export default function Header() {
           <div className="max-w-7xl mx-auto px-6 lg:px-10 py-1.5 flex items-center justify-between text-xs font-medium">
             <span className="hidden md:flex items-center gap-2">
               <i className="ri-map-pin-2-line text-blue-300"></i>
-              Serving Washington, Oregon &amp; Idaho — Family-Owned Since 1983
+              {content.components.header?.topBarText || 'Serving Washington, Oregon & Idaho — Family-Owned Since 1983'}
             </span>
             <span className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
-                <i className="ri-time-line text-blue-300"></i> Mon–Sat 7AM–6PM
+                <i className="ri-time-line text-blue-300"></i> {content.global.contact?.businessHours || 'Mon–Sat 7AM–6PM'}
               </span>
             </span>
           </div>

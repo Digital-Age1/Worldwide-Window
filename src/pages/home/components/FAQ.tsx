@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
+import content from '@/content';
 
-const faqs = [
+const faqs = content.sections.faqs?.faqs || [
   {
     q: 'What areas do you serve for window cleaning?',
     a: 'World Wide Window Co serves homeowners and properties throughout Washington State, Oregon State, and Idaho. Whether you\'re in a major metro area like Seattle, Portland, or Boise, or in a smaller community, we provide the same premium residential window cleaning service across the entire Pacific Northwest tri-state region.',

@@ -1,0 +1,19 @@
+{
+  "states": [
+    {
+      "state": "Washington State",
+      "desc": "Residential and commercial window cleaning across Washington — from Spokane and the Eastside to Seattle, Tacoma, and beyond.",
+      "cities": ["Spokane", "Spokane Valley", "Seattle", "Tacoma", "Bellevue", "Kennewick", "Richland", "Pasco", "Renton", "Kent"]
+    },
+    {
+      "state": "Oregon State",
+      "desc": "Serving Eastern Oregon communities with the same professional standard we bring to every city we cover.",
+      "cities": ["Pendleton", "Hermiston", "Milton-Freewater"]
+    },
+    {
+      "state": "Idaho State",
+      "desc": "Serving Idaho communities from the Panhandle to the Palouse — professional window cleaning you can count on.",
+      "cities": ["Coeur d'Alene", "Post Falls", "Hayden", "Rathdrum", "Priest River", "Lewiston", "Moscow"]
+    }
+  ]
+}

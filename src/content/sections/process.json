@@ -1,0 +1,24 @@
+{
+  "steps": [
+    {
+      "step": "01",
+      "title": "Book Your Free Quote",
+      "description": "Call us or fill out our online form to request a free, no-obligation quote. We'll discuss your needs and schedule a convenient time."
+    },
+    {
+      "step": "02",
+      "title": "We Arrive On Time",
+      "description": "Our professional team arrives on time, in uniform, with all the equipment needed to transform your windows."
+    },
+    {
+      "step": "03",
+      "title": "Crystal-Clear Results",
+      "description": "We clean every window inside and out, using professional-grade squeegees and a pure water system for a spotless finish."
+    },
+    {
+      "step": "04",
+      "title": "100% Satisfaction Guarantee",
+      "description": "We walk through the job with you to ensure you're completely satisfied. If anything isn't perfect, we'll make it right."
+    }
+  ]
+}

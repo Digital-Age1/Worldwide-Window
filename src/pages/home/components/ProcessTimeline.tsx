@@ -1,48 +1,42 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const steps = [
+const steps = (content.sections.process?.steps || [
   {
-    number: '01',
-    icon: 'ri-phone-line',
-    title: 'Get Your Free Quote',
-    desc: 'Call us, fill out our quick online form, or schedule directly. We\'ll get back to you promptly.',
-    time: '~5 minutes',
-    color: 'from-blue-600 to-blue-700',
+    step: '01',
+    title: 'Book Your Free Quote',
+    description: 'Call us or fill out our online form to request a free, no-obligation quote. We\'ll discuss your needs and schedule a convenient time.',
   },
   {
-    number: '02',
-    icon: 'ri-calendar-check-line',
-    title: 'Schedule Your Appointment',
-    desc: 'Choose a date and time that works for your household. We offer convenient scheduling options to fit your week.',
-    time: '~2 minutes',
-    color: 'from-blue-700 to-blue-800',
+    step: '02',
+    title: 'We Arrive On Time',
+    description: 'Our professional team arrives on time, in uniform, with all the equipment needed to transform your windows.',
   },
   {
-    number: '03',
-    icon: 'ri-user-star-line',
-    title: 'We Arrive &amp; Assess',
-    desc: 'Our certified technicians arrive on time, assess the job scope, and confirm any special needs.',
-    time: '15 minutes',
-    color: 'from-blue-500 to-blue-700',
+    step: '03',
+    title: 'Crystal-Clear Results',
+    description: 'We clean every window inside and out, using professional-grade squeegees and a pure water system for a spotless finish.',
   },
   {
-    number: '04',
-    icon: 'ri-sparkling-2-line',
-    title: 'Expert Window Cleaning',
-    desc: 'We use purified water systems and professional tools to deliver a spotless, crystal-clear finish.',
-    time: '1–4 hours',
-    color: 'from-blue-700 to-blue-500',
+    step: '04',
+    title: '100% Satisfaction Guarantee',
+    description: 'We walk through the job with you to ensure you\'re completely satisfied. If anything isn\'t perfect, we\'ll make it right.',
   },
-  {
-    number: '05',
-    icon: 'ri-shield-check-line',
-    title: 'Quality Inspection &amp; Guarantee',
-    desc: 'We walk through the job with you. 100% happy or we come back — no questions, no charge.',
-    time: '10 minutes',
-    color: 'from-blue-800 to-blue-600',
-  },
-];
+]).map((step, i) => {
+  const icons = ['ri-phone-line', 'ri-calendar-check-line', 'ri-user-star-line', 'ri-sparkling-2-line', 'ri-shield-check-line'];
+  const times = ['~5 minutes', '~2 minutes', '15 minutes', '1–4 hours', '10 minutes'];
+  const colors = ['from-blue-600 to-blue-700', 'from-blue-700 to-blue-800', 'from-blue-500 to-blue-700', 'from-blue-700 to-blue-500', 'from-blue-600 to-blue-700'];
+  return {
+    number: step.step,
+    icon: icons[i % icons.length],
+    title: step.title,
+    desc: step.description,
+    time: times[i % times.length],
+    color: colors[i % colors.length],
+  };
+});
+// ...existing code...
 
 export default function ProcessTimeline() {
   const ref = useRef<HTMLDivElement>(null);

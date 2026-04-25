@@ -1,0 +1,37 @@
+{
+  "services": [
+    {
+      "id": "residential",
+      "slug": "residential",
+      "title": "Residential Window Cleaning",
+      "shortTitle": "Residential",
+      "icon": "ri-home-4-line",
+      "badge": "Our Core Specialty",
+      "description": "Crystal-clear, spotless results for homes of all sizes across Washington, Oregon, and Idaho. From cozy bungalows to sprawling estates — every pane spotless.",
+      "bullets": ["Interior & exterior cleaning", "Screen cleaning available", "Hard water stain treatment available"],
+      "img": "https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20washing%20bright%20sparkling%20beautiful%20two%20story%20residential%20home%20exterior%20windows%20sunlight%20reflection%20upscale%20suburban%20house%20blue%20sky%20immaculate%20white%20trim%20ladder%20technician%20squeegee%20streak%20free%20premium%20curb%20appeal&width=600&height=400&seq=svc-residential-resi-001&orientation=landscape"
+    },
+    {
+      "id": "gutters",
+      "slug": "gutters",
+      "title": "Gutter Cleaning",
+      "shortTitle": "Gutters",
+      "icon": "ri-layout-top-line",
+      "badge": "",
+      "description": "Prevent water damage with thorough gutter clearing. We flush, inspect, and report condition — essential maintenance for Pacific Northwest homes.",
+      "bullets": ["Debris removal", "Downspout flushing available", "Condition inspection report"],
+      "img": "https://readdy.ai/api/search-image?query=professional%20gutter%20cleaning%20maintenance%20residential%20home%20Pacific%20Northwest%20fall%20leaves%20debris%20removal%20exterior%20clean%20gutters%20ladder%20technician%20beautiful%20house%20neighborhood&width=600&height=400&seq=svc-gutter-pnw-001&orientation=landscape"
+    },
+    {
+      "id": "hardwater",
+      "slug": "hardwater",
+      "title": "Hard Water Stain Removal",
+      "shortTitle": "Hard Water",
+      "icon": "ri-water-flash-line",
+      "badge": "",
+      "description": "Stubborn mineral deposits and calcium buildup treatment.",
+      "bullets": ["Mineral deposit treatment", "Calcium & lime buildup treatment", "Glass clarity restoration"],
+      "img": "https://readdy.ai/api/search-image?query=hard%20water%20stain%20removal%20residential%20window%20glass%20treatment%20before%20after%20sparkling%20crystal%20clear%20clean%20beautiful%20suburban%20home%20exterior%20sunlight%20reflection%20professional&width=600&height=400&seq=svc-hardwater-resi-001&orientation=landscape"
+    }
+  ]
+}

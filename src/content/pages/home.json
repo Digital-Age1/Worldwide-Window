@@ -1,0 +1,16 @@
+{
+  "heroBadge": "Family-Owned & Trusted Since 1983 — Serving WA, OR & ID",
+  "heroTitle1": "Spotless Windows.",
+  "heroTitle2": "Trusted Since 1983.",
+  "heroSubtitle": "Residential window cleaning across Washington, Oregon, and Idaho — plus storefronts and low-rise businesses.",
+  "primaryBtnLabel": "Request a Free Quote",
+  "secondaryBtnLabel": "Call (800) 223-1286",
+  "heroTrustBadges": [
+    { "icon": "ri-home-heart-line", "label": "Family-Owned Since 1983" },
+    { "icon": "ri-building-2-line", "label": "Homes & Businesses" },
+    { "icon": "ri-map-2-line", "label": "WA · OR · ID" }
+  ],
+  "featuredServiceTitle": "Residential Window Cleaning",
+  "featuredServiceDesc": "Crystal-clear, spotless results for homes of all sizes across Washington, Oregon, and Idaho. From cozy bungalows to sprawling estates — every pane spotless.",
+  "featuredServiceBullets": ["Interior & exterior cleaning", "Screen cleaning available", "Hard water stain treatment available"]
+}

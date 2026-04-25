@@ -1,0 +1,276 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  # Global Settings
+  - name: "global"
+    label: "Global Settings"
+    files:
+      - file: "src/content/global/site.json"
+        label: "Site Settings"
+        name: "site"
+        fields:
+          - { label: "Site Name", name: "siteName", widget: "string" }
+          - { label: "Tagline", name: "tagline", widget: "string", required: false }
+          - { label: "Year Established", name: "yearEstablished", widget: "number", required: false }
+          - { label: "Service States", name: "serviceStates", widget: "list", field: { label: "State", name: "state", widget: "string" } }
+
+      - file: "src/content/global/contact.json"
+        label: "Contact Info"
+        name: "contact"
+        fields:
+          - { label: "Phone", name: "phone", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Address", name: "address", widget: "text", required: false }
+          - { label: "Business Hours", name: "businessHours", widget: "text", required: false }
+
+      - file: "src/content/global/seo.json"
+        label: "SEO Settings"
+        name: "seo"
+        fields:
+          - { label: "Default Title", name: "defaultTitle", widget: "string" }
+          - { label: "Meta Description", name: "metaDescription", widget: "text" }
+          - { label: "Keywords", name: "keywords", widget: "string", required: false }
+          - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+          - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+          - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+
+  # Header
+  - name: "header"
+    label: "Header"
+    files:
+      - file: "src/content/components/header.json"
+        label: "Header"
+        name: "header"
+        fields:
+          - { label: "Top Bar Text", name: "topBarText", widget: "string", required: false }
+          - { label: "Navigation Links", name: "navLinks", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Href", name: "href", widget: "string" }
+            ]}
+
+  # Footer
+  - name: "footer"
+    label: "Footer"
+    files:
+      - file: "src/content/components/footer.json"
+        label: "Footer"
+        name: "footer"
+        fields:
+          - { label: "CTA Heading", name: "ctaHeading", widget: "string", required: false }
+          - { label: "CTA Subtext", name: "ctaSubtext", widget: "string", required: false }
+          - { label: "Service Links", name: "serviceLinks", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Href", name: "href", widget: "string" }
+            ]}
+          - { label: "Location Links", name: "locationLinks", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Href", name: "href", widget: "string" }
+            ]}
+          - { label: "Company Links", name: "companyLinks", widget: "list", fields: [
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Href", name: "href", widget: "string" }
+            ]}
+          - { label: "Trust Badges", name: "trustBadges", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "string" },
+              { label: "Text", name: "text", widget: "string" }
+            ]}
+
+  # Trust Bar
+  - name: "trust-bar"
+    label: "Trust Bar"
+    files:
+      - file: "src/content/components/trust-bar.json"
+        label: "Trust Bar"
+        name: "trust-bar"
+        fields:
+          - { label: "Stats", name: "stats", widget: "list", fields: [
+              { label: "Number", name: "number", widget: "string" },
+              { label: "Label", name: "label", widget: "string" },
+              { label: "Suffix", name: "suffix", widget: "string", required: false }
+            ]}
+
+  # Inline CTAs
+  - name: "inline-ctas"
+    label: "Inline CTAs"
+    files:
+      - file: "src/content/components/inline-cta.json"
+        label: "Inline CTAs"
+        name: "inline-ctas"
+        fields:
+          - { label: "CTAs", name: "ctas", widget: "list", fields: [
+              { label: "ID", name: "id", widget: "string" },
+              { label: "Heading", name: "heading", widget: "string" },
+              { label: "Subtext", name: "subtext", widget: "string" },
+              { label: "Primary Label", name: "primaryLabel", widget: "string" },
+              { label: "Variant", name: "variant", widget: "string", required: false }
+            ]}
+
+  # Testimonials
+  - name: "testimonials"
+    label: "Testimonials"
+    files:
+      - file: "src/content/components/testimonials.json"
+        label: "Testimonials"
+        name: "testimonials"
+        fields:
+          - label: "Testimonials"
+            name: "testimonials"
+            widget: "list"
+            fields:
+              - { label: "Name", name: "name", widget: "string" }
+              - { label: "Location", name: "location", widget: "string" }
+              - { label: "Rating", name: "rating", widget: "number" }
+              - { label: "Date", name: "date", widget: "string", required: false }
+              - { label: "Text", name: "text", widget: "text" }
+              - { label: "Service", name: "service", widget: "string", required: false }
+
+  # FAQs
+  - name: "faqs"
+    label: "FAQs"
+    files:
+      - file: "src/content/sections/faqs.json"
+        label: "FAQs"
+        name: "faqs"
+        fields:
+          - label: "FAQs"
+            name: "faqs"
+            widget: "list"
+            fields:
+              - { label: "Question", name: "q", widget: "string" }
+              - { label: "Answer", name: "a", widget: "text" }
+
+  # Service Areas
+  - name: "service-areas"
+    label: "Service Areas"
+    files:
+      - file: "src/content/sections/service-areas.json"
+        label: "Service Areas"
+        name: "service-areas"
+        fields:
+          - label: "States"
+            name: "states"
+            widget: "list"
+            fields:
+              - { label: "State Name", name: "state", widget: "string" }
+              - { label: "Description", name: "desc", widget: "text" }
+              - { label: "Cities", name: "cities", widget: "list", field: { label: "City", name: "city", widget: "string" } }
+
+  # Process
+  - name: "process"
+    label: "Process"
+    files:
+      - file: "src/content/sections/process.json"
+        label: "Process"
+        name: "process"
+        fields:
+          - label: "Steps"
+            name: "steps"
+            widget: "list"
+            fields:
+              - { label: "Step", name: "step", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+
+  # Gallery
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - file: "src/content/sections/gallery.json"
+        label: "Gallery"
+        name: "gallery"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            fields:
+              - { label: "Src", name: "src", widget: "string" }
+              - { label: "Alt", name: "alt", widget: "string" }
+              - { label: "Category", name: "category", widget: "string", required: false }
+
+  # Services
+  - name: "services"
+    label: "Services"
+    files:
+      - file: "src/content/services/services.json"
+        label: "Services"
+        name: "services"
+        fields:
+          - label: "Services"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "ID", name: "id", widget: "string" }
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Short Title", name: "shortTitle", widget: "string" }
+              - { label: "Icon", name: "icon", widget: "string" }
+              - { label: "Badge", name: "badge", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Bullets", name: "bullets", widget: "list", field: { label: "Bullet", name: "bullet", widget: "string" } }
+              - { label: "Image URL", name: "img", widget: "string", required: false }
+
+  # Home Page
+  - name: "home"
+    label: "Home Page"
+    files:
+      - file: "src/content/pages/home.json"
+        label: "Home Page"
+        name: "home"
+        fields:
+          - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
+          - { label: "Hero Title Line 1", name: "heroTitle1", widget: "string", required: false }
+          - { label: "Hero Title Line 2", name: "heroTitle2", widget: "string", required: false }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - { label: "Primary Button Label", name: "primaryBtnLabel", widget: "string", required: false }
+          - { label: "Secondary Button Label", name: "secondaryBtnLabel", widget: "string", required: false }
+          - { label: "Hero Trust Badges", name: "heroTrustBadges", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "string" },
+              { label: "Label", name: "label", widget: "string" }
+            ]}
+          - { label: "Featured Service Title", name: "featuredServiceTitle", widget: "string", required: false }
+          - { label: "Featured Service Description", name: "featuredServiceDesc", widget: "text", required: false }
+          - { label: "Featured Service Bullets", name: "featuredServiceBullets", widget: "list", field: { label: "Bullet", name: "bullet", widget: "string" } }
+
+  # About Page
+  - name: "about"
+    label: "About Page"
+    files:
+      - file: "src/content/pages/about.json"
+        label: "About Page"
+        name: "about"
+        fields:
+          - { label: "Quote Text", name: "quoteText", widget: "string", required: false }
+          - { label: "Quote Author", name: "quoteAuthor", widget: "string", required: false }
+
+  # Services Page
+  - name: "services-page"
+    label: "Services Page"
+    files:
+      - file: "src/content/pages/services.json"
+        label: "Services Page"
+        name: "services-page"
+        fields:
+          - { label: "Page Title", name: "pageTitle", widget: "string", required: false }
+          - { label: "Page Subtitle", name: "pageSubtitle", widget: "text", required: false }
+
+  # Contact Page
+  - name: "contact-page"
+    label: "Contact Page"
+    files:
+      - file: "src/content/pages/contact.json"
+        label: "Contact Page"
+        name: "contact-page"
+        fields:
+          - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
+          - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }
+          - { label: "Page Title", name: "pageTitle", widget: "string", required: false }
+          - { label: "Page Description", name: "pageDescription", widget: "text", required: false }
+          - { label: "Trust Badges List", name: "trustBadgesList", widget: "list", fields: [
+              { label: "Icon", name: "icon", widget: "string" },
+              { label: "Text", name: "text", widget: "string" }
+            ]}

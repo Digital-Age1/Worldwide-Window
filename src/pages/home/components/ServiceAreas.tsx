@@ -1,25 +1,23 @@
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const stateAreas = [
+const stateAreas = (content.sections.serviceAreas?.states || [
   {
     state: 'Washington State',
-    flag: 'ri-map-pin-2-fill',
     desc: 'Residential and commercial window cleaning across Washington — from Spokane and the Eastside to Seattle, Tacoma, and beyond.',
     cities: ['Spokane', 'Spokane Valley', 'Seattle', 'Tacoma', 'Bellevue', 'Kennewick', 'Richland', 'Pasco', 'Renton', 'Kent'],
   },
   {
     state: 'Oregon State',
-    flag: 'ri-map-pin-2-fill',
     desc: 'Serving Eastern Oregon communities with the same professional standard we bring to every city we cover.',
     cities: ['Pendleton', 'Hermiston', 'Milton-Freewater'],
   },
   {
     state: 'Idaho State',
-    flag: 'ri-map-pin-2-fill',
     desc: 'Serving Idaho communities from the Panhandle to the Palouse — professional window cleaning you can count on.',
     cities: ["Coeur d'Alene", 'Post Falls', 'Hayden', 'Rathdrum', 'Priest River', 'Lewiston', 'Moscow'],
   },
-];
+]).map(area => ({ ...area, flag: 'ri-map-pin-2-fill' }));
 
 export default function ServiceAreas() {
   return (

@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
 export default function Hero() {
+  const homeContent = content.pages.home || {};
+  const contactInfo = content.global.contact || {};
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-[100px]">
       {/* Background — premium residential home clean windows */}
@@ -20,18 +23,18 @@ export default function Hero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/15 border border-white/30 text-white text-xs font-bold uppercase tracking-widest px-4 py-2 rounded-full mb-8">
             <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse flex-shrink-0"></span>
-            Family-Owned &amp; Trusted Since 1983 — Serving WA, OR &amp; ID
+            {homeContent.heroBadge || 'Family-Owned & Trusted Since 1983 — Serving WA, OR & ID'}
           </div>
 
           {/* Headline */}
           <h1 className="font-extrabold leading-[1.05] mb-7">
-            <span className="block text-5xl lg:text-6xl xl:text-7xl text-white drop-shadow-lg mb-1">Spotless Windows.</span>
-            <span className="block text-5xl lg:text-6xl xl:text-7xl text-gradient drop-shadow-lg">Trusted Since 1983.</span>
+            <span className="block text-5xl lg:text-6xl xl:text-7xl text-white drop-shadow-lg mb-1">{homeContent.heroTitle1 || 'Spotless Windows.'}</span>
+            <span className="block text-5xl lg:text-6xl xl:text-7xl text-gradient drop-shadow-lg">{homeContent.heroTitle2 || 'Trusted Since 1983.'}</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-white text-lg lg:text-xl font-semibold max-w-2xl mb-10 leading-relaxed" style={{ textShadow: '0 2px 8px rgba(0,0,0,0.85), 0 1px 3px rgba(0,0,0,0.9)' }}>
-            Residential window cleaning across Washington, Oregon, and Idaho — plus storefronts and low-rise businesses.&nbsp;
+            {homeContent.heroSubtitle || 'Residential window cleaning across Washington, Oregon, and Idaho — plus storefronts and low-rise businesses.'}&nbsp;
           </p>
 
           {/* CTA Buttons */}
@@ -41,24 +44,24 @@ export default function Hero() {
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-calendar-check-line text-xl"></i>
-              Request a Free Quote
+              {homeContent.primaryBtnLabel || 'Request a Free Quote'}
             </Link>
             <a
-              href="tel:+18002231286"
+              href={`tel:${contactInfo.phone?.replace(/[^0-9]/g, '') || '18002231286'}`}
               className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/50 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>
-              Call (800) 223-1286
+              {homeContent.secondaryBtnLabel || 'Call (800) 223-1286'}
             </a>
           </div>
 
           {/* Trust micro-badges */}
           <div className="flex flex-wrap gap-4">
-            {[
+            {(homeContent.heroTrustBadges || [
               { icon: 'ri-home-heart-line', label: 'Family-Owned Since 1983' },
               { icon: 'ri-building-2-line', label: 'Homes & Businesses' },
               { icon: 'ri-map-2-line', label: 'WA · OR · ID' },
-            ].map((b) => (
+            ]).map((b) => (
               <div key={b.label} className="flex items-center gap-2 bg-black/30 backdrop-blur-sm border border-white/20 text-white text-sm font-semibold px-3 py-2 rounded-full">
                 <i className={`${b.icon} text-blue-300 text-sm`}></i>
                 {b.label}

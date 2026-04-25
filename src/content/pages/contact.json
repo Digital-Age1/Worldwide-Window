@@ -1,0 +1,12 @@
+{
+  "heroTitle": "Get Your Free Quote",
+  "heroSubtitle": "Serving homeowners and businesses across Washington, Oregon & Idaho.",
+  "pageTitle": "Contact Us",
+  "pageDescription": "Family-owned since 1983. We're here to help — call, email, or fill out the form and we'll get back to you fast.",
+  "trustBadgesList": [
+    { "icon": "ri-home-heart-fill", "text": "Family-Owned Since 1983" },
+    { "icon": "ri-shield-check-fill", "text": "100% Satisfaction Guarantee" },
+    { "icon": "ri-checkbox-circle-fill", "text": "Free, No-Obligation Quotes" },
+    { "icon": "ri-map-2-line", "text": "Serving WA, OR & ID" }
+  ]
+}

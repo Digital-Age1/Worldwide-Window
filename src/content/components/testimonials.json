@@ -1,0 +1,52 @@
+{
+  "testimonials": [
+    {
+      "name": "Jennifer M.",
+      "location": "Bellevue, WA",
+      "rating": 5,
+      "date": "January 2026",
+      "text": "Absolutely incredible service. My home looks completely transformed — every single window is spotless and crystal clear. They were punctual, professional, and left no mess whatsoever. Booking recurring service now.",
+      "service": "Residential Cleaning"
+    },
+    {
+      "name": "Michael T.",
+      "location": "Coeur d'Alene, ID",
+      "rating": 5,
+      "date": "November 2025",
+      "text": "Hard water stains on my windows for years that I thought were permanent. The World Wide Window team removed every single one. I genuinely couldn't believe how good the results were. Worth every penny.",
+      "service": "Hard Water Removal"
+    },
+    {
+      "name": "Karen D.",
+      "location": "Liberty Lake, WA",
+      "rating": 5,
+      "date": "February 2026",
+      "text": "I was blown away by how thorough they were. Every window inside and out, screens cleaned, tracks wiped down — nothing was missed. My house has never looked this good. Will absolutely be a repeat customer.",
+      "service": "Residential Cleaning"
+    },
+    {
+      "name": "Tom B.",
+      "location": "Post Falls, ID",
+      "rating": 5,
+      "date": "November 2025",
+      "text": "Called World Wide Window for a gutter clean before the winter rains hit. They showed up on time, cleared everything out, flushed the downspouts, and even pointed out a small issue I wasn't aware of. Honest, professional, and great value.",
+      "service": "Gutter Cleaning"
+    },
+    {
+      "name": "Robert W.",
+      "location": "Spokane, WA",
+      "rating": 5,
+      "date": "December 2025",
+      "text": "Been using World Wide Window for three years now. They are consistently excellent — always on time, thorough, and the results are perfect every single time. This is a company you can genuinely count on.",
+      "service": "Residential Cleaning"
+    },
+    {
+      "name": "Patricia S.",
+      "location": "Tacoma, WA",
+      "rating": 5,
+      "date": "January 2026",
+      "text": "Had them clean our home before a family gathering. The house sparkled — neighbors actually commented on how clean the windows looked from the street. A truly impressive result. Family-owned businesses like this are rare.",
+      "service": "Residential Cleaning"
+    }
+  ]
+}

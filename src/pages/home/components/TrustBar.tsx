@@ -1,10 +1,20 @@
 import { useRef, useEffect } from 'react';
+import content from '@/content';
 
-const stats = [
-  { icon: 'ri-home-heart-line', value: '1983', label: 'Family-Owned Since', color: 'text-blue-700' },
-  { icon: 'ri-map-2-line', value: '3 States', label: 'WA · OR · ID', color: 'text-blue-700' },
-  { icon: 'ri-history-line', value: '40+ Years', label: 'Serving the Pacific Northwest', color: 'text-blue-700' },
-];
+const stats = (content.components.trustBar?.stats || [
+  { number: '40+', label: 'Years', suffix: '' },
+  { number: '500+', label: 'Happy', suffix: 'Customers' },
+  { number: '100K+', label: 'Windows', suffix: 'Cleaned' },
+  { number: '4.9', label: 'Star', suffix: 'Rating' },
+]).map((stat, i) => {
+  const icons = ['ri-home-heart-line', 'ri-map-2-line', 'ri-history-line', 'ri-star-line'];
+  return {
+    icon: icons[i % icons.length],
+    value: stat.number + (stat.suffix ? ` ${stat.suffix}` : ''),
+    label: stat.label,
+    color: 'text-blue-700'
+  };
+});
 
 export default function TrustBar() {
   const ref = useRef<HTMLDivElement>(null);

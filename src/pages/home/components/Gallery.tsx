@@ -1,7 +1,8 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const photos = [
+const defaultPhotos = [
   {
     src: 'https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/09f3b10f42f3fe6ec89cf32495987d80.jpeg',
     alt: 'Professional window cleaning technician at work on a residential home',
@@ -39,6 +40,12 @@ const photos = [
     span: 'col-span-1 row-span-1',
   },
 ];
+
+const photos = (content.sections.gallery?.images || defaultPhotos).map((img, i) => ({
+  ...img,
+  label: img.alt?.split(' — ')[1] || img.alt?.substring(0, 30) || '',
+  span: i === 0 ? 'col-span-2 row-span-2' : 'col-span-1 row-span-1',
+}));
 
 export default function Gallery() {
   const [lightbox, setLightbox] = useState<typeof photos[0] | null>(null);

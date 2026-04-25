@@ -1,19 +1,20 @@
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
 const footerLinks = {
-  Services: [
+  Services: content.components.footer?.serviceLinks || [
     { label: 'Residential Cleaning', href: '/services#residential' },
     { label: 'Gutter Cleaning', href: '/services#gutters' },
     { label: 'Hard Water Removal', href: '/services#hardwater' },
     { label: 'Commercial Cleaning', href: '/services#commercial' },
   ],
-  Locations: [
+  Locations: content.components.footer?.locationLinks || [
     { label: 'Washington State', href: '/locations' },
     { label: 'Oregon State', href: '/locations' },
     { label: 'Idaho State', href: '/locations' },
     { label: 'View All Areas', href: '/locations' },
   ],
-  Company: [
+  Company: content.components.footer?.companyLinks || [
     { label: 'Home', href: '/' },
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
@@ -29,15 +30,15 @@ export default function Footer() {
       <div className="bg-blue-700">
         <div className="max-w-7xl mx-auto px-6 lg:px-10 py-5 flex flex-col md:flex-row items-center justify-between gap-4">
           <div>
-            <p className="text-white font-bold text-lg">Ready for crystal-clear windows at your home?</p>
-            <p className="text-blue-200 text-sm">Serving Washington, Oregon &amp; Idaho · 100% satisfaction guaranteed</p>
+            <p className="text-white font-bold text-lg">{content.components.footer?.ctaHeading || 'Ready for crystal-clear windows at your home?'}</p>
+            <p className="text-blue-200 text-sm">{content.components.footer?.ctaSubtext || 'Serving Washington, Oregon & Idaho · 100% satisfaction guaranteed'}</p>
           </div>
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
-              href="tel:+18002231286"
+              href={`tel:${content.global.contact?.phone?.replace(/[^0-9]/g, '') || '18002231286'}`}
               className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap"
             >
-              <i className="ri-phone-fill"></i> (800) 223-1286
+              <i className="ri-phone-fill"></i> {content.global.contact?.phone || '(800) 223-1286'}
             </a>
           </div>
         </div>
@@ -81,7 +82,7 @@ export default function Footer() {
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-time-line text-blue-700 text-sm"></i>
                 </div>
-                Mon–Sat: 7:00 AM – 6:00 PM
+                {content.global.contact?.businessHours || 'Mon–Sat: 7:00 AM – 6:00 PM'}
               </div>
             </div>
           </div>
@@ -111,13 +112,13 @@ export default function Footer() {
         <div className="mt-14 pt-8 border-t border-slate-200">
           <div className="flex flex-wrap items-center justify-between gap-6">
             <div className="flex flex-wrap gap-3">
-              {[
+              {(content.components.footer?.trustBadges || [
                 { icon: 'ri-home-heart-line', text: 'Family-Owned Since 1983' },
                 { icon: 'ri-award-line', text: 'BBB Accredited' },
                 { icon: 'ri-star-fill', text: 'Top-Rated Service' },
                 { icon: 'ri-sparkling-2-line', text: 'Spotless Every Time' },
                 { icon: 'ri-map-2-line', text: 'WA · OR · ID Coverage' },
-              ].map((badge) => (
+              ]).map((badge) => (
                 <div key={badge.text} className="flex items-center gap-2 bg-blue-50 border border-blue-100 px-4 py-2 rounded-full">
                   <div className="w-4 h-4 flex items-center justify-center flex-shrink-0">
                     <i className={`${badge.icon} text-blue-700 text-xs`}></i>

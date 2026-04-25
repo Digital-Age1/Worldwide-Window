@@ -1,0 +1,10 @@
+{
+  "images": [
+    { "src": "https://readdy.ai/api/search-image?query=beautiful%20residential%20home%20sparkling%20clean%20windows%20sunlight%20reflection%20Pacific%20Northwest&width=800&height=600&seq=gallery-1", "alt": "Clean residential windows", "category": "residential" },
+    { "src": "https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20working%20on%20modern%20home%20exterior&width=800&height=600&seq=gallery-2", "alt": "Window cleaning service", "category": "service" },
+    { "src": "https://readdy.ai/api/search-image?query=luxury%20home%20crystal%20clear%20windows%20blue%20sky%20reflection&width=800&height=600&seq=gallery-3", "alt": "Crystal clear windows", "category": "residential" },
+    { "src": "https://readdy.ai/api/search-image?query=upscale%20house%20spotless%20windows%20manicured%20lawn%20landscaping&width=800&height=600&seq=gallery-4", "alt": "Spotless windows", "category": "residential" },
+    { "src": "https://readdy.ai/api/search-image?query=commercial%20building%20clean%20windows%20exterior%20glass&width=800&height=600&seq=gallery-5", "alt": "Commercial windows", "category": "commercial" },
+    { "src": "https://readdy.ai/api/search-image?query=residential%20window%20cleaning%20before%20after%20sparkling%20glass&width=800&height=600&seq=gallery-6", "alt": "Before and after", "category": "results" }
+  ]
+}

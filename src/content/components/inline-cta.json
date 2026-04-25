@@ -1,0 +1,25 @@
+{
+  "ctas": [
+    {
+      "id": "home-cta-1",
+      "heading": "Request a Free Quote for Residential Window Cleaning",
+      "subtext": "Serving homeowners across Washington, Oregon & Idaho — fast response, no obligation.",
+      "primaryLabel": "Get Free Quote",
+      "variant": "light"
+    },
+    {
+      "id": "home-cta-2",
+      "heading": "40+ Years of Excellence — Serving WA, OR & ID",
+      "subtext": "Call or get a quote online in minutes. Family-owned, satisfaction guaranteed.",
+      "primaryLabel": "Book Now",
+      "variant": "emerald"
+    },
+    {
+      "id": "home-cta-3",
+      "heading": "Trusted by Pacific Northwest Homeowners Since 1983",
+      "subtext": "Spotless results, satisfaction guaranteed. Serving Washington, Oregon & Idaho.",
+      "primaryLabel": "Get My Free Quote",
+      "variant": "light"
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import content from '@/content';
 
-const testimonials = [
+const testimonials = content.components.testimonials?.testimonials || [
   {
     name: 'Jennifer M.',
     location: 'Bellevue, WA',
