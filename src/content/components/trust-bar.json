@@ -1,8 +1,29 @@
 {
   "stats": [
-    { "number": "40+", "label": "Years", "suffix": "" },
-    { "number": "500+", "label": "Happy", "suffix": "Customers" },
-    { "number": "100K+", "label": "Windows", "suffix": "Cleaned" },
-    { "number": "4.9", "label": "Star", "suffix": "Rating" }
+    {
+      "number": "40+",
+      "label": "Years",
+      "suffix": ""
+    },
+    {
+      "number": "500+",
+      "label": "Happy",
+      "suffix": "Customers"
+    },
+    {
+      "number": "100K+",
+      "label": "Windows",
+      "suffix": "Cleaned"
+    },
+    {
+      "number": "4.9",
+      "label": "Star",
+      "suffix": "Rating"
+    },
+    {
+      "number": "80+",
+      "label": "Home",
+      "suffix": "Rating"
+    }
   ]
 }
