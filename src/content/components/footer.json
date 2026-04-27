@@ -35,10 +35,6 @@
     {
       "label": "View All Areas",
       "href": "/locations"
-    },
-    {
-      "href": "/locations",
-      "label": "BD"
     }
   ],
   "companyLinks": [
