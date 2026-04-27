@@ -2,7 +2,7 @@
   "states": [
     {
       "state": "Washington State",
-      "desc": "Residential and commercial window cleaning across Washington â€” from Spokane and the Eastside to Seattle, Tacoma, and beyond.",
+      "desc": "Residential and commercial window cleaning across Washington — from Spokane and the Eastside to Seattle, Tacoma, and beyond.",
       "cities": [
         "Spokane",
         "Spokane Valley",
@@ -27,7 +27,7 @@
     },
     {
       "state": "Idaho State",
-      "desc": "Serving Idaho communities from the Panhandle to the Palouse â€” professional window cleaning you can count on.",
+      "desc": "Serving Idaho communities from the Panhandle to the Palouse — professional window cleaning you can count on.",
       "cities": [
         "Coeur d'Alene",
         "Post Falls",
@@ -45,166 +45,46 @@
       "slug": "washington",
       "abbr": "WA",
       "cities": [
-        {
-          "name": "Spokane",
-          "slug": "spokane"
-        },
-        {
-          "name": "Spokane Valley",
-          "slug": "spokane-valley"
-        },
-        {
-          "name": "Liberty Lake",
-          "slug": "liberty-lake"
-        },
-        {
-          "name": "Deer Park",
-          "slug": "deer-park"
-        },
-        {
-          "name": "Loon Lake",
-          "slug": "loon-lake"
-        },
-        {
-          "name": "Colbert",
-          "slug": "colbert"
-        },
-        {
-          "name": "Cheney",
-          "slug": "cheney"
-        },
-        {
-          "name": "Spangle",
-          "slug": "spangle"
-        },
-        {
-          "name": "Chattaroy",
-          "slug": "chattaroy"
-        },
-        {
-          "name": "Newport",
-          "slug": "newport"
-        },
-        {
-          "name": "Pullman",
-          "slug": "pullman"
-        },
-        {
-          "name": "Colfax",
-          "slug": "colfax"
-        },
-        {
-          "name": "Clarkston",
-          "slug": "clarkston"
-        },
-        {
-          "name": "Walla Walla",
-          "slug": "walla-walla"
-        },
-        {
-          "name": "Ritzville",
-          "slug": "ritzville"
-        },
-        {
-          "name": "Moses Lake",
-          "slug": "moses-lake"
-        },
-        {
-          "name": "Ephrata",
-          "slug": "ephrata"
-        },
-        {
-          "name": "Ellensburg",
-          "slug": "ellensburg"
-        },
-        {
-          "name": "Pasco",
-          "slug": "pasco"
-        },
-        {
-          "name": "Richland",
-          "slug": "richland"
-        },
-        {
-          "name": "Kennewick",
-          "slug": "kennewick"
-        },
-        {
-          "name": "North Bend",
-          "slug": "north-bend"
-        },
-        {
-          "name": "Snoqualmie",
-          "slug": "snoqualmie"
-        },
-        {
-          "name": "Bellevue",
-          "slug": "bellevue"
-        },
-        {
-          "name": "Kirkland",
-          "slug": "kirkland"
-        },
-        {
-          "name": "Redmond",
-          "slug": "redmond"
-        },
-        {
-          "name": "Mercer Island",
-          "slug": "mercer-island"
-        },
-        {
-          "name": "Renton",
-          "slug": "renton"
-        },
-        {
-          "name": "Kent",
-          "slug": "kent"
-        },
-        {
-          "name": "Auburn",
-          "slug": "auburn"
-        },
-        {
-          "name": "Seattle",
-          "slug": "seattle"
-        },
-        {
-          "name": "Tacoma",
-          "slug": "tacoma"
-        },
-        {
-          "name": "Puyallup",
-          "slug": "puyallup"
-        },
-        {
-          "name": "Federal Way",
-          "slug": "federal-way"
-        },
-        {
-          "name": "Des Moines",
-          "slug": "des-moines"
-        },
-        {
-          "name": "Gig Harbor",
-          "slug": "gig-harbor"
-        },
-        {
-          "name": "Bothell",
-          "slug": "bothell"
-        },
-        {
-          "name": "Lynnwood",
-          "slug": "lynnwood"
-        },
-        {
-          "name": "Shoreline",
-          "slug": "shoreline"
-        },
-        {
-          "name": "Burien",
-          "slug": "burien"
-        }
+        { "name": "Spokane", "slug": "spokane" },
+        { "name": "Spokane Valley", "slug": "spokane-valley" },
+        { "name": "Liberty Lake", "slug": "liberty-lake" },
+        { "name": "Deer Park", "slug": "deer-park" },
+        { "name": "Loon Lake", "slug": "loon-lake" },
+        { "name": "Colbert", "slug": "colbert" },
+        { "name": "Cheney", "slug": "cheney" },
+        { "name": "Spangle", "slug": "spangle" },
+        { "name": "Chattaroy", "slug": "chattaroy" },
+        { "name": "Newport", "slug": "newport" },
+        { "name": "Pullman", "slug": "pullman" },
+        { "name": "Colfax", "slug": "colfax" },
+        { "name": "Clarkston", "slug": "clarkston" },
+        { "name": "Walla Walla", "slug": "walla-walla" },
+        { "name": "Ritzville", "slug": "ritzville" },
+        { "name": "Moses Lake", "slug": "moses-lake" },
+        { "name": "Ephrata", "slug": "ephrata" },
+        { "name": "Ellensburg", "slug": "ellensburg" },
+        { "name": "Pasco", "slug": "pasco" },
+        { "name": "Richland", "slug": "richland" },
+        { "name": "Kennewick", "slug": "kennewick" },
+        { "name": "North Bend", "slug": "north-bend" },
+        { "name": "Snoqualmie", "slug": "snoqualmie" },
+        { "name": "Bellevue", "slug": "bellevue" },
+        { "name": "Kirkland", "slug": "kirkland" },
+        { "name": "Redmond", "slug": "redmond" },
+        { "name": "Mercer Island", "slug": "mercer-island" },
+        { "name": "Renton", "slug": "renton" },
+        { "name": "Kent", "slug": "kent" },
+        { "name": "Auburn", "slug": "auburn" },
+        { "name": "Seattle", "slug": "seattle" },
+        { "name": "Tacoma", "slug": "tacoma" },
+        { "name": "Puyallup", "slug": "puyallup" },
+        { "name": "Federal Way", "slug": "federal-way" },
+        { "name": "Des Moines", "slug": "des-moines" },
+        { "name": "Gig Harbor", "slug": "gig-harbor" },
+        { "name": "Bothell", "slug": "bothell" },
+        { "name": "Lynnwood", "slug": "lynnwood" },
+        { "name": "Shoreline", "slug": "shoreline" },
+        { "name": "Burien", "slug": "burien" }
       ]
     },
     {
@@ -212,34 +92,13 @@
       "slug": "idaho",
       "abbr": "ID",
       "cities": [
-        {
-          "name": "Coeur d'Alene",
-          "slug": "coeur-d-alene"
-        },
-        {
-          "name": "Post Falls",
-          "slug": "post-falls"
-        },
-        {
-          "name": "Hayden",
-          "slug": "hayden"
-        },
-        {
-          "name": "Rathdrum",
-          "slug": "rathdrum"
-        },
-        {
-          "name": "Priest River",
-          "slug": "priest-river"
-        },
-        {
-          "name": "Lewiston",
-          "slug": "lewiston"
-        },
-        {
-          "name": "Moscow",
-          "slug": "moscow"
-        }
+        { "name": "Coeur d'Alene", "slug": "coeur-d-alene" },
+        { "name": "Post Falls", "slug": "post-falls" },
+        { "name": "Hayden", "slug": "hayden" },
+        { "name": "Rathdrum", "slug": "rathdrum" },
+        { "name": "Priest River", "slug": "priest-river" },
+        { "name": "Lewiston", "slug": "lewiston" },
+        { "name": "Moscow", "slug": "moscow" }
       ]
     },
     {
@@ -247,18 +106,9 @@
       "slug": "oregon",
       "abbr": "OR",
       "cities": [
-        {
-          "name": "Pendleton",
-          "slug": "pendleton"
-        },
-        {
-          "name": "Hermiston",
-          "slug": "hermiston"
-        },
-        {
-          "name": "Milton-Freewater",
-          "slug": "milton-freewater"
-        }
+        { "name": "Pendleton", "slug": "pendleton" },
+        { "name": "Hermiston", "slug": "hermiston" },
+        { "name": "Milton-Freewater", "slug": "milton-freewater" }
       ]
     }
   ]

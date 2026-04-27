@@ -2,33 +2,21 @@
   "stats": [
     {
       "icon": "ri-home-heart-line",
+      "number": "1983",
+      "label": "Family-Owned Since",
+      "suffix": ""
+    },
+    {
+      "icon": "ri-map-2-line",
+      "number": "3",
+      "label": "States",
+      "suffix": "WA · OR · ID"
+    },
+    {
+      "icon": "ri-history-line",
       "number": "40+",
       "label": "Years",
-      "suffix": "Experience"
-    },
-    {
-      "icon": "ri-user-smile-line",
-      "number": "500+",
-      "label": "Happy",
-      "suffix": "Customers"
-    },
-    {
-      "icon": "ri-window-line",
-      "number": "100K+",
-      "label": "Windows",
-      "suffix": "Cleaned"
-    },
-    {
-      "icon": "ri-star-line",
-      "number": "4.9",
-      "label": "Star",
-      "suffix": "Rating"
-    },
-    {
-      "icon": "ri-star-smile-line",
-      "number": "80+",
-      "label": "Five-Star",
-      "suffix": "Reviews"
+      "suffix": "Serving the Pacific Northwest"
     }
   ]
 }
