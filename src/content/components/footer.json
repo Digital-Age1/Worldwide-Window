@@ -2,29 +2,87 @@
   "ctaHeading": "Ready for crystal-clear windows at your home?",
   "ctaSubtext": "Serving Washington, Oregon & Idaho · 100% satisfaction guaranteed",
   "serviceLinks": [
-    { "label": "Residential Cleaning", "href": "/services/residential-window-cleaning" },
-    { "label": "Gutter Cleaning", "href": "/services/gutter-cleaning" },
-    { "label": "Hard Water Removal", "href": "/services" },
-    { "label": "Commercial Cleaning", "href": "/services/commercial-window-cleaning" }
+    {
+      "label": "Residential Cleaning",
+      "href": "/services/residential-window-cleaning"
+    },
+    {
+      "label": "Gutter Cleaning",
+      "href": "/services/gutter-cleaning"
+    },
+    {
+      "label": "Hard Water Removal",
+      "href": "/services"
+    },
+    {
+      "label": "Commercial Cleaning",
+      "href": "/services/commercial-window-cleaning"
+    }
   ],
   "locationLinks": [
-    { "label": "Washington State", "href": "/locations" },
-    { "label": "Oregon State", "href": "/locations" },
-    { "label": "Idaho State", "href": "/locations" },
-    { "label": "View All Areas", "href": "/locations" }
+    {
+      "label": "Washington State",
+      "href": "/locations"
+    },
+    {
+      "label": "Oregon State",
+      "href": "/locations"
+    },
+    {
+      "label": "Idaho State",
+      "href": "/locations"
+    },
+    {
+      "label": "View All Areas",
+      "href": "/locations"
+    },
+    {
+      "href": "/locations",
+      "label": "BD"
+    }
   ],
   "companyLinks": [
-    { "label": "Home", "href": "/" },
-    { "label": "About Us", "href": "/about" },
-    { "label": "Services", "href": "/services" },
-    { "label": "Locations", "href": "/locations" },
-    { "label": "Free Quote", "href": "/contact" }
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "About Us",
+      "href": "/about"
+    },
+    {
+      "label": "Services",
+      "href": "/services"
+    },
+    {
+      "label": "Locations",
+      "href": "/locations"
+    },
+    {
+      "label": "Free Quote",
+      "href": "/contact"
+    }
   ],
   "trustBadges": [
-    { "icon": "ri-home-heart-line", "text": "Family-Owned Since 1983" },
-    { "icon": "ri-award-line", "text": "BBB Accredited" },
-    { "icon": "ri-star-fill", "text": "Top-Rated Service" },
-    { "icon": "ri-sparkling-2-line", "text": "Spotless Every Time" },
-    { "icon": "ri-map-2-line", "text": "WA · OR · ID Coverage" }
+    {
+      "icon": "ri-home-heart-line",
+      "text": "Family-Owned Since 1983"
+    },
+    {
+      "icon": "ri-award-line",
+      "text": "BBB Accredited"
+    },
+    {
+      "icon": "ri-star-fill",
+      "text": "Top-Rated Service"
+    },
+    {
+      "icon": "ri-sparkling-2-line",
+      "text": "Spotless Every Time"
+    },
+    {
+      "icon": "ri-map-2-line",
+      "text": "WA · OR · ID Coverage"
+    }
   ]
 }
