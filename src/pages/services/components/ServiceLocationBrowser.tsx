@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
+import { contactInfo } from '@/utils/contact';
 
 export default function ServiceLocationBrowser() {
   const [activeService, setActiveService] = useState(SERVICES[0].slug);
@@ -122,15 +123,15 @@ export default function ServiceLocationBrowser() {
             <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <p className="text-slate-500 text-sm">
                 Don't see your city?{' '}
-                <a href="tel:+18002231286" className="text-blue-700 font-bold hover:underline cursor-pointer">
+                <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-700 font-bold hover:underline cursor-pointer">
                   Call us — we may still serve your area.
                 </a>
               </p>
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
-                <i className="ri-phone-fill"></i> (800) 223-1286
+                <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}
               </a>
             </div>
           </div>

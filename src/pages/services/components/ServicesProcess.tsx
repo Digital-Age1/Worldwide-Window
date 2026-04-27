@@ -1,9 +1,11 @@
+import { contactInfo } from '@/utils/contact';
+
 const steps = [
   {
     step: '01',
     icon: 'ri-file-list-3-line',
     title: 'Request Your Free Quote',
-    body: 'Call us at (800) 223-1286 or fill out a quick request. Tell us your address, number of windows, and any special needs — we\'ll give you a clear, honest quote with no hidden fees.',
+    body: `Call us at ${contactInfo.phoneDisplay} or fill out a quick request. Tell us your address, number of windows, and any special needs — we'll give you a clear, honest quote with no hidden fees.`,
   },
   {
     step: '02',
@@ -66,10 +68,10 @@ export default function ServicesProcess() {
 
         <div className="mt-14 text-center">
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-base px-10 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
           >
-            <i className="ri-phone-fill"></i> Start Step 1 — Call (800) 223-1286
+            <i className="ri-phone-fill"></i> Start Step 1 — Call {contactInfo.phoneDisplay}
           </a>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 const stateAreas = (content.sections.serviceAreas?.states || [
   {
@@ -122,10 +123,10 @@ export default function ServiceAreas() {
               </p>
               <div className="flex flex-wrap gap-3">
                 <a
-                  href="tel:+18002231286"
+                  href={`tel:${contactInfo.phoneTel}`}
                   className="inline-flex items-center gap-2 bg-white text-slate-900 font-bold px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap text-sm"
                 >
-                  <i className="ri-phone-fill text-blue-700"></i> (800) 223-1286
+                  <i className="ri-phone-fill text-blue-700"></i> {contactInfo.phoneDisplay}
                 </a>
                 <Link
                   to="/locations"

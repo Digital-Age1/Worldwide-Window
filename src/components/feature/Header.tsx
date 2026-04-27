@@ -2,12 +2,30 @@ import { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 const TOP_NAV = content.components.header?.navLinks || [
   { label: 'Home', href: '/' },
   { label: 'About Us', href: '/about' },
   { label: 'Locations', href: '/locations' },
 ];
+
+const slugify = (value: string) =>
+  value
+    .toLowerCase()
+    .trim()
+    .replace(/&/g, 'and')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+
+const getServiceSlug = (service: { slug?: string; title?: string; shortTitle?: string }) =>
+  service.slug || slugify(service.title || service.shortTitle || '');
+
+const getStateSlug = (state: { slug?: string; name?: string }) =>
+  state.slug || slugify(state.name || '');
+
+const getCitySlug = (city: { slug?: string; name?: string }) =>
+  city.slug || slugify(city.name || '');
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
@@ -60,7 +78,7 @@ export default function Header() {
             </span>
             <span className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
-                <i className="ri-time-line text-blue-300"></i> {content.global.contact?.businessHours || 'Mon–Sat 7AM–6PM'}
+                <i className="ri-time-line text-blue-300"></i> {contactInfo.businessHours}
               </span>
             </span>
           </div>
@@ -111,22 +129,27 @@ export default function Header() {
                       {/* Column 1: Services */}
                       <div className="w-[220px] bg-slate-50 border-r border-slate-100 p-3 flex-shrink-0">
                         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest px-3 py-2 mb-1">Services</div>
-                        {SERVICES.map((svc) => (
-                          <button
-                            key={svc.slug}
-                            onMouseEnter={() => { setActiveService(svc.slug); setActiveState(STATES[0].slug); }}
-                            onClick={() => setActiveService(svc.slug)}
+                        {SERVICES.map((svc) => {
+                          const serviceSlug = getServiceSlug(svc);
+                          return (
+                          <Link
+                            key={serviceSlug}
+                            to={`/services/${serviceSlug}`}
+                            onMouseEnter={() => { setActiveService(serviceSlug); setActiveState(getStateSlug(STATES[0])); }}
+                            onFocus={() => { setActiveService(serviceSlug); setActiveState(getStateSlug(STATES[0])); }}
+                            onClick={() => { setActiveService(serviceSlug); setMegaOpen(false); }}
                             className={`w-full flex items-center gap-2.5 px-3 py-2.5 rounded-xl text-left transition-all cursor-pointer ${
-                              activeService === svc.slug
+                              activeService === serviceSlug
                                 ? 'bg-blue-700 text-white'
                                 : 'text-slate-600 hover:bg-white hover:text-slate-900'
                             }`}
                           >
-                            <i className={`${svc.icon} text-sm flex-shrink-0 ${activeService === svc.slug ? 'text-blue-200' : 'text-blue-600'}`}></i>
+                            <i className={`${svc.icon} text-sm flex-shrink-0 ${activeService === serviceSlug ? 'text-blue-200' : 'text-blue-600'}`}></i>
                             <span className="text-sm font-medium leading-tight">{svc.shortTitle}</span>
-                            <i className={`ri-arrow-right-s-line ml-auto text-sm ${activeService === svc.slug ? 'text-blue-200' : 'text-slate-300'}`}></i>
-                          </button>
-                        ))}
+                            <i className={`ri-arrow-right-s-line ml-auto text-sm ${activeService === serviceSlug ? 'text-blue-200' : 'text-slate-300'}`}></i>
+                          </Link>
+                          );
+                        })}
                         <div className="mt-3 pt-3 border-t border-slate-200">
                           <Link
                             to="/services"
@@ -141,22 +164,27 @@ export default function Header() {
                       {/* Column 2: States */}
                       <div className="w-[160px] border-r border-slate-100 p-3 flex-shrink-0">
                         <div className="text-xs font-bold text-slate-400 uppercase tracking-widest px-3 py-2 mb-1">State</div>
-                        {STATES.map((state) => (
-                          <button
-                            key={state.slug}
-                            onMouseEnter={() => setActiveState(state.slug)}
-                            onClick={() => setActiveState(state.slug)}
+                        {STATES.map((state) => {
+                          const stateSlug = getStateSlug(state);
+                          return (
+                          <Link
+                            key={stateSlug}
+                            to={`/services/${activeService}/${stateSlug}`}
+                            onMouseEnter={() => setActiveState(stateSlug)}
+                            onFocus={() => setActiveState(stateSlug)}
+                            onClick={() => { setActiveState(stateSlug); setMegaOpen(false); }}
                             className={`w-full flex items-center gap-2 px-3 py-2.5 rounded-xl text-left transition-all cursor-pointer ${
-                              activeState === state.slug
+                              activeState === stateSlug
                                 ? 'bg-blue-50 text-blue-700 font-semibold'
                                 : 'text-slate-600 hover:bg-slate-50 hover:text-slate-900'
                             }`}
                           >
                             <i className="ri-map-pin-2-line text-sm flex-shrink-0"></i>
                             <span className="text-sm font-medium">{state.name}</span>
-                            <i className={`ri-arrow-right-s-line ml-auto text-sm ${activeState === state.slug ? 'text-blue-400' : 'text-slate-300'}`}></i>
-                          </button>
-                        ))}
+                            <i className={`ri-arrow-right-s-line ml-auto text-sm ${activeState === stateSlug ? 'text-blue-400' : 'text-slate-300'}`}></i>
+                          </Link>
+                          );
+                        })}
                         <div className="mt-3 pt-3 border-t border-slate-200">
                           <Link
                             to={`/services/${activeService}`}
@@ -179,8 +207,8 @@ export default function Header() {
                         <div className="grid grid-cols-2 gap-1 max-h-[340px] overflow-y-auto pr-1">
                           {currentState.cities.map((city) => (
                             <Link
-                              key={city.slug}
-                              to={`/services/${activeService}/${activeState}/${city.slug}`}
+                              key={getCitySlug(city)}
+                              to={`/services/${activeService}/${activeState}/${getCitySlug(city)}`}
                               className="flex items-center gap-2 px-3 py-2 rounded-lg text-slate-600 hover:text-blue-700 hover:bg-blue-50 transition-all text-sm cursor-pointer group"
                             >
                               <i className="ri-map-pin-line text-slate-300 group-hover:text-blue-400 text-xs flex-shrink-0 transition-colors"></i>
@@ -198,10 +226,10 @@ export default function Header() {
                         <strong className="text-slate-700">Washington, Oregon &amp; Idaho</strong>
                       </span>
                       <a
-                        href="tel:+18002231286"
+                        href={`tel:${contactInfo.phoneTel}`}
                         className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors cursor-pointer whitespace-nowrap"
                       >
-                        <i className="ri-phone-fill"></i> (800) 223-1286
+                        <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}
                       </a>
                     </div>
                   </div>
@@ -226,13 +254,13 @@ export default function Header() {
             {/* Right actions */}
             <div className="flex items-center gap-2">
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="hidden lg:flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-blue-700 transition-colors whitespace-nowrap cursor-pointer group"
               >
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-full transition-colors flex-shrink-0">
                   <i className="ri-phone-fill text-blue-700 group-hover:text-white text-sm transition-colors"></i>
                 </div>
-                (800) 223-1286
+                {contactInfo.phoneDisplay}
               </a>
               <button
                 className="xl:hidden w-10 h-10 flex items-center justify-center rounded-lg text-slate-700 hover:bg-slate-100 transition-colors cursor-pointer"
@@ -297,7 +325,7 @@ export default function Header() {
                       {mobileServiceExpanded === svc.slug && (
                         <div className="ml-4 mt-1 flex flex-col gap-1">
                           <Link
-                            to={`/services/${svc.slug}`}
+                            to={`/services/${getServiceSlug(svc)}`}
                             className="text-blue-700 font-bold text-xs px-4 py-2 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
                           >
                             View All Locations →
@@ -320,7 +348,7 @@ export default function Header() {
                                   {state.cities.map((city) => (
                                     <Link
                                       key={city.slug}
-                                      to={`/services/${svc.slug}/${state.slug}/${city.slug}`}
+                                      to={`/services/${getServiceSlug(svc)}/${getStateSlug(state)}/${getCitySlug(city)}`}
                                       className="flex items-center gap-1.5 text-slate-600 hover:text-blue-700 text-xs px-3 py-1.5 rounded-lg hover:bg-blue-50 transition-colors cursor-pointer"
                                     >
                                       <i className="ri-map-pin-line text-slate-300 text-xs flex-shrink-0"></i>
@@ -353,10 +381,10 @@ export default function Header() {
 
             <div className="pt-3 border-t border-slate-100 mt-2">
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="flex items-center gap-2 text-slate-700 font-bold text-sm px-4 py-3 cursor-pointer"
               >
-                <i className="ri-phone-fill text-blue-700"></i> (800) 223-1286
+                <i className="ri-phone-fill text-blue-700"></i> {contactInfo.phoneDisplay}
               </a>
             </div>
           </div>
@@ -365,7 +393,7 @@ export default function Header() {
 
       {/* Floating mobile call button */}
       <a
-        href="tel:+18002231286"
+        href={`tel:${contactInfo.phoneTel}`}
         className="fixed bottom-6 right-6 z-50 lg:hidden w-14 h-14 flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white rounded-full cursor-pointer transition-all duration-200 hover:scale-110 animate-pulse-ring"
         aria-label="Call Worldwide Window Washington"
       >

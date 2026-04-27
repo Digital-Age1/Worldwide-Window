@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 const details = [
   {
     id: 'detail-residential',
@@ -112,7 +114,7 @@ export default function ServiceDetails() {
                 ))}
               </ul>
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> Request a Free Quote

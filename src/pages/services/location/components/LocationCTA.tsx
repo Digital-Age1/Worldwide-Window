@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 interface LocationCTAProps {
   serviceTitle: string;
   cityName: string;
@@ -28,14 +30,14 @@ export default function LocationCTA({ serviceTitle, cityName, stateAbbr }: Locat
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
           >
             <i className="ri-phone-fill text-xl"></i>
-            Call (800) 223-1286
+            Call {contactInfo.phoneDisplay}
           </a>
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
           >
             <i className="ri-calendar-check-line text-xl"></i>

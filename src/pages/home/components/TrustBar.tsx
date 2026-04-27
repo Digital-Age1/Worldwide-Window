@@ -2,14 +2,14 @@ import { useRef, useEffect } from 'react';
 import content from '@/content';
 
 const stats = (content.components.trustBar?.stats || [
-  { number: '40+', label: 'Years', suffix: '' },
+  { icon: 'ri-home-heart-line', number: '40+', label: 'Years', suffix: 'Experience' },
   { number: '500+', label: 'Happy', suffix: 'Customers' },
   { number: '100K+', label: 'Windows', suffix: 'Cleaned' },
   { number: '4.9', label: 'Star', suffix: 'Rating' },
 ]).map((stat, i) => {
   const icons = ['ri-home-heart-line', 'ri-map-2-line', 'ri-history-line', 'ri-star-line'];
   return {
-    icon: icons[i % icons.length],
+    icon: stat.icon || icons[i % icons.length] || 'ri-home-heart-line',
     value: stat.number + (stat.suffix ? ` ${stat.suffix}` : ''),
     label: stat.label,
     color: 'text-blue-700'

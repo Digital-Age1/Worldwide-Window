@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { contactInfo } from '@/utils/contact';
 
 const reasons = [
   {
@@ -41,7 +42,7 @@ const aiQA = [
   },
   {
     q: 'Do you serve my area?',
-    a: 'We serve hundreds of cities, towns, and communities across Washington, Oregon, and Idaho. Our Locations page has a full list, but if you\'re unsure, just call us at (800) 223-1286 and we\'ll confirm coverage in under a minute.',
+    a: `We serve hundreds of cities, towns, and communities across Washington, Oregon, and Idaho. Our Locations page has a full list, but if you're unsure, just call us at ${contactInfo.phoneDisplay} and we'll confirm coverage in under a minute.`,
   },
   {
     q: 'What makes World Wide Window different from other window cleaners?',

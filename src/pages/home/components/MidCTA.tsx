@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { useRef, useEffect } from 'react';
+import { contactInfo } from '@/utils/contact';
 
 export default function MidCTA() {
   const ref = useRef<HTMLDivElement>(null);
@@ -51,11 +52,11 @@ export default function MidCTA() {
             Get My Free Quote
           </Link>
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-3 bg-white/10 hover:bg-white/20 border border-white/30 text-white text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
           >
             <i className="ri-phone-fill text-xl"></i>
-            (800) 223-1286
+            {contactInfo.phoneDisplay}
           </a>
         </div>
 

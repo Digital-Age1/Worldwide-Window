@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
+import { contactInfo } from '@/utils/contact';
 
 const FORM_URL = 'https://readdy.ai/api/form/d6sod3837h4e5cfhprvg';
 
@@ -76,7 +77,7 @@ export default function LeadForm() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Quote Request Sent!</h3>
                 <p className="text-slate-500 text-base">
                   We&apos;ll be in touch soon. For immediate assistance, call{' '}
-                  <a href="tel:+18002231286" className="text-blue-600 font-semibold">(800) 223-1286</a>.
+                  <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-600 font-semibold">{contactInfo.phoneDisplay}</a>.
                 </p>
               </div>
             ) : (
@@ -211,12 +212,12 @@ export default function LeadForm() {
               <div className="mt-10 pt-8 border-t border-white/10">
                 <p className="text-slate-400 text-sm mb-3">Prefer to call?</p>
                 <a
-                  href="tel:+18002231286"
+                  href={`tel:${contactInfo.phoneTel}`}
                   className="inline-flex items-center gap-2 text-white font-bold text-xl hover:text-blue-400 transition-colors cursor-pointer"
                 >
-                  <i className="ri-phone-fill text-blue-400"></i> (800) 223-1286
+                  <i className="ri-phone-fill text-blue-400"></i> {contactInfo.phoneDisplay}
                 </a>
-                <p className="text-slate-500 text-xs mt-1">Mon–Sat: 7:00 AM – 6:00 PM · WA · OR · ID</p>
+                <p className="text-slate-500 text-xs mt-1">{contactInfo.businessHours} · WA · OR · ID</p>
               </div>
             </div>
           </div>

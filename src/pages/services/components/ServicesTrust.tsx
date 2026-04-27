@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 const reviews = [
   {
     name: 'Patricia H.',
@@ -79,12 +81,12 @@ export default function ServicesTrust() {
             </div>
             <div className="text-center lg:text-right">
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> Get a Free Quote
               </a>
-              <p className="text-slate-500 text-xs mt-3">(800) 223-1286 · Mon–Sat 7AM–6PM</p>
+              <p className="text-slate-500 text-xs mt-3">{contactInfo.phoneDisplay} · {contactInfo.businessHours}</p>
             </div>
           </div>
         </div>

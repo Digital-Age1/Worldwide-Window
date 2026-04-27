@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 export default function Hero() {
-  const homeContent = content.pages.home || {};
-  const contactInfo = content.global.contact || {};
+  const homeContent = content.pages.home as any;
   return (
     <section className="relative w-full min-h-screen flex items-center overflow-hidden pt-[100px]">
       {/* Background — premium residential home clean windows */}
@@ -47,11 +47,11 @@ export default function Hero() {
               {homeContent.primaryBtnLabel || 'Request a Free Quote'}
             </Link>
             <a
-              href={`tel:${contactInfo.phone?.replace(/[^0-9]/g, '') || '18002231286'}`}
+              href={`tel:${contactInfo.phoneTel}`}
               className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/50 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>
-              {homeContent.secondaryBtnLabel || 'Call (800) 223-1286'}
+              {homeContent.secondaryBtnLabel || `Call ${contactInfo.phoneDisplay}`}
             </a>
           </div>
 

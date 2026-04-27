@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 const fallbackFeaturedService = {
   id: 'residential',
@@ -10,6 +11,7 @@ const fallbackFeaturedService = {
   bullets: ['Interior & exterior cleaning', 'Screen cleaning available', 'Hard water stain treatment available'],
   img: 'https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20washing%20bright%20sparkling%20beautiful%20two%20story%20residential%20home%20exterior%20windows%20sunlight%20reflection%20upscale%20suburban%20house%20blue%20sky%20immaculate%20white%20trim%20ladder%20technician%20squeegee%20streak%20free%20premium%20curb%20appeal&width=600&height=400&seq=svc-residential-resi-001&orientation=landscape',
   alt: 'Professional residential home window cleaning service',
+  badge: 'Our Core Specialty',
 };
 
 const fallbackResidentialServices = [
@@ -218,7 +220,7 @@ export default function ServicesSection() {
                 Whether it&apos;s your home or your business, we&apos;ll walk you through the right service. Free quotes, no obligation.
               </p>
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold text-sm px-5 py-3 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-line"></i> Call Us Free
@@ -229,7 +231,7 @@ export default function ServicesSection() {
 
         <div className="text-center">
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer"
           >
             <i className="ri-phone-line"></i>

@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 const footerLinks = {
   Services: content.components.footer?.serviceLinks || [
@@ -35,10 +36,10 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
-              href={`tel:${content.global.contact?.phone?.replace(/[^0-9]/g, '') || '18002231286'}`}
+              href={`tel:${contactInfo.phoneTel}`}
               className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap"
             >
-              <i className="ri-phone-fill"></i> {content.global.contact?.phone || '(800) 223-1286'}
+              <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}
             </a>
           </div>
         </div>
@@ -60,29 +61,29 @@ export default function Footer() {
               Family-owned window cleaning company since 1983. Serving homes, storefronts, and properties throughout Washington, Oregon, and Idaho with a 100% satisfaction guarantee.
             </p>
             <div className="space-y-3">
-              <a href="tel:+18002231286" className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
+              <a href={`tel:${contactInfo.phoneTel}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-phone-line text-blue-700 text-sm"></i>
                 </div>
-                (800) 223-1286
+                {contactInfo.phoneDisplay}
               </a>
-              <a href="mailto:clean@worldwidewindow.net" className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
+              <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-mail-line text-blue-700 text-sm"></i>
                 </div>
-                clean@worldwidewindow.net
+                {contactInfo.email}
               </a>
               <div className="flex items-center gap-3 text-slate-600 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-map-pin-line text-blue-700 text-sm"></i>
                 </div>
-                Washington · Oregon · Idaho
+                {contactInfo.address}
               </div>
               <div className="flex items-center gap-3 text-slate-600 text-sm">
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-time-line text-blue-700 text-sm"></i>
                 </div>
-                {content.global.contact?.businessHours || 'Mon–Sat: 7:00 AM – 6:00 PM'}
+                {contactInfo.businessHours}
               </div>
             </div>
           </div>

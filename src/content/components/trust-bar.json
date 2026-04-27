@@ -1,29 +1,34 @@
 {
   "stats": [
     {
+      "icon": "ri-home-heart-line",
       "number": "40+",
       "label": "Years",
-      "suffix": ""
+      "suffix": "Experience"
     },
     {
+      "icon": "ri-user-smile-line",
       "number": "500+",
       "label": "Happy",
       "suffix": "Customers"
     },
     {
+      "icon": "ri-window-line",
       "number": "100K+",
       "label": "Windows",
       "suffix": "Cleaned"
     },
     {
+      "icon": "ri-star-line",
       "number": "4.9",
       "label": "Star",
       "suffix": "Rating"
     },
     {
+      "icon": "ri-star-smile-line",
       "number": "80+",
-      "label": "Bed",
-      "suffix": "Rating"
+      "label": "Five-Star",
+      "suffix": "Reviews"
     }
   ]
 }

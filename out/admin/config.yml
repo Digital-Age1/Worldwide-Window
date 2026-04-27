@@ -23,6 +23,8 @@ collections:
         label: "Contact Info"
         name: "contact"
         fields:
+          - { label: "Phone Display", name: "phoneDisplay", widget: "string" }
+          - { label: "Phone Tel", name: "phoneTel", widget: "string", hint: "Use E.164 format, for example +18002231287" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Address", name: "address", widget: "text", required: false }
@@ -89,6 +91,7 @@ collections:
         name: "trust-bar"
         fields:
           - { label: "Stats", name: "stats", widget: "list", fields: [
+              { label: "Icon Class", name: "icon", widget: "string", hint: "Use Remix Icon class, for example ri-home-heart-line, ri-user-smile-line, ri-window-line, ri-star-line" },
               { label: "Number", name: "number", widget: "string" },
               { label: "Label", name: "label", widget: "string" },
               { label: "Suffix", name: "suffix", widget: "string", required: false }

@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 interface LocationHeroProps {
   serviceTitle: string;
   cityName: string;
@@ -59,7 +61,7 @@ export default function LocationHero({
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="tel:+18002231286"
+              href={`tel:${contactInfo.phoneTel}`}
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-lg"></i>

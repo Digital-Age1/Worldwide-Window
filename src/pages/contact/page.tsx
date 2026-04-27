@@ -2,6 +2,7 @@ import { useState, FormEvent } from 'react';
 import Header from '@/components/feature/Header';
 import Footer from '@/components/feature/Footer';
 import content from '@/content';
+import { contactInfo } from '@/utils/contact';
 
 const FORM_URL = 'https://readdy.ai/api/form/d7j7s9udvpcv9r19p9qg';
 
@@ -19,7 +20,6 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>('idle');
   const pageContent = content.pages.contact;
-  const contactInfo = content.global.contact;
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -88,14 +88,14 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <a href={`tel:${contactInfo.phone.replace(/[^0-9]/g, '')}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
+                  <a href={`tel:${contactInfo.phoneTel}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
                     <div className="w-12 h-12 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-xl flex-shrink-0 transition-colors">
                       <i className="ri-phone-fill text-blue-700 group-hover:text-white text-xl transition-colors"></i>
                     </div>
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call Us</p>
-                      <p className="text-slate-900 font-bold text-base">{contactInfo.phone}</p>
-                      <p className="text-slate-400 text-xs">Mon–Sat: 7:00 AM – 6:00 PM</p>
+                      <p className="text-slate-900 font-bold text-base">{contactInfo.phoneDisplay}</p>
+                      <p className="text-slate-400 text-xs">{contactInfo.businessHours}</p>
                     </div>
                   </a>
 
@@ -158,7 +158,7 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Quote Request Sent!</h3>
                     <p className="text-slate-500 text-base max-w-md">
                       We&apos;ll be in touch soon. For immediate assistance, call{' '}
-                      <a href="tel:+18002231286" className="text-blue-600 font-semibold">(800) 223-1286</a>.
+                      <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-600 font-semibold">{contactInfo.phoneDisplay}</a>.
                     </p>
                   </div>
                 ) : (
@@ -242,7 +242,7 @@ export default function ContactPage() {
                     </div>
 
                     {status === 'error' && (
-                      <p className="text-red-500 text-sm">Something went wrong. Please try again or call us directly at (800) 223-1286.</p>
+                      <p className="text-red-500 text-sm">Something went wrong. Please try again or call us directly at {contactInfo.phoneDisplay}.</p>
                     )}
 
                     <button

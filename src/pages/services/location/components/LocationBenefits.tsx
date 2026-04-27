@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 interface LocationBenefitsProps {
   serviceTitle: string;
   cityName: string;
@@ -43,16 +45,16 @@ export default function LocationBenefits({ serviceTitle, cityName, stateName, bu
               </ul>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
-                  href="tel:+18002231286"
+                  href={`tel:${contactInfo.phoneTel}`}
                   className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
                 >
                   <i className="ri-phone-fill"></i> Call for a Free Quote
                 </a>
                 <a
-                  href="tel:+18002231286"
+                  href={`tel:${contactInfo.phoneTel}`}
                   className="inline-flex items-center gap-2 border-2 border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 font-bold text-sm px-6 py-3 rounded-full transition-colors cursor-pointer whitespace-nowrap"
                 >
-                  (800) 223-1286
+                  {contactInfo.phoneDisplay}
                 </a>
               </div>
             </div>

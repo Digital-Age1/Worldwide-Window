@@ -1,3 +1,5 @@
+import { contactInfo } from '@/utils/contact';
+
 export default function AboutHero() {
   return (
     <section className="relative w-full min-h-[65vh] flex items-center overflow-hidden pt-[108px]">
@@ -29,7 +31,7 @@ export default function AboutHero() {
 
           <div className="flex flex-wrap gap-4">
             <a
-              href="tel:+18002231286"
+              href={`tel:${contactInfo.phoneTel}`}
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>

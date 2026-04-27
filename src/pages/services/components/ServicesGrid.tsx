@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { contactInfo } from '@/utils/contact';
 
 const services = [
   {
@@ -118,10 +119,10 @@ export default function ServicesGrid() {
 
         <div className="mt-14 text-center">
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-base px-10 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
           >
-            <i className="ri-phone-fill"></i> Call for a Free Quote — (800) 223-1286
+            <i className="ri-phone-fill"></i> Call for a Free Quote — {contactInfo.phoneDisplay}
           </a>
         </div>
       </div>

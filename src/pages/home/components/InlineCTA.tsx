@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom';
+import { contactInfo } from '@/utils/contact';
 
 interface InlineCTAProps {
   heading?: string;
@@ -14,9 +15,13 @@ export default function InlineCTA({
   subtext = 'Get a free, no-obligation quote for residential window cleaning across WA, OR & ID.',
   primaryLabel = 'Get Free Quote',
   primaryHref = '/contact',
-  phone = '(800) 223-1286',
+  phone,
   variant = 'light',
 }: InlineCTAProps) {
+  const displayPhone = phone || contactInfo.phoneDisplay;
+  const digits = displayPhone.replace(/\D/g, '');
+  const phoneHref = phone ? (digits.length === 10 ? `+1${digits}` : `+${digits}`) : contactInfo.phoneTel;
+
   if (variant === 'emerald') {
     return (
       <div className="bg-blue-700 py-10">
@@ -28,10 +33,10 @@ export default function InlineCTA({
             </div>
             <div className="flex items-center gap-3 flex-shrink-0">
               <a
-                href={`tel:+1${phone.replace(/\D/g, '')}`}
+                href={`tel:${phoneHref}`}
                 className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
               >
-                <i className="ri-phone-fill"></i> {phone}
+                <i className="ri-phone-fill"></i> {displayPhone}
               </a>
               <Link
                 to={primaryHref}
@@ -61,10 +66,10 @@ export default function InlineCTA({
           </div>
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
-              href={`tel:+18002231286`}
+              href={`tel:${phoneHref}`}
               className="inline-flex items-center gap-2 border-2 border-blue-200 hover:border-blue-500 text-slate-700 hover:text-blue-700 font-bold text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
             >
-              <i className="ri-phone-line text-blue-700"></i> {phone}
+              <i className="ri-phone-line text-blue-700"></i> {displayPhone}
             </a>
             <Link
               to={primaryHref}

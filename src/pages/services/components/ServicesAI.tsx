@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { contactInfo } from '@/utils/contact';
 
 const qaItems = [
   {
@@ -72,10 +73,10 @@ export default function ServicesAI() {
           <h3 className="text-white font-extrabold text-xl mb-2">Still have questions?</h3>
           <p className="text-blue-100 text-sm mb-5">Our team is happy to answer anything before you book.</p>
           <a
-            href="tel:+18002231286"
+            href={`tel:${contactInfo.phoneTel}`}
             className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-sm px-7 py-3 rounded-full hover:bg-blue-50 transition-all cursor-pointer whitespace-nowrap"
           >
-            <i className="ri-phone-fill"></i> Call (800) 223-1286
+            <i className="ri-phone-fill"></i> Call {contactInfo.phoneDisplay}
           </a>
         </div>
       </div>

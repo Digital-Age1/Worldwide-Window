@@ -1,14 +1,20 @@
 import { useParams, Navigate, Link } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Header from '@/components/feature/Header';
 import Footer from '@/components/feature/Footer';
 import LocationBreadcrumb from '../location/components/LocationBreadcrumb';
 import { getServiceBySlug, STATES, SERVICES } from '@/mocks/locationData';
+import { contactInfo } from '@/utils/contact';
 
 export default function ServiceHubPage() {
-  const { serviceSlug = '' } = useParams<{ serviceSlug: string }>();
+  const { serviceSlug = '', stateSlug = '' } = useParams<{ serviceSlug: string; stateSlug?: string }>();
   const service = getServiceBySlug(serviceSlug);
-  const [activeState, setActiveState] = useState<string>(STATES[0].slug);
+  const routeState = STATES.find((s) => s.slug === stateSlug);
+  const [activeState, setActiveState] = useState<string>(routeState?.slug || STATES[0].slug);
+
+  useEffect(() => {
+    setActiveState(routeState?.slug || STATES[0].slug);
+  }, [routeState]);
 
   if (!service) return <Navigate to="/services" replace />;
 
@@ -57,7 +63,7 @@ export default function ServiceHubPage() {
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="tel:+18002231286"
+                  href={`tel:${contactInfo.phoneTel}`}
                   className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
                 >
                   <i className="ri-phone-fill text-lg"></i>
@@ -232,11 +238,11 @@ export default function ServiceHubPage() {
             </p>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
-                href="tel:+18002231286"
+                href={`tel:${contactInfo.phoneTel}`}
                 className="inline-flex items-center gap-3 bg-white text-blue-700 hover:bg-blue-50 text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
               >
                 <i className="ri-phone-fill text-xl"></i>
-                (800) 223-1286
+                {contactInfo.phoneDisplay}
               </a>
               <Link
                 to="/services"
