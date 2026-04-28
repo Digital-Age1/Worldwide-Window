@@ -7,6 +7,8 @@ interface ContactContent {
   email?: string;
   address?: string;
   businessHours?: string;
+  businessHoursShort?: string;
+  businessHoursDisplay?: string;
 }
 
 const contact = contactData as ContactContent;
@@ -25,5 +27,7 @@ export const contactInfo = {
   phoneTel: contact.phoneTel || fallbackTel,
   email: contact.email || 'clean@worldwidewindow.net',
   address: contact.address || 'Washington, Oregon & Idaho',
-  businessHours: contact.businessHours || 'Mon-Sat: 7:00 AM - 7:00 PM',
+  businessHoursShort: contact.businessHoursShort || contact.businessHours || 'Mon-Sat 7AM-6PM',
+  businessHoursDisplay: contact.businessHoursDisplay || contact.businessHours || 'Mon-Sat: 7:00 AM - 6:00 PM',
+  businessHours: contact.businessHoursDisplay || contact.businessHours || 'Mon-Sat: 7:00 AM - 6:00 PM',
 };

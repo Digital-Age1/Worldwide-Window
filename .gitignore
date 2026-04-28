@@ -1,6 +1,7 @@
 node_modules/
 .comparison/
 out/
+
 dist/
 .env
 .env.local

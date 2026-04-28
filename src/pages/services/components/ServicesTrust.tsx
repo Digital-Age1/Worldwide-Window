@@ -86,7 +86,7 @@ export default function ServicesTrust() {
               >
                 <i className="ri-phone-fill"></i> Get a Free Quote
               </a>
-              <p className="text-slate-500 text-xs mt-3">{contactInfo.phoneDisplay} · {contactInfo.businessHours}</p>
+              <p className="text-slate-500 text-xs mt-3">{contactInfo.phoneDisplay} · {contactInfo.businessHoursShort}</p>
             </div>
           </div>
         </div>

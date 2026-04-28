@@ -78,7 +78,7 @@ export default function Header() {
             </span>
             <span className="flex items-center gap-4">
               <span className="flex items-center gap-1.5">
-                <i className="ri-time-line text-blue-300"></i> {contactInfo.businessHours}
+                <i className="ri-time-line text-blue-300"></i> {contactInfo.businessHoursShort}
               </span>
             </span>
           </div>

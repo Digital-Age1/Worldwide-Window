@@ -83,7 +83,7 @@ export default function Footer() {
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-time-line text-blue-700 text-sm"></i>
                 </div>
-                {contactInfo.businessHours}
+                {contactInfo.businessHoursDisplay}
               </div>
             </div>
           </div>

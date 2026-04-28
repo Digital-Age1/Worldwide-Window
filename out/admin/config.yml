@@ -29,6 +29,8 @@ collections:
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Address", name: "address", widget: "text", required: false }
           - { label: "Business Hours", name: "businessHours", widget: "text", required: false }
+          - { label: "Business Hours Short", name: "businessHoursShort", widget: "string", required: false }
+          - { label: "Business Hours Display", name: "businessHoursDisplay", widget: "string", required: false }
 
       - file: "src/content/global/seo.json"
         label: "SEO Settings"

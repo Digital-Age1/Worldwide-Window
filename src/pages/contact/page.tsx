@@ -95,7 +95,7 @@ export default function ContactPage() {
                     <div>
                       <p className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-0.5">Call Us</p>
                       <p className="text-slate-900 font-bold text-base">{contactInfo.phoneDisplay}</p>
-                      <p className="text-slate-400 text-xs">{contactInfo.businessHours}</p>
+                      <p className="text-slate-400 text-xs">{contactInfo.businessHoursDisplay}</p>
                     </div>
                   </a>
 

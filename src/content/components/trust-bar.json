@@ -9,14 +9,14 @@
     {
       "icon": "ri-map-2-line",
       "number": "3",
-      "label": "States",
-      "suffix": "WA · OR · ID"
+      "label": "WA · OR · ID",
+      "suffix": "States"
     },
     {
       "icon": "ri-history-line",
       "number": "40+",
-      "label": "Years",
-      "suffix": "Serving the Pacific Northwest"
+      "label": "Serving the Pacific Northwest",
+      "suffix": "Years"
     }
   ]
 }

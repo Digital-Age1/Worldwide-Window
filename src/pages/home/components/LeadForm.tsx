@@ -217,7 +217,7 @@ export default function LeadForm() {
                 >
                   <i className="ri-phone-fill text-blue-400"></i> {contactInfo.phoneDisplay}
                 </a>
-                <p className="text-slate-500 text-xs mt-1">{contactInfo.businessHours} · WA · OR · ID</p>
+                <p className="text-slate-500 text-xs mt-1">{contactInfo.businessHoursDisplay} · WA · OR · ID</p>
               </div>
             </div>
           </div>

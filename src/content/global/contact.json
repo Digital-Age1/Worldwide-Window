@@ -4,5 +4,7 @@
   "phone": "(800) 223-1286",
   "email": "clean@worldwidewindow.net",
   "address": "Washington · Oregon · Idaho",
-  "businessHours": "Mon–Sat 7AM–6PM"
+  "businessHours": "Mon–Sat: 7:00 AM – 6:00 PM",
+  "businessHoursShort": "Mon–Sat 7AM–6PM",
+  "businessHoursDisplay": "Mon–Sat: 7:00 AM – 6:00 PM"
 }
