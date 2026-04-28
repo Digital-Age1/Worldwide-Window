@@ -36,12 +36,19 @@ collections:
         label: "SEO Settings"
         name: "seo"
         fields:
+          - { label: "Site URL", name: "siteUrl", widget: "string" }
           - { label: "Default Title", name: "defaultTitle", widget: "string" }
           - { label: "Meta Description", name: "metaDescription", widget: "text" }
           - { label: "Keywords", name: "keywords", widget: "string", required: false }
           - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+          - { label: "Robots", name: "robots", widget: "string", required: false }
           - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
           - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+          - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+          - { label: "OG Type", name: "ogType", widget: "string", required: false }
+          - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+          - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+          - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
 
   # Header
   - name: "header"
@@ -157,6 +164,23 @@ collections:
         label: "Service Areas"
         name: "service-areas"
         fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Keywords", name: "keywords", widget: "string", required: false }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+              - { label: "Robots", name: "robots", widget: "string", required: false }
+              - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+              - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+              - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+              - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+              - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
           - label: "States"
             name: "states"
             widget: "list"
@@ -171,12 +195,46 @@ collections:
               - { label: "Name", name: "name", widget: "string" }
               - { label: "Slug", name: "slug", widget: "string" }
               - { label: "Abbreviation", name: "abbr", widget: "string" }
+              - label: "State SEO"
+                name: "seo"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Keywords", name: "keywords", widget: "string", required: false }
+                  - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+                  - { label: "Robots", name: "robots", widget: "string", required: false }
+                  - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+                  - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+                  - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+                  - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+                  - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+                  - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
               - label: "Cities"
                 name: "cities"
                 widget: "list"
                 fields:
                   - { label: "Name", name: "name", widget: "string" }
                   - { label: "Slug", name: "slug", widget: "string" }
+                  - label: "City SEO"
+                    name: "seo"
+                    widget: "object"
+                    required: false
+                    collapsed: true
+                    fields:
+                      - { label: "Title", name: "title", widget: "string", required: false }
+                      - { label: "Description", name: "description", widget: "text", required: false }
+                      - { label: "Keywords", name: "keywords", widget: "string", required: false }
+                      - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+                      - { label: "Robots", name: "robots", widget: "string", required: false }
+                      - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+                      - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+                      - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+                      - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+                      - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+                      - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
 
   # Process
   - name: "process"
@@ -216,7 +274,9 @@ collections:
               - { label: "ID", name: "id", widget: "number" }
               - { label: "Label", name: "label", widget: "string" }
               - { label: "Before Image", name: "before", widget: "string" }
+              - { label: "Before Image Alt", name: "beforeAlt", widget: "string", required: false }
               - { label: "After Image", name: "after", widget: "string" }
+              - { label: "After Image Alt", name: "afterAlt", widget: "string", required: false }
               - { label: "Type", name: "type", widget: "string" }
 
   # Services
@@ -240,6 +300,24 @@ collections:
               - { label: "Description", name: "description", widget: "text" }
               - { label: "Bullets", name: "bullets", widget: "list", field: { label: "Bullet", name: "bullet", widget: "string" } }
               - { label: "Image URL", name: "img", widget: "string", required: false }
+              - { label: "Image Alt", name: "imgAlt", widget: "string", required: false }
+              - label: "SEO"
+                name: "seo"
+                widget: "object"
+                required: false
+                collapsed: true
+                fields:
+                  - { label: "Title", name: "title", widget: "string", required: false }
+                  - { label: "Description", name: "description", widget: "text", required: false }
+                  - { label: "Keywords", name: "keywords", widget: "string", required: false }
+                  - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+                  - { label: "Robots", name: "robots", widget: "string", required: false }
+                  - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+                  - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+                  - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+                  - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+                  - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+                  - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
 
   # Home Page
   - name: "home"
@@ -249,6 +327,23 @@ collections:
         label: "Home Page"
         name: "home"
         fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Keywords", name: "keywords", widget: "string", required: false }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+              - { label: "Robots", name: "robots", widget: "string", required: false }
+              - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+              - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+              - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+              - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+              - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
           - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
           - { label: "Hero Title Line 1", name: "heroTitle1", widget: "string", required: false }
           - { label: "Hero Title Line 2", name: "heroTitle2", widget: "string", required: false }
@@ -271,6 +366,23 @@ collections:
         label: "About Page"
         name: "about"
         fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Keywords", name: "keywords", widget: "string", required: false }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+              - { label: "Robots", name: "robots", widget: "string", required: false }
+              - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+              - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+              - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+              - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+              - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
           - { label: "Quote Text", name: "quoteText", widget: "string", required: false }
           - { label: "Quote Author", name: "quoteAuthor", widget: "string", required: false }
 
@@ -282,6 +394,23 @@ collections:
         label: "Services Page"
         name: "services-page"
         fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Keywords", name: "keywords", widget: "string", required: false }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+              - { label: "Robots", name: "robots", widget: "string", required: false }
+              - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+              - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+              - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+              - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+              - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
           - { label: "Page Title", name: "pageTitle", widget: "string", required: false }
           - { label: "Page Subtitle", name: "pageSubtitle", widget: "text", required: false }
           - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
@@ -297,6 +426,23 @@ collections:
         label: "Contact Page"
         name: "contact-page"
         fields:
+          - label: "SEO"
+            name: "seo"
+            widget: "object"
+            required: false
+            collapsed: true
+            fields:
+              - { label: "Title", name: "title", widget: "string", required: false }
+              - { label: "Description", name: "description", widget: "text", required: false }
+              - { label: "Keywords", name: "keywords", widget: "string", required: false }
+              - { label: "Canonical URL", name: "canonicalUrl", widget: "string", required: false }
+              - { label: "Robots", name: "robots", widget: "string", required: false }
+              - { label: "OG Title", name: "ogTitle", widget: "string", required: false }
+              - { label: "OG Description", name: "ogDescription", widget: "text", required: false }
+              - { label: "OG Image", name: "ogImage", widget: "string", required: false }
+              - { label: "Twitter Title", name: "twitterTitle", widget: "string", required: false }
+              - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
+              - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
           - { label: "Hero Title", name: "heroTitle", widget: "string", required: false }
           - { label: "Hero Badge", name: "heroBadge", widget: "string", required: false }
           - { label: "Hero Subtitle", name: "heroSubtitle", widget: "text", required: false }

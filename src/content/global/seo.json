@@ -1,8 +1,15 @@
 {
+  "siteUrl": "https://worldwide-window.netlify.app",
   "defaultTitle": "Worldwide Window | Washington State Window Cleaning | Seattle, Bellevue, Tacoma",
   "metaDescription": "Washington State's #1 rated window cleaning company. Professional residential and commercial window cleaning in Seattle, Bellevue, Tacoma, Kirkland, Everett and 40+ WA cities. Licensed, insured, 4.9★ rated. Get a free quote today.",
   "keywords": "window cleaning Washington State, window cleaning Seattle, window cleaning Bellevue, residential window cleaning WA, commercial window cleaning Washington",
-  "canonicalUrl": "https://worldwidewindow.com/",
+  "canonicalUrl": "",
+  "robots": "index,follow",
   "ogTitle": "Worldwide Window | Washington State's #1 Window Cleaning Service",
-  "ogDescription": "Professional residential and commercial window cleaning across Seattle, Bellevue, Tacoma, Kirkland and all of Washington State. 20+ years, 500+ 5-star reviews, same-day service available."
+  "ogDescription": "Professional residential and commercial window cleaning across Seattle, Bellevue, Tacoma, Kirkland and all of Washington State. 20+ years, 500+ 5-star reviews, same-day service available.",
+  "ogImage": "",
+  "ogType": "website",
+  "twitterTitle": "Worldwide Window | Washington State Window Cleaning",
+  "twitterDescription": "Washington State's premier window cleaning — Seattle, Bellevue, Tacoma & 40+ cities. Licensed, insured, satisfaction guaranteed.",
+  "twitterImage": ""
 }

@@ -2,7 +2,17 @@ import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
 
-const fallbackBeforeAfterPairs = [
+interface BeforeAfterPair {
+  id: number;
+  label: string;
+  before: string;
+  beforeAlt?: string;
+  after: string;
+  afterAlt?: string;
+  type: string;
+}
+
+const fallbackBeforeAfterPairs: BeforeAfterPair[] = [
   {
     id: 1,
     label: 'Residential Home — Bellevue, WA',
@@ -81,7 +91,7 @@ export default function BeforeAfterGallery() {
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group">
             <img
               src={active.before}
-              alt={`Before professional window cleaning — ${active.label}`}
+              alt={active.beforeAlt || `Before professional window cleaning — ${active.label}`}
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
@@ -104,7 +114,7 @@ export default function BeforeAfterGallery() {
           <div className="relative rounded-3xl overflow-hidden aspect-[4/3] group">
             <img
               src={active.after}
-              alt={`After professional window cleaning — ${active.label}`}
+              alt={active.afterAlt || `After professional window cleaning — ${active.label}`}
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>

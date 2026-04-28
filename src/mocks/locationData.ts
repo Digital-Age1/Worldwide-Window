@@ -23,6 +23,8 @@ export interface ServiceEntry {
   description: string;
   bullets: string[];
   img: string;
+  imgAlt?: string;
+  seo?: Record<string, string>;
 }
 
 const FALLBACK_STATES: StateEntry[] = [

@@ -37,7 +37,7 @@ export default function ServiceHubPage() {
           <div className="absolute inset-0">
             <img
               src={service.img}
-              alt={`${service.title} across Washington, Oregon and Idaho`}
+              alt={service.imgAlt || `${service.title} across Washington, Oregon and Idaho`}
               className="w-full h-full object-cover object-top"
             />
             <div className="absolute inset-0 bg-gradient-to-r from-slate-900/95 via-slate-900/85 to-slate-900/50"></div>

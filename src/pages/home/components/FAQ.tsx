@@ -83,17 +83,6 @@ export default function FAQ() {
           </p>
         </div>
 
-        {/* Schema.org FAQPage structured data */}
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "FAQPage",
-          "mainEntity": faqs.map(f => ({
-            "@type": "Question",
-            "name": f.q,
-            "acceptedAnswer": { "@type": "Answer", "text": f.a }
-          }))
-        })}} />
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-8 gap-y-2">
           <FAQColumn items={col1} startIndex={0} openIndex={openIndex} setOpenIndex={setOpenIndex} />
           <FAQColumn items={col2} startIndex={half} openIndex={openIndex} setOpenIndex={setOpenIndex} />

@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "Window Cleaning Services | Worldwide Window",
+    "description": "Explore residential, commercial, high-rise, and gutter cleaning services from Worldwide Window across Washington, Oregon, and Idaho.",
+    "keywords": "window cleaning services, residential window cleaning, commercial window cleaning, gutter cleaning",
+    "canonicalUrl": "",
+    "robots": "index,follow",
+    "ogTitle": "Window Cleaning Services | Worldwide Window",
+    "ogDescription": "Residential, commercial, high-rise, and gutter cleaning services across Washington, Oregon, and Idaho.",
+    "ogImage": "",
+    "twitterTitle": "Window Cleaning Services | Worldwide Window",
+    "twitterDescription": "Residential, commercial, high-rise, and gutter cleaning services across Washington, Oregon, and Idaho.",
+    "twitterImage": ""
+  },
   "heroBadge": "Residential & Commercial Window Cleaning",
   "heroTitle1": "Professional Window",
   "heroTitle2": "Cleaning Services",

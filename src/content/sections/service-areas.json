@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "Window Cleaning Service Areas | Worldwide Window",
+    "description": "Find Worldwide Window service areas across Washington, Oregon, and Idaho.",
+    "keywords": "window cleaning service areas, Washington window cleaning, Oregon window cleaning, Idaho window cleaning",
+    "canonicalUrl": "",
+    "robots": "index,follow",
+    "ogTitle": "Window Cleaning Service Areas | Worldwide Window",
+    "ogDescription": "Find professional window cleaning service areas across Washington, Oregon, and Idaho.",
+    "ogImage": "",
+    "twitterTitle": "Window Cleaning Service Areas | Worldwide Window",
+    "twitterDescription": "Find professional window cleaning service areas across Washington, Oregon, and Idaho.",
+    "twitterImage": ""
+  },
   "states": [
     {
       "state": "Washington State",
@@ -44,71 +57,910 @@
       "name": "Washington",
       "slug": "washington",
       "abbr": "WA",
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": "",
+        "canonicalUrl": "",
+        "robots": "index,follow",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "",
+        "twitterTitle": "",
+        "twitterDescription": "",
+        "twitterImage": ""
+      },
       "cities": [
-        { "name": "Spokane", "slug": "spokane" },
-        { "name": "Spokane Valley", "slug": "spokane-valley" },
-        { "name": "Liberty Lake", "slug": "liberty-lake" },
-        { "name": "Deer Park", "slug": "deer-park" },
-        { "name": "Loon Lake", "slug": "loon-lake" },
-        { "name": "Colbert", "slug": "colbert" },
-        { "name": "Cheney", "slug": "cheney" },
-        { "name": "Spangle", "slug": "spangle" },
-        { "name": "Chattaroy", "slug": "chattaroy" },
-        { "name": "Newport", "slug": "newport" },
-        { "name": "Pullman", "slug": "pullman" },
-        { "name": "Colfax", "slug": "colfax" },
-        { "name": "Clarkston", "slug": "clarkston" },
-        { "name": "Walla Walla", "slug": "walla-walla" },
-        { "name": "Ritzville", "slug": "ritzville" },
-        { "name": "Moses Lake", "slug": "moses-lake" },
-        { "name": "Ephrata", "slug": "ephrata" },
-        { "name": "Ellensburg", "slug": "ellensburg" },
-        { "name": "Pasco", "slug": "pasco" },
-        { "name": "Richland", "slug": "richland" },
-        { "name": "Kennewick", "slug": "kennewick" },
-        { "name": "North Bend", "slug": "north-bend" },
-        { "name": "Snoqualmie", "slug": "snoqualmie" },
-        { "name": "Bellevue", "slug": "bellevue" },
-        { "name": "Kirkland", "slug": "kirkland" },
-        { "name": "Redmond", "slug": "redmond" },
-        { "name": "Mercer Island", "slug": "mercer-island" },
-        { "name": "Renton", "slug": "renton" },
-        { "name": "Kent", "slug": "kent" },
-        { "name": "Auburn", "slug": "auburn" },
-        { "name": "Seattle", "slug": "seattle" },
-        { "name": "Tacoma", "slug": "tacoma" },
-        { "name": "Puyallup", "slug": "puyallup" },
-        { "name": "Federal Way", "slug": "federal-way" },
-        { "name": "Des Moines", "slug": "des-moines" },
-        { "name": "Gig Harbor", "slug": "gig-harbor" },
-        { "name": "Bothell", "slug": "bothell" },
-        { "name": "Lynnwood", "slug": "lynnwood" },
-        { "name": "Shoreline", "slug": "shoreline" },
-        { "name": "Burien", "slug": "burien" }
+        {
+          "name": "Spokane",
+          "slug": "spokane",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Spokane Valley",
+          "slug": "spokane-valley",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Liberty Lake",
+          "slug": "liberty-lake",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Deer Park",
+          "slug": "deer-park",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Loon Lake",
+          "slug": "loon-lake",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Colbert",
+          "slug": "colbert",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Cheney",
+          "slug": "cheney",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Spangle",
+          "slug": "spangle",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Chattaroy",
+          "slug": "chattaroy",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Newport",
+          "slug": "newport",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Pullman",
+          "slug": "pullman",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Colfax",
+          "slug": "colfax",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Clarkston",
+          "slug": "clarkston",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Walla Walla",
+          "slug": "walla-walla",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Ritzville",
+          "slug": "ritzville",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Moses Lake",
+          "slug": "moses-lake",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Ephrata",
+          "slug": "ephrata",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Ellensburg",
+          "slug": "ellensburg",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Pasco",
+          "slug": "pasco",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Richland",
+          "slug": "richland",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Kennewick",
+          "slug": "kennewick",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "North Bend",
+          "slug": "north-bend",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Snoqualmie",
+          "slug": "snoqualmie",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Bellevue",
+          "slug": "bellevue",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Kirkland",
+          "slug": "kirkland",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Redmond",
+          "slug": "redmond",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Mercer Island",
+          "slug": "mercer-island",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Renton",
+          "slug": "renton",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Kent",
+          "slug": "kent",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Auburn",
+          "slug": "auburn",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Seattle",
+          "slug": "seattle",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Tacoma",
+          "slug": "tacoma",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Puyallup",
+          "slug": "puyallup",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Federal Way",
+          "slug": "federal-way",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Des Moines",
+          "slug": "des-moines",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Gig Harbor",
+          "slug": "gig-harbor",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Bothell",
+          "slug": "bothell",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Lynnwood",
+          "slug": "lynnwood",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Shoreline",
+          "slug": "shoreline",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Burien",
+          "slug": "burien",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        }
       ]
     },
     {
       "name": "Idaho",
       "slug": "idaho",
       "abbr": "ID",
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": "",
+        "canonicalUrl": "",
+        "robots": "index,follow",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "",
+        "twitterTitle": "",
+        "twitterDescription": "",
+        "twitterImage": ""
+      },
       "cities": [
-        { "name": "Coeur d'Alene", "slug": "coeur-d-alene" },
-        { "name": "Post Falls", "slug": "post-falls" },
-        { "name": "Hayden", "slug": "hayden" },
-        { "name": "Rathdrum", "slug": "rathdrum" },
-        { "name": "Priest River", "slug": "priest-river" },
-        { "name": "Lewiston", "slug": "lewiston" },
-        { "name": "Moscow", "slug": "moscow" }
+        {
+          "name": "Coeur d'Alene",
+          "slug": "coeur-d-alene",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Post Falls",
+          "slug": "post-falls",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Hayden",
+          "slug": "hayden",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Rathdrum",
+          "slug": "rathdrum",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Priest River",
+          "slug": "priest-river",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Lewiston",
+          "slug": "lewiston",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Moscow",
+          "slug": "moscow",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        }
       ]
     },
     {
       "name": "Oregon",
       "slug": "oregon",
       "abbr": "OR",
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": "",
+        "canonicalUrl": "",
+        "robots": "index,follow",
+        "ogTitle": "",
+        "ogDescription": "",
+        "ogImage": "",
+        "twitterTitle": "",
+        "twitterDescription": "",
+        "twitterImage": ""
+      },
       "cities": [
-        { "name": "Pendleton", "slug": "pendleton" },
-        { "name": "Hermiston", "slug": "hermiston" },
-        { "name": "Milton-Freewater", "slug": "milton-freewater" }
+        {
+          "name": "Pendleton",
+          "slug": "pendleton",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Hermiston",
+          "slug": "hermiston",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        },
+        {
+          "name": "Milton-Freewater",
+          "slug": "milton-freewater",
+          "seo": {
+            "title": "",
+            "description": "",
+            "keywords": "",
+            "canonicalUrl": "",
+            "robots": "index,follow",
+            "ogTitle": "",
+            "ogDescription": "",
+            "ogImage": "",
+            "twitterTitle": "",
+            "twitterDescription": "",
+            "twitterImage": ""
+          }
+        }
       ]
     }
   ]

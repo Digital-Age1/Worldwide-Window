@@ -1,4 +1,17 @@
 {
+  "seo": {
+    "title": "About Worldwide Window | Worldwide Window",
+    "description": "Learn about Worldwide Window, a family-owned window cleaning company serving Washington, Oregon, and Idaho since 1983.",
+    "keywords": "about Worldwide Window, family owned window cleaning, Pacific Northwest window cleaning",
+    "canonicalUrl": "",
+    "robots": "index,follow",
+    "ogTitle": "About Worldwide Window | Worldwide Window",
+    "ogDescription": "Family-owned window cleaning serving Washington, Oregon, and Idaho since 1983.",
+    "ogImage": "",
+    "twitterTitle": "About Worldwide Window | Worldwide Window",
+    "twitterDescription": "Family-owned window cleaning serving Washington, Oregon, and Idaho since 1983.",
+    "twitterImage": ""
+  },
   "quoteText": "We treat every home like it's our own.",
   "quoteAuthor": "World Wide Window Co, est. 1983"
 }
