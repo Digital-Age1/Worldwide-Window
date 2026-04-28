@@ -1,4 +1,5 @@
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const steps = [
   {
@@ -69,6 +70,10 @@ export default function ServicesProcess() {
         <div className="mt-14 text-center">
           <a
             href={`tel:${contactInfo.phoneTel}`}
+            onClick={() => {
+              trackServiceCtaClick({ location: 'services_process', action: 'phone_quote' });
+              trackPhoneClick({ location: 'services_process' });
+            }}
             className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-base px-10 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
           >
             <i className="ri-phone-fill"></i> Start Step 1 — Call {contactInfo.phoneDisplay}

@@ -1,8 +1,16 @@
 import { useState, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Header from '@/components/feature/Header';
 import Footer from '@/components/feature/Footer';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import {
+  getThankYouPageUrl,
+  shouldRedirectToThankYou,
+  trackEmailClick,
+  trackFormSubmit,
+  trackPhoneClick,
+} from '@/utils/tracking';
 
 const FORM_URL = 'https://readdy.ai/api/form/d7j7s9udvpcv9r19p9qg';
 
@@ -20,6 +28,7 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 export default function ContactPage() {
   const [status, setStatus] = useState<Status>('idle');
   const pageContent = content.pages.contact;
+  const navigate = useNavigate();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,8 +43,18 @@ export default function ContactPage() {
         body: data.toString(),
       });
       if (res.ok) {
-        setStatus('success');
+        trackFormSubmit({ form_id: 'contact_form', form_location: 'contact_page' });
         form.reset();
+        if (shouldRedirectToThankYou()) {
+          const thankYouUrl = getThankYouPageUrl();
+          if (/^https?:\/\//i.test(thankYouUrl)) {
+            window.location.assign(thankYouUrl);
+          } else {
+            navigate(thankYouUrl);
+          }
+          return;
+        }
+        setStatus('success');
       } else {
         setStatus('error');
       }
@@ -88,7 +107,11 @@ export default function ContactPage() {
                 </div>
 
                 <div className="space-y-4">
-                  <a href={`tel:${contactInfo.phoneTel}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
+                  <a
+                    href={`tel:${contactInfo.phoneTel}`}
+                    onClick={() => trackPhoneClick({ location: 'contact_page_card' })}
+                    className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group"
+                  >
                     <div className="w-12 h-12 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-xl flex-shrink-0 transition-colors">
                       <i className="ri-phone-fill text-blue-700 group-hover:text-white text-xl transition-colors"></i>
                     </div>
@@ -99,7 +122,11 @@ export default function ContactPage() {
                     </div>
                   </a>
 
-                  <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group">
+                  <a
+                    href={`mailto:${contactInfo.email}`}
+                    onClick={() => trackEmailClick({ location: 'contact_page_card' })}
+                    className="flex items-center gap-4 bg-white rounded-2xl p-5 border border-slate-100 hover:border-blue-200 transition-all cursor-pointer group"
+                  >
                     <div className="w-12 h-12 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-xl flex-shrink-0 transition-colors">
                       <i className="ri-mail-fill text-blue-700 group-hover:text-white text-xl transition-colors"></i>
                     </div>
@@ -158,7 +185,13 @@ export default function ContactPage() {
                     <h3 className="text-2xl font-bold text-slate-900 mb-3">Quote Request Sent!</h3>
                     <p className="text-slate-500 text-base max-w-md">
                       We&apos;ll be in touch soon. For immediate assistance, call{' '}
-                      <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-600 font-semibold">{contactInfo.phoneDisplay}</a>.
+                      <a
+                        href={`tel:${contactInfo.phoneTel}`}
+                        onClick={() => trackPhoneClick({ location: 'contact_form_success' })}
+                        className="text-blue-600 font-semibold"
+                      >
+                        {contactInfo.phoneDisplay}
+                      </a>.
                     </p>
                   </div>
                 ) : (

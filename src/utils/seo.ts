@@ -148,6 +148,14 @@ export const getSeoForPath = (pathname: string): ResolvedSeo => {
     }), (content.pages.contact as { seo?: SeoFields }).seo, normalizedPath);
   }
 
+  if (normalizedPath === '/thank-you') {
+    return withBase(normalizedPath, {
+      title: 'Thank You | Worldwide Window',
+      description: 'Thank you for requesting a quote from Worldwide Window.',
+      robots: 'noindex,follow',
+    });
+  }
+
   if (normalizedPath === '/locations') {
     const serviceAreasSeo = (content.sections.serviceAreas as { seo?: SeoFields }).seo;
     return mergeSeo(withBase(normalizedPath, {

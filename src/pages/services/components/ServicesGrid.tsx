@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const services = [
   {
@@ -82,6 +83,7 @@ export default function ServicesGrid() {
             <Link
               key={service.id}
               to={serviceRouteById[service.id] || '/services'}
+              onClick={() => trackServiceCtaClick({ location: 'services_grid_card', service_id: service.id })}
               className="group bg-white rounded-2xl overflow-hidden border border-slate-100 hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 cursor-pointer block"
             >
               <div className="relative h-48 overflow-hidden">
@@ -120,6 +122,10 @@ export default function ServicesGrid() {
         <div className="mt-14 text-center">
           <a
             href={`tel:${contactInfo.phoneTel}`}
+            onClick={() => {
+              trackServiceCtaClick({ location: 'services_grid_bottom', action: 'phone_quote' });
+              trackPhoneClick({ location: 'services_grid_bottom' });
+            }}
             className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white font-bold text-base px-10 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
           >
             <i className="ri-phone-fill"></i> Call for a Free Quote — {contactInfo.phoneDisplay}

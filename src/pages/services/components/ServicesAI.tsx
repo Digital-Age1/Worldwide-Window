@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const qaItems = [
   {
@@ -74,6 +75,10 @@ export default function ServicesAI() {
           <p className="text-blue-100 text-sm mb-5">Our team is happy to answer anything before you book.</p>
           <a
             href={`tel:${contactInfo.phoneTel}`}
+            onClick={() => {
+              trackServiceCtaClick({ location: 'services_faq', action: 'phone' });
+              trackPhoneClick({ location: 'services_faq' });
+            }}
             className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-sm px-7 py-3 rounded-full hover:bg-blue-50 transition-all cursor-pointer whitespace-nowrap"
           >
             <i className="ri-phone-fill"></i> Call {contactInfo.phoneDisplay}

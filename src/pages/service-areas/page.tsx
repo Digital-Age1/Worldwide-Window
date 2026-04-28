@@ -13,6 +13,7 @@ import Gallery from '../home/components/Gallery';
 import LeadForm from '../home/components/LeadForm';
 import { STATES, SERVICES } from '../../mocks/locationData';
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick, trackPhoneClick } from '@/utils/tracking';
 
 const locationDetails = [
   {
@@ -88,7 +89,14 @@ export default function ServiceAreasPage() {
                 Family-owned since 1983, we proudly serve homeowners and businesses across Washington, Oregon, and Idaho — with the same spotless standard in every city we cover.
               </p>
               <div className="flex flex-wrap gap-4">
-                <a href={`tel:${contactInfo.phoneTel}`} className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white text-base font-bold px-8 py-4 rounded-full transition-all hover:scale-105 whitespace-nowrap cursor-pointer">
+                <a
+                  href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => {
+                    trackLocationCtaClick({ location: 'locations_hero', action: 'phone' });
+                    trackPhoneClick({ location: 'locations_hero' });
+                  }}
+                  className="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white text-base font-bold px-8 py-4 rounded-full transition-all hover:scale-105 whitespace-nowrap cursor-pointer"
+                >
                   <i className="ri-phone-fill text-xl"></i> Schedule Window Cleaning
                 </a>
               </div>
@@ -184,6 +192,12 @@ export default function ServiceAreasPage() {
                     <Link
                       key={city.slug}
                       to={`/services/${activeService.slug}/${activeState.slug}/${city.slug}`}
+                      onClick={() => trackLocationCtaClick({
+                        location: 'locations_city_grid',
+                        service_slug: activeService.slug,
+                        state_slug: activeState.slug,
+                        city_slug: city.slug,
+                      })}
                       className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-700 bg-slate-50 border border-slate-200 px-3 py-2 rounded-full hover:bg-emerald-600 hover:text-white hover:border-emerald-600 transition-all cursor-pointer whitespace-nowrap"
                     >
                       <i className="ri-map-pin-line text-xs"></i>
@@ -201,7 +215,14 @@ export default function ServiceAreasPage() {
             <div className="mt-8 p-6 bg-white border border-slate-200 rounded-2xl text-center max-w-2xl mx-auto">
               <p className="text-slate-700 font-semibold text-sm mb-1">Don&apos;t see your city?</p>
               <p className="text-slate-400 text-sm mb-4">We may still cover your area. Give us a call and we&apos;ll confirm in under a minute.</p>
-              <a href={`tel:${contactInfo.phoneTel}`} className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold text-sm px-6 py-3 rounded-full hover:bg-slate-700 transition-all cursor-pointer whitespace-nowrap">
+              <a
+                href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackLocationCtaClick({ location: 'locations_missing_city', service_slug: activeService.slug, state_slug: activeState.slug, action: 'phone' });
+                  trackPhoneClick({ location: 'locations_missing_city' });
+                }}
+                className="inline-flex items-center gap-2 bg-slate-900 text-white font-bold text-sm px-6 py-3 rounded-full hover:bg-slate-700 transition-all cursor-pointer whitespace-nowrap"
+              >
                 <i className="ri-phone-fill"></i> Call {contactInfo.phoneDisplay}
               </a>
             </div>
@@ -237,7 +258,14 @@ export default function ServiceAreasPage() {
                       </li>
                     ))}
                   </ul>
-                  <a href={`tel:${contactInfo.phoneTel}`} className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap">
+                  <a
+                    href={`tel:${contactInfo.phoneTel}`}
+                    onClick={() => {
+                      trackLocationCtaClick({ location: 'locations_state_detail', state_slug: loc.slug, action: 'phone' });
+                      trackPhoneClick({ location: 'locations_state_detail', state_slug: loc.slug });
+                    }}
+                    className="inline-flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
+                  >
                     <i className="ri-phone-fill"></i> Schedule in {loc.state}
                   </a>
                 </div>

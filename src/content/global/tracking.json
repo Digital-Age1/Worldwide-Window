@@ -1,0 +1,12 @@
+{
+  "gtmId": "",
+  "googleSiteVerification": "",
+  "formSuccessMode": "inline",
+  "thankYouPageUrl": "/thank-you",
+  "trackPhoneClick": true,
+  "trackEmailClick": true,
+  "trackQuoteButtonClick": true,
+  "trackFormSubmit": true,
+  "trackServiceCtaClick": true,
+  "trackLocationCtaClick": true
+}

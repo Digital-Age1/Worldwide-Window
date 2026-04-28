@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick, trackPhoneClick } from '@/utils/tracking';
 
 export default function ServiceLocationBrowser() {
   const [activeService, setActiveService] = useState(SERVICES[0].slug);
@@ -98,6 +99,11 @@ export default function ServiceLocationBrowser() {
               </div>
               <Link
                 to={`/services/${activeService}/${activeState}`}
+                onClick={() => trackLocationCtaClick({
+                  location: 'service_location_browser_state',
+                  service_slug: activeService,
+                  state_slug: activeState,
+                })}
                 className="hidden sm:inline-flex items-center gap-2 text-blue-700 font-bold text-sm hover:underline cursor-pointer whitespace-nowrap"
               >
                 View All <i className="ri-arrow-right-line"></i>
@@ -109,6 +115,12 @@ export default function ServiceLocationBrowser() {
                 <Link
                   key={city.slug}
                   to={`/services/${activeService}/${activeState}/${city.slug}`}
+                  onClick={() => trackLocationCtaClick({
+                    location: 'service_location_browser_city',
+                    service_slug: activeService,
+                    state_slug: activeState,
+                    city_slug: city.slug,
+                  })}
                   className="group flex items-center gap-2 bg-white hover:bg-blue-50 border border-slate-100 hover:border-blue-200 rounded-xl px-3 py-2.5 transition-all duration-200 cursor-pointer"
                 >
                   <i className="ri-map-pin-line text-slate-300 group-hover:text-blue-500 text-sm flex-shrink-0 transition-colors"></i>
@@ -123,12 +135,23 @@ export default function ServiceLocationBrowser() {
             <div className="mt-6 pt-5 border-t border-slate-100 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <p className="text-slate-500 text-sm">
                 Don't see your city?{' '}
-                <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-700 font-bold hover:underline cursor-pointer">
+                <a
+                  href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => {
+                    trackLocationCtaClick({ location: 'service_location_browser_missing_city', service_slug: activeService, state_slug: activeState, action: 'phone' });
+                    trackPhoneClick({ location: 'service_location_browser_missing_city' });
+                  }}
+                  className="text-blue-700 font-bold hover:underline cursor-pointer"
+                >
                   Call us — we may still serve your area.
                 </a>
               </p>
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackLocationCtaClick({ location: 'service_location_browser_bottom', service_slug: activeService, state_slug: activeState, action: 'phone' });
+                  trackPhoneClick({ location: 'service_location_browser_bottom' });
+                }}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}

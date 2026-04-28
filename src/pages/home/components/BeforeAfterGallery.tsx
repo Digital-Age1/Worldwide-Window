@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { trackQuoteButtonClick } from '@/utils/tracking';
 
 interface BeforeAfterPair {
   id: number;
@@ -139,6 +140,7 @@ export default function BeforeAfterGallery() {
           <p className="text-slate-500 text-sm mb-4">Want results like this for your home?</p>
           <Link
             to="/contact"
+            onClick={() => trackQuoteButtonClick({ location: 'before_after_gallery', destination: '/contact' })}
             className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer whitespace-nowrap"
           >
             <i className="ri-calendar-check-line"></i> Book My Free Quote

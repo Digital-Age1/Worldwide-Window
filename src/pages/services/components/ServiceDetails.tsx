@@ -1,4 +1,5 @@
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const details = [
   {
@@ -115,6 +116,10 @@ export default function ServiceDetails() {
               </ul>
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackServiceCtaClick({ location: 'service_details', service_detail_id: item.id, action: 'phone_quote' });
+                  trackPhoneClick({ location: 'service_details', service_detail_id: item.id });
+                }}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> Request a Free Quote

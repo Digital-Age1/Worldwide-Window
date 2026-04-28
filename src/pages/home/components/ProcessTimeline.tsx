@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { trackQuoteButtonClick } from '@/utils/tracking';
 
 const steps = (content.sections.process?.steps || [
   {
@@ -91,6 +92,7 @@ export default function ProcessTimeline() {
           </Link>
           <Link
             to="/contact"
+            onClick={() => trackQuoteButtonClick({ location: 'process_timeline', destination: '/contact' })}
             className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-6 py-3 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer"
           >
             <i className="ri-calendar-check-line"></i> Book Now

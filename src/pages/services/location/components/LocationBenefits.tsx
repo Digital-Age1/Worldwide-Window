@@ -1,4 +1,5 @@
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick, trackPhoneClick } from '@/utils/tracking';
 
 interface LocationBenefitsProps {
   serviceTitle: string;
@@ -46,12 +47,17 @@ export default function LocationBenefits({ serviceTitle, cityName, stateName, bu
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
                   href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => {
+                    trackLocationCtaClick({ location: 'location_benefits', city: cityName, state: stateName, action: 'phone_quote' });
+                    trackPhoneClick({ location: 'location_benefits', city: cityName, state: stateName });
+                  }}
                   className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-6 py-3 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
                 >
                   <i className="ri-phone-fill"></i> Call for a Free Quote
                 </a>
                 <a
                   href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => trackPhoneClick({ location: 'location_benefits_phone', city: cityName, state: stateName })}
                   className="inline-flex items-center gap-2 border-2 border-slate-200 hover:border-blue-300 text-slate-700 hover:text-blue-700 font-bold text-sm px-6 py-3 rounded-full transition-colors cursor-pointer whitespace-nowrap"
                 >
                   {contactInfo.phoneDisplay}

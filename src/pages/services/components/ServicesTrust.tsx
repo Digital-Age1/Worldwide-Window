@@ -1,4 +1,5 @@
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const reviews = [
   {
@@ -82,6 +83,10 @@ export default function ServicesTrust() {
             <div className="text-center lg:text-right">
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackServiceCtaClick({ location: 'services_trust', action: 'phone_quote' });
+                  trackPhoneClick({ location: 'services_trust' });
+                }}
                 className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-600 text-white font-bold px-8 py-4 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> Get a Free Quote

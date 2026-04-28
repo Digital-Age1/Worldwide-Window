@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick } from '@/utils/tracking';
 
 const reasons = [
   {
@@ -123,6 +124,7 @@ export default function AboutWhyUs() {
           </p>
           <Link
             to="/locations"
+            onClick={() => trackLocationCtaClick({ location: 'about_service_area', destination: '/locations' })}
             className="inline-flex items-center gap-2 text-blue-700 hover:text-blue-800 font-bold text-sm border-b-2 border-blue-200 hover:border-blue-500 pb-0.5 transition-all cursor-pointer"
           >
             View all service locations <i className="ri-arrow-right-line"></i>

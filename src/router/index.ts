@@ -4,6 +4,7 @@ import { useRoutes } from "react-router-dom";
 import { useEffect } from "react";
 import routes from "./config";
 import SEO from "@/components/SEO";
+import Tracking from "@/components/Tracking";
 
 let navigateResolver: (navigate: ReturnType<typeof useNavigate>) => void;
 
@@ -41,5 +42,5 @@ export function AppRoutes() {
     });
   }, [location.pathname, location.hash]);
 
-  return createElement(Fragment, null, createElement(SEO), element);
+  return createElement(Fragment, null, createElement(SEO), createElement(Tracking), element);
 }

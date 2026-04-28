@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 export default function ServicesHero() {
   const pageContent = content.pages.services;
@@ -35,6 +36,10 @@ export default function ServicesHero() {
           <div className="flex flex-wrap gap-4 mb-12">
             <a
               href={`tel:${contactInfo.phoneTel}`}
+              onClick={() => {
+                trackServiceCtaClick({ location: 'services_hero', action: 'phone_quote' });
+                trackPhoneClick({ location: 'services_hero' });
+              }}
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/40 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>

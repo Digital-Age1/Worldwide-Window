@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackQuoteButtonClick } from '@/utils/tracking';
 
 interface InlineCTAProps {
   heading?: string;
@@ -34,12 +35,14 @@ export default function InlineCTA({
             <div className="flex items-center gap-3 flex-shrink-0">
               <a
                 href={`tel:${phoneHref}`}
+                onClick={() => trackPhoneClick({ location: 'inline_cta', variant })}
                 className="inline-flex items-center gap-2 bg-white/15 hover:bg-white/25 border border-white/30 text-white font-bold text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-fill"></i> {displayPhone}
               </a>
               <Link
                 to={primaryHref}
+                onClick={() => trackQuoteButtonClick({ location: 'inline_cta', variant, destination: primaryHref })}
                 className="inline-flex items-center gap-2 bg-white text-blue-700 hover:bg-blue-50 font-bold text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-arrow-right-circle-line"></i> {primaryLabel}
@@ -67,12 +70,14 @@ export default function InlineCTA({
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
               href={`tel:${phoneHref}`}
+              onClick={() => trackPhoneClick({ location: 'inline_cta', variant })}
               className="inline-flex items-center gap-2 border-2 border-blue-200 hover:border-blue-500 text-slate-700 hover:text-blue-700 font-bold text-sm px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap"
             >
               <i className="ri-phone-line text-blue-700"></i> {displayPhone}
             </a>
             <Link
               to={primaryHref}
+              onClick={() => trackQuoteButtonClick({ location: 'inline_cta', variant, destination: primaryHref })}
               className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold text-sm px-5 py-2.5 rounded-full transition-all hover:scale-105 cursor-pointer whitespace-nowrap"
             >
               <i className="ri-calendar-check-line"></i> {primaryLabel}

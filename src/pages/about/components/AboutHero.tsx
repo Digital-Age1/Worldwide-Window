@@ -1,4 +1,5 @@
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackQuoteButtonClick } from '@/utils/tracking';
 
 export default function AboutHero() {
   return (
@@ -32,6 +33,10 @@ export default function AboutHero() {
           <div className="flex flex-wrap gap-4">
             <a
               href={`tel:${contactInfo.phoneTel}`}
+              onClick={() => {
+                trackQuoteButtonClick({ location: 'about_hero', action: 'phone_quote' });
+                trackPhoneClick({ location: 'about_hero' });
+              }}
               className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>

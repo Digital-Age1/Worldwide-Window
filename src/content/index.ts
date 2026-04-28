@@ -2,6 +2,7 @@
 import siteData from '../content/global/site.json';
 import contactData from '../content/global/contact.json';
 import seoData from '../content/global/seo.json';
+import trackingData from '../content/global/tracking.json';
 import headerData from '../content/components/header.json';
 import footerData from '../content/components/footer.json';
 import trustBarData from '../content/components/trust-bar.json';
@@ -22,6 +23,7 @@ export const content = {
     site: siteData,
     contact: contactData,
     seo: seoData,
+    tracking: trackingData,
   },
   components: {
     header: headerData,

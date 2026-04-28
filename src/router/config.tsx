@@ -7,10 +7,12 @@ import ServiceAreas from '../pages/service-areas/page';
 import ServiceHubPage from '../pages/services/service-hub/page';
 import ServiceLocationPage from '../pages/services/location/page';
 import ContactPage from '../pages/contact/page';
+import ThankYouPage from '../pages/thank-you/page';
 
 const routes: RouteObject[] = [
   { path: '/', element: <Home /> },
   { path: '/contact', element: <ContactPage /> },
+  { path: '/thank-you', element: <ThankYouPage /> },
   { path: '/services', element: <Services /> },
   { path: '/services/:serviceSlug', element: <ServiceHubPage /> },
   { path: '/services/:serviceSlug/:stateSlug', element: <ServiceHubPage /> },

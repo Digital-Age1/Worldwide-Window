@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackQuoteButtonClick } from '@/utils/tracking';
 
 export default function Hero() {
   const homeContent = content.pages.home as any;
@@ -41,6 +42,7 @@ export default function Hero() {
           <div className="flex flex-wrap gap-4 mb-12">
             <Link
               to="/contact"
+              onClick={() => trackQuoteButtonClick({ location: 'home_hero', destination: '/contact' })}
               className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-500 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 hover:shadow-2xl hover:shadow-blue-600/50 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-calendar-check-line text-xl"></i>
@@ -48,6 +50,7 @@ export default function Hero() {
             </Link>
             <a
               href={`tel:${contactInfo.phoneTel}`}
+              onClick={() => trackPhoneClick({ location: 'home_hero' })}
               className="inline-flex items-center gap-3 bg-white/20 hover:bg-white/30 backdrop-blur-sm border border-white/50 text-white text-base lg:text-lg font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
             >
               <i className="ri-phone-fill text-xl"></i>

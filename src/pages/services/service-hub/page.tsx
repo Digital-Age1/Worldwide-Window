@@ -5,6 +5,7 @@ import Footer from '@/components/feature/Footer';
 import LocationBreadcrumb from '../location/components/LocationBreadcrumb';
 import { getServiceBySlug, STATES, SERVICES } from '@/mocks/locationData';
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick, trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 export default function ServiceHubPage() {
   const { serviceSlug = '', stateSlug = '' } = useParams<{ serviceSlug: string; stateSlug?: string }>();
@@ -64,6 +65,10 @@ export default function ServiceHubPage() {
               <div className="flex flex-wrap gap-4">
                 <a
                   href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => {
+                    trackServiceCtaClick({ location: 'service_hub_hero', service_slug: service.slug, action: 'phone_quote' });
+                    trackPhoneClick({ location: 'service_hub_hero', service_slug: service.slug });
+                  }}
                   className="inline-flex items-center gap-3 bg-blue-700 hover:bg-blue-600 text-white text-base font-bold px-8 py-4 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
                 >
                   <i className="ri-phone-fill text-lg"></i>
@@ -178,6 +183,12 @@ export default function ServiceHubPage() {
                   <Link
                     key={city.slug}
                     to={`/services/${serviceSlug}/${currentState.slug}/${city.slug}`}
+                    onClick={() => trackLocationCtaClick({
+                      location: 'service_hub_city_grid',
+                      service_slug: service.slug,
+                      state_slug: currentState.slug,
+                      city_slug: city.slug,
+                    })}
                     className="group flex items-center gap-2 bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-blue-200 rounded-xl px-3 py-2.5 transition-all duration-200 cursor-pointer"
                   >
                     <i className="ri-map-pin-line text-slate-300 group-hover:text-blue-500 text-sm flex-shrink-0 transition-colors"></i>
@@ -207,6 +218,7 @@ export default function ServiceHubPage() {
                 <Link
                   key={svc.slug}
                   to={`/services/${svc.slug}`}
+                  onClick={() => trackServiceCtaClick({ location: 'service_hub_related_services', service_slug: svc.slug })}
                   className="group flex items-start gap-4 bg-slate-50 hover:bg-blue-50 border border-slate-100 hover:border-blue-200 rounded-2xl p-5 transition-all duration-200 cursor-pointer"
                 >
                   <div className="w-11 h-11 flex items-center justify-center bg-blue-700 group-hover:bg-blue-800 rounded-xl flex-shrink-0 transition-colors">
@@ -239,6 +251,10 @@ export default function ServiceHubPage() {
             <div className="flex flex-wrap items-center justify-center gap-4">
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackServiceCtaClick({ location: 'service_hub_bottom_cta', service_slug: service.slug, action: 'phone' });
+                  trackPhoneClick({ location: 'service_hub_bottom_cta', service_slug: service.slug });
+                }}
                 className="inline-flex items-center gap-3 bg-white text-blue-700 hover:bg-blue-50 text-lg font-bold px-10 py-5 rounded-full transition-all duration-300 hover:scale-105 whitespace-nowrap cursor-pointer"
               >
                 <i className="ri-phone-fill text-xl"></i>

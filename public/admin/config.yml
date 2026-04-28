@@ -50,6 +50,26 @@ collections:
           - { label: "Twitter Description", name: "twitterDescription", widget: "text", required: false }
           - { label: "Twitter Image", name: "twitterImage", widget: "string", required: false }
 
+      - file: "src/content/global/tracking.json"
+        label: "Tracking & Verification"
+        name: "tracking"
+        fields:
+          - { label: "GTM Container ID", name: "gtmId", widget: "string", required: false, hint: "Use a real GTM container ID such as GTM-XXXXXXX. Leave blank to disable GTM." }
+          - { label: "Google Search Console Verification Code", name: "googleSiteVerification", widget: "string", required: false, hint: "Paste only the verification token, not the full meta tag." }
+          - label: "Form Success Mode"
+            name: "formSuccessMode"
+            widget: "select"
+            options:
+              - { label: "Inline success message", value: "inline" }
+              - { label: "Thank-you page redirect", value: "thank-you-page" }
+          - { label: "Thank You Page URL", name: "thankYouPageUrl", widget: "string", required: false }
+          - { label: "Track Phone Click", name: "trackPhoneClick", widget: "boolean", required: false }
+          - { label: "Track Email Click", name: "trackEmailClick", widget: "boolean", required: false }
+          - { label: "Track Quote Button Click", name: "trackQuoteButtonClick", widget: "boolean", required: false }
+          - { label: "Track Form Submit", name: "trackFormSubmit", widget: "boolean", required: false }
+          - { label: "Track Service CTA Click", name: "trackServiceCtaClick", widget: "boolean", required: false }
+          - { label: "Track Location CTA Click", name: "trackLocationCtaClick", widget: "boolean", required: false }
+
   # Header
   - name: "header"
     label: "Header"

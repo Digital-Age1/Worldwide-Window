@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackEmailClick, trackPhoneClick, trackQuoteButtonClick } from '@/utils/tracking';
 
 const footerLinks = {
   Services: content.components.footer?.serviceLinks || [
@@ -37,6 +38,7 @@ export default function Footer() {
           <div className="flex items-center gap-3 flex-shrink-0">
             <a
               href={`tel:${contactInfo.phoneTel}`}
+              onClick={() => trackPhoneClick({ location: 'footer_top_cta' })}
               className="inline-flex items-center gap-2 bg-white text-blue-700 font-bold text-sm px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap"
             >
               <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}
@@ -61,13 +63,21 @@ export default function Footer() {
               Family-owned window cleaning company since 1983. Serving homes, storefronts, and properties throughout Washington, Oregon, and Idaho with a 100% satisfaction guarantee.
             </p>
             <div className="space-y-3">
-              <a href={`tel:${contactInfo.phoneTel}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
+              <a
+                href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => trackPhoneClick({ location: 'footer_contact' })}
+                className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer"
+              >
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-phone-line text-blue-700 text-sm"></i>
                 </div>
                 {contactInfo.phoneDisplay}
               </a>
-              <a href={`mailto:${contactInfo.email}`} className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer">
+              <a
+                href={`mailto:${contactInfo.email}`}
+                onClick={() => trackEmailClick({ location: 'footer_contact' })}
+                className="flex items-center gap-3 text-slate-600 hover:text-blue-700 transition-colors text-sm cursor-pointer"
+              >
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg flex-shrink-0">
                   <i className="ri-mail-line text-blue-700 text-sm"></i>
                 </div>
@@ -97,6 +107,11 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       to={link.href}
+                      onClick={() => {
+                        if (link.href === '/contact') {
+                          trackQuoteButtonClick({ location: 'footer_links', label: link.label });
+                        }
+                      }}
                       className="text-slate-500 hover:text-blue-700 text-sm transition-colors cursor-pointer flex items-center gap-1.5 group"
                     >
                       <i className="ri-arrow-right-s-line text-slate-300 group-hover:text-blue-500 text-xs transition-colors"></i>

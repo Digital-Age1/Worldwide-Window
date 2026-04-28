@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackLocationCtaClick, trackPhoneClick } from '@/utils/tracking';
 
 const stateAreas = (content.sections.serviceAreas?.states || [
   {
@@ -124,12 +125,17 @@ export default function ServiceAreas() {
               <div className="flex flex-wrap gap-3">
                 <a
                   href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => {
+                    trackLocationCtaClick({ location: 'home_service_areas', action: 'phone' });
+                    trackPhoneClick({ location: 'home_service_areas' });
+                  }}
                   className="inline-flex items-center gap-2 bg-white text-slate-900 font-bold px-5 py-2.5 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap text-sm"
                 >
                   <i className="ri-phone-fill text-blue-700"></i> {contactInfo.phoneDisplay}
                 </a>
                 <Link
                   to="/locations"
+                  onClick={() => trackLocationCtaClick({ location: 'home_service_areas', destination: '/locations' })}
                   className="inline-flex items-center gap-2 border border-white/20 hover:border-blue-400 text-white font-bold px-5 py-2.5 rounded-full transition-colors cursor-pointer whitespace-nowrap text-sm"
                 >
                   <i className="ri-map-2-line"></i> View Full Coverage

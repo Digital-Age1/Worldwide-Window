@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { SERVICES, STATES } from '@/mocks/locationData';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick } from '@/utils/tracking';
 
 const TOP_NAV = content.components.header?.navLinks || [
   { label: 'Home', href: '/' },
@@ -227,6 +228,7 @@ export default function Header() {
                       </span>
                       <a
                         href={`tel:${contactInfo.phoneTel}`}
+                        onClick={() => trackPhoneClick({ location: 'header_services_dropdown' })}
                         className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white text-xs font-bold px-4 py-2 rounded-full transition-colors cursor-pointer whitespace-nowrap"
                       >
                         <i className="ri-phone-fill"></i> {contactInfo.phoneDisplay}
@@ -255,6 +257,7 @@ export default function Header() {
             <div className="flex items-center gap-2">
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => trackPhoneClick({ location: 'header_desktop' })}
                 className="hidden lg:flex items-center gap-2 text-sm font-bold text-slate-800 hover:text-blue-700 transition-colors whitespace-nowrap cursor-pointer group"
               >
                 <div className="w-8 h-8 flex items-center justify-center bg-blue-100 group-hover:bg-blue-700 rounded-full transition-colors flex-shrink-0">
@@ -382,6 +385,7 @@ export default function Header() {
             <div className="pt-3 border-t border-slate-100 mt-2">
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => trackPhoneClick({ location: 'header_mobile_menu' })}
                 className="flex items-center gap-2 text-slate-700 font-bold text-sm px-4 py-3 cursor-pointer"
               >
                 <i className="ri-phone-fill text-blue-700"></i> {contactInfo.phoneDisplay}
@@ -394,6 +398,7 @@ export default function Header() {
       {/* Floating mobile call button */}
       <a
         href={`tel:${contactInfo.phoneTel}`}
+        onClick={() => trackPhoneClick({ location: 'floating_mobile_call' })}
         className="fixed bottom-6 right-6 z-50 lg:hidden w-14 h-14 flex items-center justify-center bg-blue-700 hover:bg-blue-800 text-white rounded-full cursor-pointer transition-all duration-200 hover:scale-110 animate-pulse-ring"
         aria-label="Call Worldwide Window Washington"
       >

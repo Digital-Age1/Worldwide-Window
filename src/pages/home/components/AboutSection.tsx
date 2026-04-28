@@ -1,6 +1,7 @@
 import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
+import { trackQuoteButtonClick } from '@/utils/tracking';
 
 const aboutContent = content.pages.home.aboutPreview;
 const stats = aboutContent?.stats || [
@@ -99,6 +100,7 @@ export default function AboutSection() {
               </Link>
               <Link
                 to="/contact"
+                onClick={() => trackQuoteButtonClick({ location: 'about_preview', destination: '/contact' })}
                 className="inline-flex items-center gap-2 border-2 border-slate-200 hover:border-blue-400 text-slate-700 hover:text-blue-700 font-bold px-6 py-3 rounded-full transition-all duration-200 cursor-pointer"
               >
                 <i className="ri-phone-line"></i> Get Free Quote

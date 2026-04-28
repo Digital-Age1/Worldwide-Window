@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import content from '@/content';
 import { contactInfo } from '@/utils/contact';
+import { trackPhoneClick, trackServiceCtaClick } from '@/utils/tracking';
 
 const fallbackFeaturedService = {
   id: 'residential',
@@ -119,6 +120,7 @@ export default function ServicesSection() {
               </ul>
               <Link
                 to={getServiceRoute(featuredService.id)}
+                onClick={() => trackServiceCtaClick({ location: 'home_services_featured', service_id: featuredService.id })}
                 className="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-800 font-bold text-sm transition-colors group-hover:gap-2.5 cursor-pointer"
               >
                 Learn more <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
@@ -158,6 +160,7 @@ export default function ServicesSection() {
                 </ul>
                 <Link
                   to={getServiceRoute(service.id)}
+                  onClick={() => trackServiceCtaClick({ location: 'home_services_grid', service_id: service.id })}
                   className="inline-flex items-center gap-1.5 text-blue-700 hover:text-blue-800 font-semibold text-sm transition-colors group-hover:gap-2.5 cursor-pointer"
                 >
                   Learn more <i className="ri-arrow-right-line transition-transform group-hover:translate-x-1"></i>
@@ -207,6 +210,7 @@ export default function ServicesSection() {
                 </ul>
                 <Link
                   to="/services/commercial-window-cleaning"
+                  onClick={() => trackServiceCtaClick({ location: 'home_services_business', service_id: 'commercial' })}
                   className="inline-flex items-center gap-1.5 text-slate-600 hover:text-blue-700 font-semibold text-sm transition-colors cursor-pointer"
                 >
                   Learn more <i className="ri-arrow-right-line"></i>
@@ -221,6 +225,10 @@ export default function ServicesSection() {
               </p>
               <a
                 href={`tel:${contactInfo.phoneTel}`}
+                onClick={() => {
+                  trackServiceCtaClick({ location: 'home_services_help', action: 'phone' });
+                  trackPhoneClick({ location: 'home_services_help' });
+                }}
                 className="inline-flex items-center justify-center gap-2 bg-white text-blue-700 font-bold text-sm px-5 py-3 rounded-full hover:bg-blue-50 transition-colors cursor-pointer whitespace-nowrap"
               >
                 <i className="ri-phone-line"></i> Call Us Free
@@ -232,6 +240,10 @@ export default function ServicesSection() {
         <div className="text-center">
           <a
             href={`tel:${contactInfo.phoneTel}`}
+            onClick={() => {
+              trackServiceCtaClick({ location: 'home_services_bottom', action: 'phone' });
+              trackPhoneClick({ location: 'home_services_bottom' });
+            }}
             className="inline-flex items-center gap-2 bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:scale-105 cursor-pointer"
           >
             <i className="ri-phone-line"></i>

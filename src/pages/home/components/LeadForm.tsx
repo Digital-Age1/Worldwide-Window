@@ -1,5 +1,12 @@
 import { useState, useRef, useEffect, FormEvent } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { contactInfo } from '@/utils/contact';
+import {
+  getThankYouPageUrl,
+  shouldRedirectToThankYou,
+  trackFormSubmit,
+  trackPhoneClick,
+} from '@/utils/tracking';
 
 const FORM_URL = 'https://readdy.ai/api/form/d6sod3837h4e5cfhprvg';
 
@@ -17,6 +24,7 @@ type Status = 'idle' | 'submitting' | 'success' | 'error';
 export default function LeadForm() {
   const [status, setStatus] = useState<Status>('idle');
   const ref = useRef<HTMLDivElement>(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const el = ref.current;
@@ -43,8 +51,18 @@ export default function LeadForm() {
         body: data.toString(),
       });
       if (res.ok) {
-        setStatus('success');
+        trackFormSubmit({ form_id: 'lead_form', form_location: 'home' });
         form.reset();
+        if (shouldRedirectToThankYou()) {
+          const thankYouUrl = getThankYouPageUrl();
+          if (/^https?:\/\//i.test(thankYouUrl)) {
+            window.location.assign(thankYouUrl);
+          } else {
+            navigate(thankYouUrl);
+          }
+          return;
+        }
+        setStatus('success');
       } else {
         setStatus('error');
       }
@@ -77,7 +95,13 @@ export default function LeadForm() {
                 <h3 className="text-2xl font-bold text-slate-900 mb-2">Quote Request Sent!</h3>
                 <p className="text-slate-500 text-base">
                   We&apos;ll be in touch soon. For immediate assistance, call{' '}
-                  <a href={`tel:${contactInfo.phoneTel}`} className="text-blue-600 font-semibold">{contactInfo.phoneDisplay}</a>.
+                  <a
+                    href={`tel:${contactInfo.phoneTel}`}
+                    onClick={() => trackPhoneClick({ location: 'lead_form_success' })}
+                    className="text-blue-600 font-semibold"
+                  >
+                    {contactInfo.phoneDisplay}
+                  </a>.
                 </p>
               </div>
             ) : (
@@ -213,6 +237,7 @@ export default function LeadForm() {
                 <p className="text-slate-400 text-sm mb-3">Prefer to call?</p>
                 <a
                   href={`tel:${contactInfo.phoneTel}`}
+                  onClick={() => trackPhoneClick({ location: 'lead_form_side_panel' })}
                   className="inline-flex items-center gap-2 text-white font-bold text-xl hover:text-blue-400 transition-colors cursor-pointer"
                 >
                   <i className="ri-phone-fill text-blue-400"></i> {contactInfo.phoneDisplay}
