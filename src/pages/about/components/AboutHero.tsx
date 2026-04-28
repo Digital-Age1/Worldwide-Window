@@ -6,7 +6,7 @@ export default function AboutHero() {
     <section className="relative w-full min-h-[65vh] flex items-center overflow-hidden pt-[108px]">
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20technician%20team%20uniformed%20workers%20residential%20home%20exterior%20beautiful%20sunny%20Pacific%20Northwest%20neighborhood%20friendly%20trustworthy%20experienced%20family%20business%20established%20trusted%20local%20community%20service%20proud%20professional%20team%20front%20of%20beautiful%20house&width=1920&height=900&seq=about-hero-team-v1&orientation=landscape"
+          src="/images/site/about-hero-team-v1.jpg"
           alt="World Wide Window Co professional team — family-owned window cleaning since 1983"
           className="w-full h-full object-cover object-top"
         />

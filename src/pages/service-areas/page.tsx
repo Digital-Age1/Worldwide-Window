@@ -21,21 +21,21 @@ const locationDetails = [
     slug: 'washington',
     headline: 'Window Cleaning Across Washington State',
     body: 'From the Eastside suburbs of Seattle and Bellevue to the neighborhoods of Spokane, the Tri-Cities, and communities across the state — World Wide Window Co has served Washington homeowners and businesses since 1983. No matter where you are, we bring the same professional standard: streak-free glass, clean screens, and reliable scheduling every time.',
-    img: 'https://readdy.ai/api/search-image?query=Washington%20State%20beautiful%20residential%20neighborhood%20homes%20Pacific%20Northwest%20lush%20green%20trees%20Mount%20Rainier%20backdrop%20suburban%20streets%20clean%20upscale%20houses%20community%20Puget%20Sound%20Cascades%20blue%20sky%20manicured%20yards%20wide%20panoramic&width=800&height=500&seq=loc-washington-state-v1&orientation=landscape',
+    img: '/images/site/loc-washington-state-v1.jpg',
   },
   {
     state: 'Oregon',
     slug: 'oregon',
     headline: 'Window Cleaning Across Oregon',
     body: 'Serving Eastern Oregon communities including Pendleton, Hermiston, and Milton-Freewater — our team brings the same dependable, detail-focused window cleaning that has made us a trusted name in the Pacific Northwest for over 40 years.',
-    img: 'https://readdy.ai/api/search-image?query=Oregon%20State%20beautiful%20residential%20neighborhood%20homes%20Pacific%20Northwest%20lush%20green%20trees%20Willamette%20Valley%20suburban%20streets%20clean%20upscale%20houses%20community%20Cascades%20blue%20sky%20manicured%20yards%20wide%20panoramic%20scenic&width=800&height=500&seq=loc-oregon-state-v1&orientation=landscape',
+    img: '/images/site/loc-oregon-state-v1.jpg',
   },
   {
     state: 'Idaho',
     slug: 'idaho',
     headline: 'Window Cleaning Across Idaho',
     body: 'Idaho communities from the Panhandle to the Palouse — including Coeur d\'Alene, Post Falls, Hayden, Rathdrum, Priest River, Lewiston, and Moscow — trust World Wide Window Co for residential and commercial window cleaning. We bring spotless results and professional service to every city we serve.',
-    img: 'https://readdy.ai/api/search-image?query=Idaho%20State%20beautiful%20residential%20neighborhood%20homes%20sunny%20day%20lush%20green%20trees%20foothills%20suburban%20streets%20clean%20upscale%20houses%20community%20Boise%20Treasure%20Valley%20blue%20sky%20manicured%20yards%20wide%20panoramic%20scenic%20landscape&width=800&height=500&seq=loc-idaho-state-v1&orientation=landscape',
+    img: '/images/site/loc-idaho-state-v1.jpg',
   },
 ];
 
@@ -68,7 +68,7 @@ export default function ServiceAreasPage() {
         <section className="relative w-full min-h-[65vh] flex items-center overflow-hidden pt-[108px]">
           <div className="absolute inset-0">
             <img
-              src="https://readdy.ai/api/search-image?query=Pacific%20Northwest%20aerial%20panoramic%20view%20Washington%20Oregon%20Idaho%20three%20states%20beautiful%20landscape%20residential%20neighborhoods%20lush%20green%20forests%20mountains%20valleys%20homes%20communities%20vast%20scenic%20region%20clear%20blue%20sky%20wide%20angle%20stunning&width=1920&height=900&seq=locations-hero-v1&orientation=landscape"
+              src="/images/site/locations-hero-v1.jpg"
               alt="Window cleaning services across Washington Oregon and Idaho Pacific Northwest"
               className="w-full h-full object-cover object-center"
             />

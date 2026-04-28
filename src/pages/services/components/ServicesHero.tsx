@@ -9,7 +9,7 @@ export default function ServicesHero() {
     <section className="relative w-full min-h-[72vh] flex items-center overflow-hidden pt-[108px]">
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20technician%20working%20on%20large%20beautiful%20residential%20home%20exterior%20pristine%20sparkling%20glass%20panels%20glistening%20in%20morning%20sunlight%20upscale%20suburban%20house%20white%20trim%20clean%20manicured%20front%20yard%20lush%20green%20Pacific%20Northwest%20garden%20vivid%20clear%20blue%20sky%20no%20ladders%20visible%20pure%20architectural%20beauty%20premium%20service&width=1920&height=900&seq=services-hero-residential-v1&orientation=landscape"
+          src="/images/site/services-hero-residential-v1.jpg"
           alt="Professional residential window cleaning service across Washington Oregon and Idaho"
           className="w-full h-full object-cover object-top"
         />

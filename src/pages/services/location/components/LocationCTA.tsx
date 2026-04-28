@@ -12,7 +12,7 @@ export default function LocationCTA({ serviceTitle, cityName, stateAbbr }: Locat
     <section className="relative py-20 overflow-hidden">
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=beautiful%20Pacific%20Northwest%20home%20exterior%20pristine%20clean%20windows%20sparkling%20sunlight%20reflecting%20glass%20residential%20property%20lush%20green%20garden%20curb%20appeal%20immaculate%20suburban%20neighborhood%20bright%20clear%20day&width=1920&height=700&seq=loc-cta-bg-v1&orientation=landscape"
+          src="/images/site/loc-cta-bg-v1.jpg"
           alt="Window cleaning service CTA background"
           className="w-full h-full object-cover object-top"
         />

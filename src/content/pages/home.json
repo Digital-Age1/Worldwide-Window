@@ -33,7 +33,7 @@
       "title": "Residential Window Cleaning",
       "desc": "Crystal-clear, spotless results for homes of all sizes across Washington, Oregon, and Idaho. From cozy bungalows to sprawling estates — every pane spotless.",
       "bullets": ["Interior & exterior cleaning", "Screen cleaning available", "Hard water stain treatment available"],
-      "img": "https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20washing%20bright%20sparkling%20beautiful%20two%20story%20residential%20home%20exterior%20windows%20sunlight%20reflection%20upscale%20suburban%20house%20blue%20sky%20immaculate%20white%20trim%20ladder%20technician%20squeegee%20streak%20free%20premium%20curb%20appeal&width=600&height=400&seq=svc-residential-resi-001&orientation=landscape",
+      "img": "/images/site/svc-residential-resi-001.jpg",
       "alt": "Professional residential home window cleaning service",
       "badge": "Our Core Specialty"
     },
@@ -44,7 +44,7 @@
         "title": "Gutter Cleaning",
         "desc": "Prevent water damage with thorough gutter clearing. We flush, inspect, and report condition — essential maintenance for Pacific Northwest homes.",
         "bullets": ["Debris removal", "Downspout flushing available", "Condition inspection report"],
-        "img": "https://readdy.ai/api/search-image?query=professional%20gutter%20cleaning%20maintenance%20residential%20home%20Pacific%20Northwest%20fall%20leaves%20debris%20removal%20exterior%20clean%20gutters%20ladder%20technician%20beautiful%20house%20neighborhood&width=600&height=400&seq=svc-gutter-pnw-001&orientation=landscape",
+        "img": "/images/site/svc-gutter-pnw-001.jpg",
         "alt": "Professional gutter cleaning and maintenance service"
       },
       {
@@ -53,7 +53,7 @@
         "title": "Hard Water Stain Removal",
         "desc": "Stubborn mineral deposits and calcium buildup treatment.",
         "bullets": ["Mineral deposit treatment", "Calcium & lime buildup treatment", "Glass clarity restoration"],
-        "img": "https://readdy.ai/api/search-image?query=hard%20water%20stain%20removal%20residential%20window%20glass%20treatment%20before%20after%20sparkling%20crystal%20clear%20clean%20beautiful%20suburban%20home%20exterior%20sunlight%20reflection%20professional&width=600&height=400&seq=svc-hardwater-resi-001&orientation=landscape",
+        "img": "/images/site/svc-hardwater-resi-001.jpg",
         "alt": "Hard water stain removal treatment for residential windows"
       }
     ],
@@ -61,7 +61,7 @@
       "title": "Commercial Window Cleaning",
       "desc": "Storefront and low-rise business window cleaning across WA, OR, and ID. Keep a clean, professional appearance that makes the right impression on customers.",
       "bullets": ["Storefronts & retail shops", "Low-rise office buildings", "Recurring service plans"],
-      "img": "https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20small%20business%20storefront%20clean%20gleaming%20clear%20glass%20exterior%20shop%20retail%20building%20clean%20attractive%20neighborhood%20street%20daylight&width=400&height=300&seq=svc-commercial-sm-002&orientation=landscape",
+      "img": "/images/site/svc-commercial-sm-002.jpg",
       "alt": "Commercial storefront window cleaning service"
     }
   },
@@ -75,7 +75,7 @@
         "title": "Spotless Results — Guaranteed Every Time",
         "body": "We use a pure water purification system combined with professional-grade squeegees to deliver a perfectly clean finish on every home we service. If you're not satisfied after we leave, we come back. No questions asked.",
         "bullets": ["Purified water system (0 TDS)", "Professional-grade equipment", "100% satisfaction guarantee"],
-        "img": "https://readdy.ai/api/search-image?query=window%20cleaning%20specialist%20achieving%20perfect%20streak%20free%20crystal%20clear%20result%20beautiful%20residential%20home%20bright%20sunlight%20reflection%20professional%20technician%20squeegee%20immaculate%20glass%20upscale%20house%20exterior&width=800&height=600&seq=why-01-resi-pnw&orientation=landscape",
+        "img": "/images/site/why-01-resi-pnw.jpg",
         "alt": "Window cleaning specialist delivering spotless results on a residential home",
         "imgLeft": false
       },
@@ -84,7 +84,7 @@
         "title": "Family-Owned Business — Over 40 Years of Excellence",
         "body": "Founded in 1983, World Wide Window Co has been a family-owned and operated business for over four decades. We bring the care, consistency, and personal accountability of a family business to every job — because our reputation is everything.",
         "bullets": ["Established 1983", "Family-owned and operated", "Consistent team, consistent results"],
-        "img": "https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/964158586b3eb583444cd6872d12421e.jpeg",
+        "img": "/images/site/why-protected-recurring-care.jpeg",
         "alt": "Family-owned window cleaning team serving Pacific Northwest homes",
         "imgLeft": true
       },
@@ -93,7 +93,7 @@
         "title": "Residential Experts — We Know Homes",
         "body": "Homes are the heart of our business. We understand what it takes to work carefully around landscaping, pets, and homeowner schedules — and what it means to leave a property looking its absolute best. Residential service is our specialty, not an afterthought.",
         "bullets": ["Homes are our primary focus", "Interior & exterior expertise", "Respectful of your property"],
-        "img": "https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20working%20on%20beautiful%20upscale%20residential%20home%20exterior%20careful%20respectful%20homeowner%20property%20ladder%20cleaning%20windows%20pristine%20suburban%20house%20Pacific%20Northwest%20garden%20landscaping&width=800&height=600&seq=why-03-resi-pnw&orientation=landscape",
+        "img": "/images/site/why-03-resi-pnw.jpg",
         "alt": "Residential window cleaning expert working on a beautiful Pacific Northwest home",
         "imgLeft": false
       },
@@ -102,7 +102,7 @@
         "title": "3-State Regional Coverage — WA, OR & ID",
         "body": "We proudly serve homeowners throughout Washington, Oregon, and Idaho. Whether you're in a major metro area or a smaller community, our team covers the entire Pacific Northwest tri-state region with the same premium standard.",
         "bullets": ["Full Washington State coverage", "Oregon State coverage", "Idaho State coverage"],
-        "img": "https://readdy.ai/api/search-image?query=Pacific%20Northwest%20landscape%20Washington%20Oregon%20Idaho%20beautiful%20scenic%20panorama%20three%20states%20region%20residential%20homes%20neighborhood%20lush%20green%20trees%20mountains%20beautiful%20sky%20broad%20service%20area&width=800&height=600&seq=why-04-3state-pnw&orientation=landscape",
+        "img": "/images/site/why-04-3state-pnw.jpg",
         "alt": "Window cleaning service covering Washington, Oregon, and Idaho",
         "imgLeft": true
       }
@@ -121,7 +121,7 @@
       { "value": "3", "label": "States Served" },
       { "value": "40+", "label": "Years Experience" }
     ],
-    "image": "https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/38f4f87b39d6feafe2bc8f35e7981672.jpeg",
+    "image": "/images/site/about-preview-family-home.jpeg",
     "imageAlt": "World Wide Window Co — Family-owned residential window cleaning since 1983"
   },
   "aiSearchBlocks": [

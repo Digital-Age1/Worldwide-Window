@@ -67,7 +67,7 @@ export default function LocationBenefits({ serviceTitle, cityName, stateName, bu
             <div className="relative">
               <div className="rounded-2xl overflow-hidden">
                 <img
-                  src="https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20technician%20working%20on%20beautiful%20residential%20home%20exterior%20pristine%20sparkling%20glass%20Pacific%20Northwest%20suburban%20house%20bright%20sunlight%20immaculate%20clean%20windows%20detail%20work%20careful%20professional%20service%20uniformed%20worker%20squeegee%20streak%20free%20result&width=700&height=520&seq=loc-benefits-pnw-residential-v1&orientation=landscape"
+                  src="/images/site/loc-benefits-pnw-residential-v1.jpg"
                   alt={`${serviceTitle} service in ${cityName}, ${stateName}`}
                   className="w-full h-[380px] object-cover object-top"
                 />

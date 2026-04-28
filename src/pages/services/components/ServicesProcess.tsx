@@ -27,7 +27,7 @@ export default function ServicesProcess() {
     <section className="py-24 bg-slate-900 relative overflow-hidden" id="process">
       <div className="absolute inset-0 opacity-5">
         <img
-          src="https://readdy.ai/api/search-image?query=window%20cleaning%20texture%20abstract%20glass%20water%20droplets%20clean%20surface%20professional%20service%20subtle%20background&width=1920&height=600&seq=process-bg-v1&orientation=landscape"
+          src="/images/site/process-bg-v1.jpg"
           alt=""
           className="w-full h-full object-cover"
         />

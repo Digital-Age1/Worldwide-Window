@@ -10,7 +10,7 @@ export default function Hero() {
       {/* Background — premium residential home clean windows */}
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=stunning%20luxury%20residential%20home%20exterior%20beautifully%20cleaned%20sparkling%20windows%20bright%20afternoon%20sunlight%20warm%20golden%20light%20reflecting%20on%20pristine%20glass%20large%20upscale%20house%20white%20trim%20stone%20facade%20lush%20green%20landscaping%20manicured%20lawn%20clear%20blue%20sky%20no%20people%20no%20workers%20purely%20architectural%20residential%20beauty&width=1920&height=1080&seq=hero-resi-home-v3&orientation=landscape"
+          src="/images/site/hero-resi-home-v3.jpg"
           alt="Premium residential window cleaning service across Washington, Oregon, and Idaho"
           className="w-full h-full object-cover object-center"
         />

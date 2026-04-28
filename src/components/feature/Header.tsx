@@ -90,7 +90,7 @@ export default function Header() {
             {/* Logo */}
             <Link to="/" className="flex items-center flex-shrink-0">
               <img
-                src="https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/bc0259c4ade5599752e3a176166f5ac2.png"
+                src="/images/site/site-logo.png"
                 alt="Worldwide Window Co — A Family Business, Est. 1983 — Washington State Window Cleaning"
                 className="h-16 w-auto object-contain"
               />

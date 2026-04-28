@@ -210,7 +210,7 @@ export default function LeadForm() {
           {/* Trust / image side */}
           <div className="relative hidden lg:flex flex-col justify-center bg-slate-900 p-14">
             <img
-              src="https://readdy.ai/api/search-image?query=beautiful%20upscale%20residential%20home%20exterior%20crystal%20clear%20sparkling%20clean%20windows%20sunlight%20reflection%20immaculate%20two%20story%20house%20lush%20green%20garden%20Pacific%20Northwest%20warm%20afternoon%20light%20premium%20curb%20appeal&width=800&height=900&seq=leadform-side-resi-v2&orientation=portrait"
+              src="/images/site/leadform-side-resi-v2.jpg"
               alt="Premium residential window cleaning results"
               className="absolute inset-0 w-full h-full object-cover opacity-20"
             />

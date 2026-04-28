@@ -60,7 +60,7 @@ export default function ContactPage() {
         <section className="relative w-full min-h-[42vh] flex items-center overflow-hidden pt-[108px]">
           <div className="absolute inset-0">
             <img
-              src="https://readdy.ai/api/search-image?query=beautiful%20upscale%20residential%20home%20exterior%20sparkling%20crystal%20clear%20windows%20gleaming%20sunlight%20reflection%20immaculate%20two%20story%20house%20lush%20green%20Pacific%20Northwest%20garden%20manicured%20lawn%20warm%20golden%20afternoon%20light%20premium%20curb%20appeal%20pristine%20glass%20panels%20architectural%20beauty&width=1920&height=700&seq=contact-hero-bg-v1&orientation=landscape"
+              src="/images/site/contact-hero-bg-v1.jpg"
               alt="Contact World Wide Window Co for a free quote"
               className="w-full h-full object-cover object-top"
             />

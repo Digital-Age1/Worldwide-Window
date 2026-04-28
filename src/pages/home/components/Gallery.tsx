@@ -4,37 +4,37 @@ import content from '@/content';
 
 const defaultPhotos = [
   {
-    src: 'https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/09f3b10f42f3fe6ec89cf32495987d80.jpeg',
+    src: '/images/site/gallery-exterior-clean-bellevue.jpeg',
     alt: 'Professional window cleaning technician at work on a residential home',
     label: 'Exterior Clean — Bellevue, WA',
     span: 'col-span-2 row-span-2',
   },
   {
-    src: 'https://readdy.ai/api/search-image?query=sparkling%20clean%20residential%20home%20windows%20exterior%20after%20professional%20window%20cleaning%20beautiful%20suburban%20house%20curb%20appeal%20bright%20reflection%20sunlight%20gleaming%20glass%20pristine&width=600&height=400&seq=gallery-resi-02&orientation=landscape',
+    src: '/images/site/gallery-resi-02.jpg',
     alt: 'Gleaming clean residential home windows after professional cleaning',
     label: 'Residential — Portland, OR',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://readdy.ai/api/search-image?query=beautiful%20upscale%20two%20story%20residential%20home%20exterior%20pristine%20sparkling%20window%20cleaning%20result%20manicured%20lawn%20blue%20sky%20professional%20service%20Pacific%20Northwest%20house&width=600&height=400&seq=gallery-resi-03&orientation=landscape',
+    src: '/images/site/gallery-resi-03.jpg',
     alt: 'Upscale residential home exterior after window cleaning service',
     label: 'Residential — Coeur d\'Alene, ID',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20ladder%20residential%20home%20exterior%20two%20story%20house%20worker%20cleaning%20windows%20sunlight%20Pacific%20Northwest%20neighborhood%20beautiful%20day&width=600&height=400&seq=gallery-resi-04&orientation=landscape',
+    src: '/images/site/gallery-resi-04.jpg',
     alt: 'Window cleaning technician working on a two-story residential home',
     label: 'Two-Story Home — Spokane, WA',
     span: 'col-span-1 row-span-2',
   },
   {
-    src: 'https://readdy.ai/api/search-image?query=gutter%20cleaning%20professional%20technician%20residential%20home%20Pacific%20Northwest%20beautiful%20house%20maintenance%20autumn%20leaves%20removal%20clean%20gutters%20curb%20appeal&width=600&height=400&seq=gallery-gutter-05&orientation=landscape',
+    src: '/images/site/gallery-gutter-05.jpg',
     alt: 'Professional gutter cleaning service on residential home',
     label: 'Gutter Clean — Salem, OR',
     span: 'col-span-1 row-span-1',
   },
   {
-    src: 'https://readdy.ai/api/search-image?query=hard%20water%20stain%20removal%20sparkling%20crystal%20clear%20window%20glass%20residential%20home%20beautiful%20result%20before%20after%20transformation%20professional%20cleaning%20Pacific%20Northwest%20suburb&width=600&height=400&seq=gallery-hardwater-06&orientation=landscape',
+    src: '/images/site/gallery-hardwater-06.jpg',
     alt: 'Hard water stain removal results on residential windows',
     label: 'Hard Water Removal — Boise, ID',
     span: 'col-span-1 row-span-1',

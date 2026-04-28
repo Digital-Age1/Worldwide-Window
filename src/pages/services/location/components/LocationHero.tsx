@@ -24,7 +24,7 @@ export default function LocationHero({
     <section className="relative w-full min-h-[60vh] flex items-center overflow-hidden pt-[108px]">
       <div className="absolute inset-0">
         <img
-          src="https://readdy.ai/api/search-image?query=professional%20window%20cleaning%20service%20beautiful%20home%20exterior%20pristine%20sparkling%20glass%20Pacific%20Northwest%20residential%20property%20clean%20bright%20sunlight%20clear%20blue%20sky%20immaculate%20curb%20appeal%20suburban%20neighborhood%20lush%20green%20trees%20manicured%20lawn%20upscale%20house%20white%20trim%20architectural%20beauty&width=1920&height=800&seq=loc-hero-pnw-residential-v1&orientation=landscape"
+          src="/images/site/loc-hero-pnw-residential-v1.jpg"
           alt={`${serviceTitle} in ${cityName}, ${stateAbbr}`}
           className="w-full h-full object-cover object-top"
         />

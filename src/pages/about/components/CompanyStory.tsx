@@ -27,7 +27,7 @@ export default function CompanyStory() {
           <div className="relative">
             <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
               <img
-                src="https://readdy.ai/api/search-image?query=professional%20window%20cleaner%20working%20on%20beautiful%20residential%20home%20Pacific%20Northwest%20sunny%20day%20upscale%20house%20white%20trim%20technician%20cleaning%20exterior%20windows%20careful%20respectful%20uniformed%20professional%20residential%20neighborhood%20green%20landscaping&width=800&height=600&seq=about-story-v1&orientation=landscape"
+                src="/images/site/about-story-v1.jpg"
                 alt="World Wide Window Co team serving Pacific Northwest homes since 1983"
                 className="w-full h-full object-cover object-top"
               />

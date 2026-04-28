@@ -38,7 +38,7 @@ export default function AboutSection() {
           <div className="relative" ref={leftRef}>
             <div className="relative rounded-3xl overflow-hidden aspect-[4/5]">
               <img
-                src={aboutContent?.image || "https://static.readdy.ai/image/81164d3ba0f00c2a7e247a9f180c9b75/38f4f87b39d6feafe2bc8f35e7981672.jpeg"}
+                src={aboutContent?.image || "/images/site/about-preview-family-home.jpeg"}
                 alt={aboutContent?.imageAlt || 'World Wide Window Co — Family-owned residential window cleaning since 1983'}
                 className="w-full h-full object-cover object-top"
               />

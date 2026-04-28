@@ -88,7 +88,7 @@ export default function AboutWhyUs() {
             <div className="space-y-6">
               <div className="relative rounded-3xl overflow-hidden aspect-[4/3]">
                 <img
-                  src="https://readdy.ai/api/search-image?query=beautifully%20clean%20sparkling%20residential%20windows%20on%20a%20modern%20Pacific%20Northwest%20home%2C%20bright%20sunlight%20reflecting%20off%20perfectly%20streak-free%20glass%20panes%2C%20lush%20green%20landscaping%20and%20blue%20sky%20visible%20through%20the%20crystal%20clear%20windows%2C%20close-up%20detail%20of%20pristine%20window%20quality%2C%20no%20people%20visible%20anywhere%2C%20professional%20window%20cleaning%20result%20showcase%2C%20warm%20natural%20lighting%2C%20suburban%20home%20exterior&width=700&height=530&seq=about-whyus-img-v3&orientation=landscape"
+                  src="/images/site/about-whyus-img-v3.jpg"
                   alt="Professional window cleaning result sparkling clean residential windows"
                   className="w-full h-full object-cover object-top"
                 />

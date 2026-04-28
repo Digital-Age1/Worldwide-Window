@@ -17,22 +17,22 @@ const fallbackBeforeAfterPairs: BeforeAfterPair[] = [
   {
     id: 1,
     label: 'Residential Home — Bellevue, WA',
-    before: 'https://readdy.ai/api/search-image?query=dirty%20grimy%20residential%20house%20window%20exterior%20smudged%20streaks%20dirt%20grime%20hard%20water%20stains%20glass%20opaque%20Pacific%20Northwest%20home%20before%20cleaning%20weathered&width=700&height=500&seq=ba-before-pnw-001&orientation=landscape',
-    after: 'https://readdy.ai/api/search-image?query=sparkling%20crystal%20clear%20clean%20residential%20house%20window%20exterior%20gleaming%20bright%20reflection%20sunshine%20Pacific%20Northwest%20home%20after%20professional%20cleaning%20pristine&width=700&height=500&seq=ba-after-pnw-001&orientation=landscape',
+    before: '/images/site/ba-before-pnw-001.jpg',
+    after: '/images/site/ba-after-pnw-001.jpg',
     type: 'Residential',
   },
   {
     id: 2,
     label: 'Two-Story Home — Portland, OR',
-    before: 'https://readdy.ai/api/search-image?query=dirty%20smudged%20two%20story%20residential%20home%20window%20grimy%20exterior%20grime%20dust%20polluted%20glass%20suburban%20Oregon%20before%20window%20cleaning%20dull%20hazy&width=700&height=500&seq=ba-before-pnw-002&orientation=landscape',
-    after: 'https://readdy.ai/api/search-image?query=gleaming%20spotless%20two%20story%20residential%20home%20window%20clean%20polished%20reflection%20bright%20crystal%20clear%20suburban%20Oregon%20after%20professional%20window%20cleaning%20beautiful&width=700&height=500&seq=ba-after-pnw-002&orientation=landscape',
+    before: '/images/site/ba-before-pnw-002.jpg',
+    after: '/images/site/ba-after-pnw-002.jpg',
     type: 'Two-Story Home',
   },
   {
     id: 3,
     label: 'Hard Water Removal — Boise, ID',
-    before: 'https://readdy.ai/api/search-image?query=severe%20hard%20water%20calcium%20mineral%20stain%20deposit%20etching%20residential%20window%20glass%20white%20hazy%20opaque%20Idaho%20home%20before%20treatment%20weathered%20glass%20damage&width=700&height=500&seq=ba-before-pnw-003&orientation=landscape',
-    after: 'https://readdy.ai/api/search-image?query=crystal%20clear%20window%20glass%20after%20hard%20water%20stain%20removal%20treatment%20sparkling%20bright%20transparent%20shine%20Idaho%20residential%20home%20clean%20clear%20restored%20glass&width=700&height=500&seq=ba-after-pnw-003&orientation=landscape',
+    before: '/images/site/ba-before-pnw-003.jpg',
+    after: '/images/site/ba-after-pnw-003.jpg',
     type: 'Hard Water',
   },
 ];

@@ -40,7 +40,7 @@ export default function AboutPage() {
         {/* 6 — About Section / Visual Break */}
         <section className="relative h-72 overflow-hidden">
           <img
-            src="https://readdy.ai/api/search-image?query=wide%20panoramic%20view%20window%20cleaning%20service%20residential%20neighborhood%20Pacific%20Northwest%20beautiful%20homes%20sunny%20day%20lush%20green%20trees%20suburban%20community%20clean%20windows%20gleaming%20bright%20light%20morning%20residential%20houses%20Pacific%20Northwest%20Washington%20Oregon%20Idaho%20wide%20landscape%20community&width=1920&height=500&seq=about-midband-v1&orientation=landscape"
+            src="/images/site/about-midband-v1.jpg"
             alt="World Wide Window Co serving Pacific Northwest communities"
             className="w-full h-full object-cover object-center"
           />
