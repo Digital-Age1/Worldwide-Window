@@ -11,8 +11,7 @@ import {
   trackFormSubmit,
   trackPhoneClick,
 } from '@/utils/tracking';
-
-const FORM_URL = 'https://readdy.ai/api/form/d7j7s9udvpcv9r19p9qg';
+import { QUOTE_FORM_NAME, submitNetlifyForm } from '@/utils/netlifyForms';
 
 const services = [
   'Residential Window Cleaning',
@@ -34,30 +33,20 @@ export default function ContactPage() {
     e.preventDefault();
     setStatus('submitting');
     const form = e.currentTarget;
-    const data = new URLSearchParams();
-    new FormData(form).forEach((v, k) => data.append(k, v.toString()));
     try {
-      const res = await fetch(FORM_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-        body: data.toString(),
-      });
-      if (res.ok) {
-        trackFormSubmit({ form_id: 'contact_form', form_location: 'contact_page' });
-        form.reset();
-        if (shouldRedirectToThankYou()) {
-          const thankYouUrl = getThankYouPageUrl();
-          if (/^https?:\/\//i.test(thankYouUrl)) {
-            window.location.assign(thankYouUrl);
-          } else {
-            navigate(thankYouUrl);
-          }
-          return;
+      await submitNetlifyForm(form);
+      trackFormSubmit({ form_id: 'contact_form', form_location: 'contact_page' });
+      form.reset();
+      if (shouldRedirectToThankYou()) {
+        const thankYouUrl = getThankYouPageUrl();
+        if (/^https?:\/\//i.test(thankYouUrl)) {
+          window.location.assign(thankYouUrl);
+        } else {
+          navigate(thankYouUrl);
         }
-        setStatus('success');
-      } else {
-        setStatus('error');
+        return;
       }
+      setStatus('success');
     } catch {
       setStatus('error');
     }
@@ -195,12 +184,26 @@ export default function ContactPage() {
                     </p>
                   </div>
                 ) : (
-                  <form onSubmit={handleSubmit} data-readdy-form className="space-y-5">
+                  <form
+                    name={QUOTE_FORM_NAME}
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    onSubmit={handleSubmit}
+                    className="space-y-5"
+                  >
+                    <input type="hidden" name="form-name" value={QUOTE_FORM_NAME} />
+                    <p className="hidden">
+                      <label>
+                        Don’t fill this out if you’re human:
+                        <input name="bot-field" />
+                      </label>
+                    </p>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-1.5">First Name *</label>
                         <input
-                          name="first_name"
+                          name="firstName"
                           type="text"
                           required
                           placeholder="Jane"
@@ -210,7 +213,7 @@ export default function ContactPage() {
                       <div>
                         <label className="block text-sm font-semibold text-slate-700 mb-1.5">Last Name *</label>
                         <input
-                          name="last_name"
+                          name="lastName"
                           type="text"
                           required
                           placeholder="Smith"
@@ -244,7 +247,7 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-1.5">Service Address</label>
                       <input
-                        name="address"
+                        name="serviceAddress"
                         type="text"
                         placeholder="Your home or business address (city, state)"
                         className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all"
@@ -254,7 +257,7 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-1.5">Service Needed *</label>
                       <select
-                        name="service"
+                        name="serviceNeeded"
                         required
                         className="w-full text-sm border border-slate-200 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition-all bg-white cursor-pointer"
                       >
@@ -266,7 +269,7 @@ export default function ContactPage() {
                     <div>
                       <label className="block text-sm font-semibold text-slate-700 mb-1.5">Additional Notes</label>
                       <textarea
-                        name="message"
+                        name="notes"
                         rows={4}
                         maxLength={500}
                         placeholder="Tell us about your home or business — number of windows, stories, special requirements..."

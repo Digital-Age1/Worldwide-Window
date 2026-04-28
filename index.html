@@ -41,6 +41,22 @@
     <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   </head>
   <body>
+    <form name="quote-form" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" hidden>
+      <input type="hidden" name="form-name" value="quote-form" />
+      <p class="hidden">
+        <label>
+          Don’t fill this out if you’re human:
+          <input name="bot-field" />
+        </label>
+      </p>
+      <input name="firstName" />
+      <input name="lastName" />
+      <input name="email" />
+      <input name="phone" />
+      <input name="serviceAddress" />
+      <input name="serviceNeeded" />
+      <textarea name="notes"></textarea>
+    </form>
     <div id="root"></div>
     <script>
       if (window.netlifyIdentity) {
